@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment} from "react";
+import {Switch, Route, BrowserRouter} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from "./Common/Component/Header/Header";
+import Footer from "./Common/Component/Footer/Footer";
+import Home from "./Pages/Home/Home";
+import Rooms from "./Pages/Rooms/Rooms";
+import Data from "./Pages/Data/Data";
+import Service from "./Pages/Service/Services";
+import Registration from "./Pages/Registration/Registration";
+import "./AppStyle.scss";
+
+export default class App extends React.Component {
+	render() {
+		const AppLayout = (content) => {
+			return (
+				<Fragment>
+					<Header />
+					{content}
+					<Footer />
+				</Fragment>
+			);
+		};
+		return (
+			<BrowserRouter>
+				<div className="App">
+					<Switch>
+						<Route exact path="/home" render={() => AppLayout(<Home />)} />
+						<Route path="/rooms" render={() => AppLayout(<Rooms />)} />
+						<Route path="/data" render={() => AppLayout(<Data />)} />
+						<Route path="/service" render={() => AppLayout(<Service />)} />
+						<Route path="/registration" render={() => AppLayout(<Registration />)} />
+					</Switch>
+				</div>
+			</BrowserRouter>
+		);
+	}
 }
-
-export default App;

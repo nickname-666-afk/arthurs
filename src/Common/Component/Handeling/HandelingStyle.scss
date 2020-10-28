@@ -1,0 +1,167 @@
+$w: 100%;
+@mixin boxshadow {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
+}
+.Handeling {
+	.content-main {
+		width: $w;
+		& > .title {
+			text-align: center;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 30px auto;
+		}
+		.content-column {
+			display: flex;
+			justify-content: space-between;
+			width: $w;
+			.content {
+				@include boxshadow;
+				display: block;
+				max-width: 550px;
+				width: 48%;
+				margin: 30px 0;
+				padding: 10px;
+				box-sizing: 0;
+				border-radius: 8px;
+				transition: all 1s ease;
+				&:hover {
+					box-shadow: 0 1rem 2.5rem rgba(32, 34, 36, 0.1),
+						0 0.5rem 1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
+					transform: translate3d(0, -3px, 0);
+				}
+				.image {
+					display: block;
+					float: left;
+					width: calc(100% - 60%);
+					& > img {
+						width: $w;
+					}
+				}
+				.text {
+					width: calc(100% - 45%);
+					float: right;
+					color: #000;
+					& > .title {
+						font-size: 24px;
+						line-height: 150%;
+					}
+					& > .info {
+						max-width: 300px;
+						margin: 10px 0;
+						color: #848484;
+						font-size: 18px;
+					}
+					& > .price {
+						max-width: 300px;
+						color: #848484;
+						font-size: 18px;
+					}
+				}
+				.container-btn {
+					margin-top: 50px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1112px) {
+	.Handeling {
+		.content-main {
+			& > .title {
+				font-size: 36px;
+			}
+			.content-column {
+				.content {
+					.text {
+						& > .title {
+							font-size: 18px;
+						}
+						& > .info {
+							font-size: 16px;
+						}
+						& > .price {
+							font-size: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 834px) and (orientation: portrait) {
+	.Handeling {
+		.content-main {
+			.content-column {
+				.content {
+					.text {
+						& > .title {
+							font-size: 16px;
+						}
+						& > .info {
+							font-size: 14px;
+						}
+						& > .price {
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.Handeling {
+		.content-main {
+			padding: 10px 0;
+			& > .title {
+				margin: 10px auto;
+				font-size: 24px;
+			}
+			.content-column {
+				display: block;
+				.content {
+					box-shadow: none !important;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					width: $w;
+					border-top: 0.8px solid #ededed;
+					padding: 10px;
+					margin: 0 auto;
+					&:hover {
+						@include boxshadow;
+						transform: none;
+					}
+					.image {
+						display: block;
+						width: auto;
+						& > img {
+							float: none;
+							width: auto;
+							max-height: 150px;
+							border-radius: 8px;
+						}
+					}
+					.text {
+						padding-left: 10px;
+						text-align: left;
+						max-width: cacl(100% - 52%);
+						& > .title {
+							font-size: 14px;
+						}
+						& > .info {
+							font-size: 12px;
+							width: $w;
+							padding: 0;
+							margin: 10px 0;
+						}
+						& > .price {
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

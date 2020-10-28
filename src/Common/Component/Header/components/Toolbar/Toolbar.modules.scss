@@ -1,0 +1,135 @@
+$w: 100%;
+$h: 100%;
+@mixin link {
+	color: #fff;
+	text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.35);
+}
+.header {
+	position: absolute;
+	height: 80px;
+	width: $w;
+	.toolbar {
+		width: $w;
+		max-width: 1240px;
+		margin: 0 auto;
+		.toolbar__navigation {
+			display: flex;
+			align-items: center;
+			.toolbar__logo {
+				display: flex;
+				align-items: center;
+				width: 100px;
+				height: 80px;
+				.link {
+					font-weight: bold;
+					font-size: 22px;
+					@include link;
+				}
+			}
+			.toolbar_navigation-items {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				width: $w;
+				height: 80px;
+				& > ul {
+					width: $w;
+					display: flex;
+					justify-content: flex-end;
+					:last-child {
+						text-align: right;
+						width: 130px;
+					}
+					& > li {
+						width: 200px;
+						text-align: center;
+						.link {
+							font-size: 18px;
+							@include link;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1024px) {
+	.header {
+		.toolbar {
+			width: 90%;
+		}
+	}
+}
+@media (max-width: 1112px) {
+	.header {
+		.toolbar {
+			width: 90%;
+		}
+	}
+}
+@media (max-width: 834px) and (orientation: portrait) {
+	.header {
+		.toolbar {
+			.toolbar__navigation {
+				width: $w;
+				.toolbar_navigation-items {
+					& > ul {
+						:nth-child(3) {
+							width: 100px;
+						}
+						& > li {
+							text-align: right;
+							width: 150px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.header {
+		.toolbar {
+			z-index: 399;
+			position: fixed;
+			background: #ff7b51;
+			width: $w;
+			height: 50px;
+			.toolbar__navigation {
+				padding: 0;
+				height: 50px;
+				box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+				.toolbar__logo {
+					position: absolute;
+					left: 25%;
+					right: 25%;
+					width: 50%;
+					min-width: 200px;
+					height: auto;
+					top: 15px;
+					font-size: 21px;
+					.link {
+						width: $w;
+						color: #fff;
+						font-size: 21px;
+						text-transform: uppercase;
+					}
+				}
+				.toolbar_navigation-items {
+					display: none;
+				}
+			}
+			.side-drawer {
+				z-index: 200;
+				position: fixed;
+				height: $h;
+				background: white;
+				box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+				top: 0;
+				left: 0;
+				width: 70%;
+				max-width: 400px;
+			}
+		}
+	}
+}

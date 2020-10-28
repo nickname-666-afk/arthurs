@@ -1,0 +1,150 @@
+$w: 100%;
+$h: 100%;
+@mixin size {
+	width: calc(100% - 50%);
+	max-width: calc(100% - 50%);
+}
+@mixin width {
+	width: $w;
+	max-width: $w;
+}
+.MenuSecond {
+	.content {
+		& > .text {
+			float: right;
+			text-align: right;
+			@include size;
+			& > .title {
+				font-size: 36px;
+			}
+			.title_p {
+				float: right;
+				& > .p {
+					float: right;
+					margin: 50px 0;
+					width: 330px;
+					font-weight: 300;
+					line-height: 27px;
+				}
+			}
+			.button_block {
+				width: $w;
+				float: right;
+				.modal-wrapper {
+					z-index: 111;
+					position: fixed;
+					width: $w;
+					height: $h;
+					top: 0;
+					left: 0;
+					background: rgba(0, 0, 0, 0.9);
+					visibility: hidden;
+					opacity: 0;
+					transition: all 0.4s linear;
+					.modal {
+						position: relative;
+						width: 80%;
+						max-width: 800px;
+						height: $h;
+						max-height: 600px;
+						display: block;
+						margin: 50% -40%;
+						top: 30%;
+						left: 50%;
+						background: #fff;
+						opacity: 0;
+						transition: all 0.5s linear;
+						background-image: url("../../../Common/image/menu.svg");
+						background-size: 40%;
+						background-repeat: no-repeat;
+						background-position: 50%;
+						background-position-y: 80%;
+					}
+				}
+			}
+		}
+		.image {
+			float: left;
+			@include size;
+			& > img {
+				width: $w;
+				max-height: 550px;
+			}
+		}
+	}
+}
+@media (max-width: 834px) and (orientation: portrait) {
+	.MenuSecond {
+		.content {
+			.text {
+				width: 45%;
+				max-width: 45%;
+				.title_p {
+					& > .p {
+						width: $w;
+						margin: 40px 0;
+						line-height: 150%;
+					}
+				}
+				.button_block {
+					& > .button {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.MenuSecond {
+		.content {
+			padding: 20px 10px;
+			.text {
+				@include width;
+				margin: 30px 0;
+				float: none;
+				text-align: center;
+				& > .title {
+					font-size: 22px;
+				}
+				.title_p {
+					width: $w;
+					margin: auto;
+					& > .p {
+						margin: 30px auto;
+						width: $w;
+						padding: 0 20px;
+						font-size: 14px;
+						color: #595858;
+					}
+				}
+				.button_block {
+					margin: 30px 0;
+					float: none;
+					.modal-wrapper {
+						.modal {
+							top: 12rem;
+							left: 0;
+							margin: 0 auto !important;
+							width: $w;
+							max-width: 600px;
+							height: $h;
+						}
+					}
+					& > .button {
+						margin: 0;
+					}
+				}
+			}
+			.image {
+				float: none;
+				@include width;
+				& > img {
+					border-radius: 8px;
+					max-height: 280px;
+					max-width: 500px;
+				}
+			}
+		}
+	}
+}

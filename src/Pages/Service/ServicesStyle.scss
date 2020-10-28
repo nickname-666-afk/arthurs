@@ -1,0 +1,153 @@
+$w: 100%;
+
+@mixin size {
+	width: calc(100% - 52%);
+	max-width: calc(100% - 52%);
+}
+@mixin style {
+	border-radius: 8px;
+	box-shadow: 0 0.1rem 0.5rem rgba(32, 34, 36, 0.1), 0 0.5rem 1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
+}
+@mixin reset-size {
+	float: none;
+	width: $w;
+	max-width: $w;
+}
+@mixin width-front {
+	width: 50%;
+	font-size: 24px;
+}
+
+.Services {
+	padding: 100px 10px 0 10px;
+	width: $w;
+	margin: auto;
+	text-align: center;
+	.title {
+		font-size: 36px;
+		text-align: center;
+	}
+	.service {
+		width: $w;
+		max-width: 1240px;
+		margin: 100px auto;
+		.block__rooms {
+			@include style;
+			margin: 50px auto;
+		}
+		.Handeling {
+			float: left;
+			@include size;
+			.content-main {
+				@include reset-size;
+				& > .title {
+					display: none;
+				}
+				.content-column {
+					@include reset-size;
+					display: block;
+					.content {
+						width: 80%;
+						display: flex;
+						justify-content: space-between;
+						.text {
+							width: 50%;
+							text-align: left;
+							& > .title {
+								text-align: left;
+							}
+						}
+					}
+				}
+			}
+		}
+		.block__orders {
+			float: right;
+			padding: 25px 30px;
+			margin: 50px 0;
+			text-align: right;
+			@include size;
+			@include style;
+			& > .title {
+				text-align: left;
+			}
+			& > .content {
+				margin: 10px 0;
+			}
+			& > .link {
+				& > .button {
+					background: #408cff;
+					&:hover {
+						color: #408cff;
+						background: #fff !important;
+						outline: 1px solid #408cff !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.Services {
+		.title {
+			font-size: 22px;
+		}
+		.service {
+			width: $w;
+			max-width: 1240px;
+			.block__rooms {
+				@include reset-size;
+				margin: 50px auto;
+			}
+			.Handeling {
+				float: none;
+				@include reset-size;
+				.content-main {
+					@include reset-size;
+					& > .title {
+						display: none;
+					}
+					.content-column {
+						@include reset-size;
+						display: block;
+						:first-child {
+							border-top: none !important;
+						}
+						.content {
+							width: $w;
+							padding: 15px 10px;
+							margin: 0;
+							box-shadow: none !important;
+							.text {
+								width: 50%;
+								max-width: $w;
+								text-align: left;
+								& > button {
+									display: block !important;
+								}
+								& > .title {
+									text-align: left;
+								}
+								& > .p {
+									width: $w;
+								}
+							}
+						}
+					}
+				}
+			}
+			.block__orders {
+				float: none;
+				text-align: center;
+				@include reset-size;
+				& > .title {
+					text-align: left;
+				}
+				& > .content {
+					margin: 10px 0;
+				}
+			}
+		}
+	}
+}

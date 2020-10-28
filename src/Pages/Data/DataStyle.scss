@@ -1,0 +1,128 @@
+$w: 100%;
+$h: 100%;
+
+.Data {
+	width: $w;
+	background-image: url("../../Common/image/4.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top: 100px;
+	.component {
+		margin: auto;
+		text-align: center;
+		.title {
+			font-size: 30px;
+		}
+		.form {
+			width: 50%;
+			margin: 100px auto;
+			.calendar {
+				margin: 50px 0;
+				.datepickers {
+					max-width: 620px;
+					width: $w;
+					height: 65px;
+					display: flex;
+					justify-content: space-between;
+					margin: 0 auto;
+					.DatePicker {
+						width: $w;
+						max-width: 280px;
+						height: $h;
+						margin-right: 30px;
+						box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+						transition: all 1s ease;
+						&:hover {
+							box-shadow: 0 0.1rem 2.5rem rgba(32, 34, 36, 0.1),
+								0 0.5rem 0.1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
+							transform: translate3d(0, -3px, 0);
+						}
+						& > input {
+							border: none;
+							font-size: 1.2rem;
+							text-align: left;
+							cursor: pointer;
+							width: $w;
+							height: $h;
+						}
+					}
+					:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+			.button {
+				width: $w;
+				max-width: 35.9vmax;
+				height: 4vmax;
+				font-size: 1.5vmax;
+			}
+		}
+	}
+	& > .text {
+		background: #fff;
+		height: 300px;
+		padding: 25px 100px;
+		color: #848484;
+		.title {
+			font-size: 36px;
+			color: #000;
+		}
+		.p_first {
+			line-height: 150%;
+			margin: 15px 0;
+		}
+		.p {
+			width: 650px;
+			font-size: 18px;
+			line-height: 200%;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.Data {
+		.component {
+			.title {
+				font-size: 22px;
+			}
+			.form {
+				width: $w;
+				margin: 40px 0;
+				.calendar {
+					width: $w;
+					.datepickers {
+						.DatePicker {
+							& > input {
+								font-size: 14px !important;
+							}
+						}
+					}
+				}
+			}
+			.button {
+				width: $w !important;
+				max-width: 90% !important;
+				height: 45px !important;
+				font-size: 16px !important;
+			}
+		}
+		& > .text {
+			height: 300px;
+			padding: 20px;
+			text-align: left;
+			.title {
+				font-size: 24px;
+			}
+			.p_first {
+				line-height: 150%;
+				margin: 20px 0;
+			}
+			.p {
+				width: $w;
+				font-size: 18px;
+				line-height: 130%;
+			}
+		}
+	}
+}

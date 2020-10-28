@@ -1,0 +1,278 @@
+$w: 100%;
+$h: 100%;
+
+@mixin size {
+	width: calc(100% - 50%);
+	max-width: calc(100% - 50%);
+}
+@mixin width {
+	width: $w;
+	max-width: $w;
+}
+
+.MenuFirst {
+	.content {
+		& > .text {
+			float: left;
+			text-align: left;
+			@include size;
+			& > .title {
+				font-size: 36px;
+			}
+			.title_p {
+				float: left;
+				& > .p {
+					float: left;
+					margin: 50px 0;
+					width: 330px;
+					font-weight: 300;
+					line-height: 27px;
+				}
+			}
+			.button_block {
+				width: $w;
+				float: left;
+				.modal-wrapper {
+					z-index: 111;
+					position: fixed;
+					width: $w;
+					height: $h;
+					top: 0;
+					left: 0;
+					background: rgba(0, 0, 0, 0.9);
+					visibility: hidden;
+					opacity: 0;
+					transition: all 0.4s linear;
+					.modal {
+						position: relative;
+						width: 80%;
+						max-width: 800px;
+						height: $h;
+						max-height: 700px;
+						display: block;
+						margin: 50% -30%;
+						top: 40%;
+						left: 50%;
+						background: #fff;
+						opacity: 0;
+						transition: all 0.5s linear;
+						background-image: url("../../../Common/image/menu.svg");
+						background-size: 40%;
+						background-repeat: no-repeat;
+						background-position: 50%;
+						background-position-y: 80%;
+						.head {
+							width: $w;
+							height: 50px;
+							overflow: hidden;
+							background: #ff7b51;
+							& > .title {
+								position: absolute;
+								top: 10px;
+								right: 45%;
+								font-size: 24px;
+								text-align: center;
+								color: #fff;
+							}
+							.btn-close {
+								position: absolute;
+								top: 10px;
+								right: 15px;
+								width: 30px;
+								height: 30px;
+								display: block;
+								cursor: pointer;
+								.line--left {
+									position: absolute;
+									top: 13px;
+									width: $w;
+									height: 3px;
+									background: #fff;
+									transform: rotate(-45deg);
+								}
+								.line--right {
+									position: absolute;
+									top: 12px;
+									width: $w;
+									height: 3px;
+									background: #fff;
+									transform: rotate(45deg);
+								}
+							}
+						}
+					}
+				}
+				.modal-wrapper.open {
+					opacity: 1;
+					visibility: visible;
+				}
+				.modal-wrapper.open .modal {
+					margin-top: -12vmax;
+					opacity: 1;
+				}
+			}
+		}
+		.image {
+			float: right;
+			@include size;
+			& > img {
+				width: $w;
+				max-height: 550px;
+			}
+		}
+	}
+}
+@media (max-width: 1112px) {
+	.MenuFirst {
+		.content {
+			& > .text {
+				.button_block {
+					.modal-wrapper {
+						.modal {
+							top: 0;
+							left: 0;
+							margin: 7rem auto !important;
+							width: 700px;
+							height: 600px;
+							background-size: 70%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1024px) and (orientation: portrait) {
+	.MenuFirst {
+		.content {
+			.text {
+				.title {
+					font-size: 36px;
+				}
+				.title_p {
+					& > .p {
+						font-size: 14px;
+						margin: 30px 0;
+					}
+				}
+				.button_block {
+					.modal-wrapper {
+						.modal {
+							top: 12rem;
+							left: 0;
+							margin: 0 auto !important;
+							width: $w;
+							max-width: 600px;
+							height: $h;
+						}
+					}
+					& > .button {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 834px) and (orientation: portrait) {
+	.MenuFirst {
+		.content {
+			.text {
+				width: 45%;
+				max-width: 45%;
+				.title_p {
+					& > .p {
+						width: $w;
+						margin: 40px 0;
+						line-height: 150%;
+					}
+				}
+				.button_block {
+					.modal-wrapper {
+						.modal {
+							height: 79%;
+							background-size: 65%;
+						}
+					}
+					& > .button {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.MenuFirst {
+		.content {
+			padding: 20px 10px;
+			.text {
+				@include width;
+				float: none;
+				text-align: center;
+				& > .title {
+					font-size: 22px;
+				}
+				.title_p {
+					width: $w;
+					margin: auto;
+					& > .p {
+						margin: 30px auto;
+						width: $w;
+						font-size: 14px;
+						color: #595858;
+					}
+				}
+				.button_block {
+					margin: 30px 0;
+					float: none;
+					.modal-wrapper {
+						.modal {
+							top: 12rem;
+							left: 0;
+							margin: 0 auto !important;
+							width: $w;
+							max-width: 600px;
+							height: $h;
+						}
+					}
+					& > .button {
+						margin: 0;
+					}
+				}
+			}
+			.image {
+				float: none;
+				@include width;
+				& > img {
+					border-radius: 8px;
+					max-height: 280px;
+					max-width: 500px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 414px) {
+	.MenuFirst {
+		.content {
+			.text {
+				.button_block {
+					.modal-wrapper {
+						.modal {
+							top: 14vmax;
+							left: 0;
+							margin: 0 auto !important;
+							width: 90%;
+							height: 80%;
+							background-size: $w;
+						}
+					}
+					& > .button {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}

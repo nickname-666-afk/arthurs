@@ -1,0 +1,490 @@
+$w: 100%;
+$h: 100%;
+@mixin width {
+	width: calc(100% - 52%);
+	max-width: calc(100% - 52%);
+}
+@mixin reset-width {
+	float: none;
+	width: $w;
+	max-width: $w;
+}
+
+.Rooms {
+	width: $w;
+	& > .component {
+		text-align: center;
+		margin: 100px auto !important;
+		padding: 30px 0;
+		.content {
+			text-align: center;
+			flex-wrap: wrap;
+			& > .title {
+				font-size: 48px;
+				text-align: center;
+				margin: 15px auto;
+			}
+			.add-filter {
+				text-align: left;
+				font-size: 18px;
+				margin-bottom: 40px;
+			}
+			.filter {
+				width: $w;
+				max-width: 1240px;
+				text-align: left;
+				.wrapper-filter {
+					display: flex;
+					justify-content: space-between;
+					width: $w;
+					.custom-select {
+						margin: 0;
+						width: 50%;
+						max-width: 1240px;
+						display: flex;
+						.css-2b097c-container {
+							width: 33%;
+							height: 50px;
+							font-size: 16px;
+						}
+					}
+					.button_block {
+						width: 20%;
+						.button {
+							float: right;
+							width: 90%;
+							height: 50px;
+							margin: 0;
+						}
+					}
+				}
+			}
+			.component-block {
+				width: $w;
+				max-width: 1240px;
+				padding: 25px 30px;
+				margin: 30px auto;
+				box-shadow: 0 0.1rem 0.5rem rgba(32, 34, 36, 0.1),
+					0 0.5rem 1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
+				.left {
+					float: left;
+					@include width;
+					.slider {
+						.slider-control-bottomcenter {
+							& > ul {
+								& > li {
+									& > button {
+										width: 12px;
+										& > svg {
+											& > circle {
+												width: 3vh;
+												height: 3vh;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				.right {
+					float: right;
+					@include width;
+					text-align: right;
+					.text {
+						text-align: left;
+						color: #848484;
+						& > .title {
+							float: left;
+							text-align: left;
+							font-size: 24px;
+							color: #000;
+						}
+						& > .price {
+							float: right;
+							text-align: right;
+							font-size: 24px;
+							color: #000;
+						}
+						& > .count {
+							float: left;
+							width: $w;
+							margin: 10px 0;
+						}
+						& > .square {
+							float: left;
+							width: $w;
+						}
+						& > .info {
+							float: left;
+							width: $w;
+							margin: 15px 0;
+							& > div {
+								max-width: 88%;
+								margin: 10px 0;
+							}
+						}
+						& > .comfort {
+							float: left;
+							width: $w;
+							margin: 10px 0;
+							& > p {
+								margin: 10px 0;
+							}
+							& > div {
+								max-width: 40%;
+							}
+						}
+					}
+					.button {
+						width: 15vmax;
+						margin: 85px 0 0 0;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1112px) {
+	.Rooms {
+		& > .component {
+			.content {
+				& > .title {
+					font-size: 36px;
+				}
+				.filter {
+					.add-filter {
+						font-size: 16px;
+						margin-bottom: 30px;
+					}
+					.wrapper-filter {
+						.custom-select {
+							.css-2b097c-container {
+								font-size: 12px;
+								height: 40px;
+							}
+						}
+						.button_block {
+							.button {
+								font-size: 12px;
+								height: 40px;
+							}
+						}
+					}
+				}
+				.component-block {
+					.right {
+						.button {
+							width: 12vmax;
+							height: 3vmax;
+							margin: 0;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1024px) {
+	.Rooms {
+		& > .component {
+			.content {
+				.component-block {
+					.right {
+						.text {
+							& > .comfort {
+								& > div {
+									max-width: 80%;
+								}
+							}
+						}
+						.button {
+							width: 12vmax;
+							height: 3.5vmax;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1024px) and (orientation: portrait) {
+	.Rooms {
+		& > .component {
+			.content {
+				& > .title {
+					font-size: 36px;
+				}
+				.filter {
+					.add-filter {
+						font-size: 14px;
+						margin-bottom: 20px;
+					}
+					.wrapper-filter {
+						.custom-select {
+							width: 70%;
+							.css-2b097c-container {
+								font-size: 11px;
+							}
+						}
+						.button_block {
+							.button {
+								font-size: 11px;
+							}
+						}
+					}
+				}
+				.component-block {
+					.right {
+						.text {
+							& > .title {
+								width: 40%;
+								font-size: 24px;
+							}
+							& > .price {
+								width: 60%;
+								font-size: 24px;
+							}
+							& > .count {
+								font-size: 16px;
+							}
+							& > .square {
+								font-size: 16px;
+							}
+						}
+						.button {
+							width: 12vmax;
+							height: 3.5vmax;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 834px) and (orientation: portrait) {
+	.Rooms {
+		& > .component {
+			.content {
+				& > .title {
+					font-size: 24px;
+				}
+				.filter {
+					.wrapper-filter {
+						.custom-select {
+							width: 60%;
+						}
+					}
+				}
+				.component-block {
+					.right {
+						.text {
+							width: $w;
+							& > .title {
+								font-size: 16px;
+							}
+							& > .price {
+								font-size: 16px;
+							}
+							& > .count {
+								font-size: 12px;
+							}
+							& > .square {
+								font-size: 12px;
+							}
+							& > .info {
+								font-size: 12px;
+								margin: 0;
+							}
+							& > .comfort {
+								margin: 0;
+								font-size: 12px;
+								& > div {
+									width: $w;
+									max-width: 80%;
+								}
+							}
+						}
+						.button {
+							width: 10vmax;
+							height: 3vmax;
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.Rooms {
+		& > .component {
+			.content {
+				width: $w;
+				& > .title {
+					font-size: 22px;
+					text-align: center;
+					margin: 20px auto;
+				}
+				.filter {
+					width: $w;
+					max-width: 1240px;
+					margin: 20px 0;
+					.add-filter {
+						font-size: 18px;
+						margin-bottom: 40px;
+					}
+					.wrapper-filter {
+						display: block;
+						.custom-select {
+							width: $w;
+							height: 40px;
+							.css-2b097c-container {
+								width: 33%;
+								height: 40px !important;
+								font-size: 12px !important;
+							}
+						}
+						.button_block {
+							float: left;
+							margin: 40px 0 0 0;
+							width: 33%;
+							.button {
+								margin: 0 !important;
+								width: $w;
+								border-radius: 0;
+								font-size: 12px;
+							}
+						}
+					}
+				}
+				.component-block {
+					width: $w;
+					height: auto;
+					padding: 20px 10px;
+					margin: 20px 0;
+					border-radius: 8px;
+					.left {
+						@include reset-width;
+					}
+					.right {
+						@include reset-width;
+						text-align: center;
+						.text {
+							padding: 20px 0;
+							height: $h;
+							& > .title {
+								font-size: 24px;
+							}
+							& > .price {
+								font-size: 24px;
+							}
+							& > .count {
+								margin: 10px 0;
+								width: $w;
+								font-size: 14px;
+							}
+							& > .square {
+								float: left;
+								width: $w;
+								font-size: 14px;
+							}
+							& > .info {
+								float: none;
+								width: $w;
+								font-size: 14px;
+								& > div {
+									float: none;
+								}
+							}
+							& > .comfort {
+								float: none;
+								line-height: 150%;
+								font-size: 14px;
+								& > div {
+									width: 42%;
+								}
+							}
+						}
+						.button {
+							width: 18vmax;
+							height: 4vmax;
+							margin: 30px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 414px) {
+	.Rooms {
+		& > .component {
+			.content {
+				& > .title {
+					margin: 0 auto 20px auto;
+				}
+				.component-block {
+					.right {
+						.text {
+							.title {
+								font-size: 18px;
+							}
+							.price {
+								font-size: 18px;
+							}
+							.count {
+								float: left;
+							}
+						}
+						.button {
+							width: 20vmax;
+							height: 5vmax;
+							margin: 10px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 320px) {
+	.Rooms {
+		.component {
+			.content {
+				.component-block {
+					.right {
+						.text {
+							.title {
+								font-size: 14px;
+							}
+							.price {
+								font-size: 14px;
+							}
+							.info {
+								float: none;
+								& > div {
+									max-width: $w;
+								}
+							}
+							.comfort {
+								& > div {
+									width: $w;
+									max-width: $w;
+								}
+							}
+						}
+						.button {
+							width: 25vmax;
+							height: 7vmax;
+							margin: 10px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

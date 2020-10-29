@@ -1,9 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Content extends Component {
-	state = {
-		image: "",
-	};
+export default class Content extends React.Component {
 	render() {
 		const info = this.props.info;
 		return (
@@ -17,7 +14,7 @@ export default class Content extends Component {
 					</div>
 					<div className="text">
 						<div className="title">{info.title}</div>
-						<div className="amount">{info.amount}</div>
+						<div className="amount">{info.count}</div>
 						<div className="square">
 							{info.square}
 							<sup>2</sup>

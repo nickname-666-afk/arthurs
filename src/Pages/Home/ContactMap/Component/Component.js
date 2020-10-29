@@ -3,13 +3,13 @@ import React from "react";
 import Text from "./Text";
 import Maps from "./Maps";
 
-const Component = () => {
-	return (
-		<div className="content">
-			<Maps />
-			<Text />
-		</div>
-	);
-};
-
-export default Component;
+export default class Component extends React.Component {
+	render() {
+		return (
+			<div className="content">
+				<Maps />
+				<Text />
+			</div>
+		);
+	}
+}

@@ -1,9 +1,6 @@
 $w: 100%;
 $h: 100%;
-@mixin width {
-	width: calc(100% - 52%);
-	max-width: calc(100% - 52%);
-}
+
 @mixin reset-width {
 	float: none;
 	width: $w;
@@ -60,6 +57,8 @@ $h: 100%;
 				}
 			}
 			.component-block {
+				display: flex;
+				justify-content: space-between;
 				width: $w;
 				max-width: 1240px;
 				padding: 25px 30px;
@@ -68,7 +67,8 @@ $h: 100%;
 					0 0.5rem 1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
 				.left {
 					float: left;
-					@include width;
+					width: 48%;
+					max-width: 48%;
 					.slider {
 						.slider-control-bottomcenter {
 							& > ul {
@@ -89,7 +89,8 @@ $h: 100%;
 				}
 				.right {
 					float: right;
-					@include width;
+					width: 48%;
+					max-width: 48%;
 					text-align: right;
 					.text {
 						text-align: left;
@@ -136,9 +137,14 @@ $h: 100%;
 							}
 						}
 					}
-					.button {
-						width: 15vmax;
-						margin: 85px 0 0 0;
+					.link {
+						display: inline-block;
+						height: 40px;
+						text-align: right;
+						.button {
+							width: 15vmax;
+							margin: 0;
+						}
 					}
 				}
 			}
@@ -174,11 +180,15 @@ $h: 100%;
 				}
 				.component-block {
 					.right {
-						.button {
-							width: 12vmax;
-							height: 3vmax;
-							margin: 0;
-							font-size: 14px;
+						.text {
+							.link {
+								.button {
+									width: 12vmax;
+									height: 3vmax;
+									margin: 0;
+									font-size: 14px;
+								}
+							}
 						}
 					}
 				}
@@ -198,11 +208,13 @@ $h: 100%;
 									max-width: 80%;
 								}
 							}
-						}
-						.button {
-							width: 12vmax;
-							height: 3.5vmax;
-							font-size: 14px;
+							.link {
+								.button {
+									width: 12vmax;
+									height: 3.5vmax;
+									font-size: 14px;
+								}
+							}
 						}
 					}
 				}
@@ -254,11 +266,6 @@ $h: 100%;
 								font-size: 16px;
 							}
 						}
-						.button {
-							width: 12vmax;
-							height: 3.5vmax;
-							font-size: 14px;
-						}
 					}
 				}
 			}
@@ -307,11 +314,13 @@ $h: 100%;
 									max-width: 80%;
 								}
 							}
-						}
-						.button {
-							width: 10vmax;
-							height: 3vmax;
-							font-size: 12px;
+							.link {
+								.button {
+									width: 10vmax;
+									height: 3vmax;
+									font-size: 12px;
+								}
+							}
 						}
 					}
 				}
@@ -376,6 +385,7 @@ $h: 100%;
 						.text {
 							padding: 20px 0;
 							height: $h;
+							text-align: left;
 							& > .title {
 								font-size: 24px;
 							}
@@ -408,11 +418,17 @@ $h: 100%;
 									width: 42%;
 								}
 							}
-						}
-						.button {
-							width: 18vmax;
-							height: 4vmax;
-							margin: 30px 0;
+							.link {
+								display: block;
+								width: $w;
+								height: 40px;
+								text-align: right;
+								margin: 30px 0 0 0;
+								.button {
+									width: 18vmax;
+									height: 40px;
+								}
+							}
 						}
 					}
 				}

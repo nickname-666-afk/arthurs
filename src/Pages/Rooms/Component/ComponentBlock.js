@@ -5,32 +5,7 @@ import {NavLink} from "react-router-dom";
 export const Context = React.createContext();
 
 export default class ComponentBlock extends React.Component {
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = {
-	// 		purchase: this.props.room.price,
-	// 	};
-	// 	// this.handleClick = this.handleClick.bind(this);
-	// }
-	// rooms(event) {
-	// 	event.preventDefault();
-	// 	console.log("Click");
-	// 	this.setState((prevState) => ({
-	// 		isToggle: !prevState.isToggleOn,
-	// 	}));
-	// }
-
-	// handleRoom = (value) => {
-	// 	this.setState({room: value});
-	// };
-
-	//consumer = (<Context.Consumer>{(context) => this.countUpdate(context)}</Context.Consumer>);
-
 	render() {
-		// const room = [];
-		// for (let i = 0; i < this.state.roomNum; i += 1) {
-		// 	room.push(<ComponentBlock key={i} />);
-		// }
 		return (
 			<div className="component-block">
 				<div className="left">
@@ -63,15 +38,11 @@ export default class ComponentBlock extends React.Component {
 							<div>{this.props.room.comfort}</div>
 						</div>
 					</div>
-					{/* <Context.Consumer>
-						{(context) => ( */}
-					<NavLink to="/service">
-						<button className="button" onClick={() => ''}>
+					<NavLink to="/service" className="link">
+						<button className="button" onClick={() => ""}>
 							Забронировать
 						</button>
 					</NavLink>
-					{/* )}
-					</Context.Consumer> */}
 				</div>
 			</div>
 		);

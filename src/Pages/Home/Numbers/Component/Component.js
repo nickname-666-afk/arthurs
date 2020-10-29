@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-import image from "../../../../Common/image/delux.png";
 import Content from "./Content";
+import image from "../../../../Common/image/delux.png";
 import lux from "../../../../Common/image/lux.png";
 import delux from "../../../../Common/image/delux.png";
 import family from "../../../../Common/image/family.png";
@@ -39,13 +39,15 @@ $(document).ready(function () {
 
 const images = ["lux", "delux", "family"];
 
-export default class Column extends Component {
-	state = {
-		first: [],
-		second: [],
-		third: [],
-	};
-
+export default class Column extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			first: [],
+			second: [],
+			third: [],
+		};
+	}
 	componentDidMount() {
 		this.setState({
 			first: [
@@ -53,7 +55,7 @@ export default class Column extends Component {
 					id: 1,
 					image: lux,
 					title: "Люкс",
-					amount: "Максимум: 3 человека",
+					count: "Максимум: 3 человека",
 					text: "от 5000р в сутки",
 					square: "Площадь номера: 30м",
 				},
@@ -65,7 +67,7 @@ export default class Column extends Component {
 					id: 2,
 					image: delux,
 					title: "Тройной делюкс",
-					amount: "Максимум: 4 человека",
+					count: "Максимум: 4 человека",
 					text: "от 3500 в сутки",
 					square: "Площадь номера: 35м",
 				},
@@ -77,7 +79,7 @@ export default class Column extends Component {
 					id: 3,
 					image: family,
 					title: "Семейный",
-					amount: "Максимум: 5 человек",
+					count: "Максимум: 5 человек",
 					text: "от 4000р в сутки",
 					square: "Площадь номера: 40м",
 				},
@@ -86,27 +88,27 @@ export default class Column extends Component {
 	}
 
 	render() {
-		const { first, second, third } = this.state;
+		const {first, second, third} = this.state;
 		return (
 			<div className="container-num">
 				<div className="title">Наши номера и цены</div>
 				<div className="leftListItems">
 					<div className="first">
-						{first.map((contents, index) => (
-							<Content key={index} info={contents} image={images[0]} />
+						{first.map((image, index) => (
+							<Content key={index} info={image} image={images[0]} />
 						))}
 					</div>
 					<div className="second">
-						{second.map((contents, index) => (
-							<Content key={index} info={contents} image={images[1]} />
+						{second.map((image, index) => (
+							<Content key={index} info={image} image={images[1]} />
 						))}
 					</div>
 					<div className="third">
-						{third.map((contents, index) => (
-							<Content key={index} info={contents} image={images[2]} />
+						{third.map((image, index) => (
+							<Content key={index} info={image} image={images[2]} />
 						))}
 					</div>
-					<a href="/rooms">
+					<a href="/rooms" className="link">
 						<button type="button" className="button">
 							Показать все номера
 						</button>

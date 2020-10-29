@@ -2,11 +2,9 @@ $w: 100%;
 $h: 100%;
 @mixin style {
 	transition: all 1s ease;
-	box-shadow: 0 0.1rem 0.5rem rgba(32, 34, 36, 0.1),
-		0 0.5rem 1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
+	box-shadow: 0 0.1rem 0.5rem rgba(32, 34, 36, 0.1), 0 0.5rem 1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
 	&:hover {
-		box-shadow: 0 1rem 2.5rem rgba(32, 34, 36, 0.1),
-			0 0.5rem 1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
+		box-shadow: 0 1rem 2.5rem rgba(32, 34, 36, 0.1), 0 0.5rem 1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
 		transform: translate3d(0, -3px, 0);
 	}
 }
@@ -78,8 +76,7 @@ $h: 100%;
 			min-width: calc(100% - 50%);
 			padding: 15px;
 			border-radius: 16px;
-			box-shadow: 0 1rem 2.5rem rgba(32, 34, 36, 0.1),
-				0 0.5rem 2rem -0.75rem rgba(32, 34, 36, 0.1);
+			box-shadow: 0 1rem 2.5rem rgba(32, 34, 36, 0.1), 0 0.5rem 2rem -0.75rem rgba(32, 34, 36, 0.1);
 			.img {
 				position: relative;
 				width: $w;
@@ -326,8 +323,8 @@ $h: 100%;
 				.link {
 					display: block;
 					width: $w;
-					height: 40px;
-					margin: 40px 0;
+					height: 45px;
+					margin: 50px 0;
 					.button {
 						margin: 0;
 						width: 40vmax;

@@ -89,6 +89,7 @@ $h: 100%;
 }
 @media (max-width: 768px) {
 	.header {
+		height: 50px;
 		.toolbar {
 			z-index: 399;
 			position: fixed;

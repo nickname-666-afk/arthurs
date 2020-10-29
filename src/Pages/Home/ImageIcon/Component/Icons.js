@@ -9,46 +9,47 @@ import st from "../../../../Common/image/icon(6).png";
 import att from "../../../../Common/image/icon(7).png";
 import ter from "../../../../Common/image/icon(8).png";
 
-const Icons = () => {
-	return (
-		<div className="column">
-			<div className="row">
-				<div className="icon">
-					<img src={sea} alt="Иконка" />
-					<p className="p">Близко к морю</p>
+export default class Icons extends React.Component {
+	render() {
+		return (
+			<div className="column">
+				<div className="row">
+					<div className="icon">
+						<img src={sea} alt="Иконка" />
+						<p className="p">Близко к морю</p>
+					</div>
+					<div className="icon">
+						<img src={ent} alt="Иконка" />
+						<p className="p">Развлечения в шаговой доступности</p>
+					</div>
+					<div className="icon">
+						<img src={safe} alt="Иконка" />
+						<p className="p">Охраняемая парковка</p>
+					</div>
+					<div className="icon">
+						<img src={wifi} alt="Иконка" />
+						<p className="p">Бесплатный WI-FI</p>
+					</div>
 				</div>
-				<div className="icon">
-					<img src={ent} alt="Иконка" />
-					<p className="p">Развлечения в шаговой доступности</p>
-				</div>
-				<div className="icon">
-					<img src={safe} alt="Иконка" />
-					<p className="p">Охраняемая парковка</p>
-				</div>
-				<div className="icon">
-					<img src={wifi} alt="Иконка" />
-					<p className="p">Бесплатный WI-FI</p>
+				<div className="row">
+					<div className="icon">
+						<img src={num} alt="Иконка" />
+						<p className="p">Комфортные номера</p>
+					</div>
+					<div className="icon">
+						<img src={st} alt="Иконка" />
+						<p className="p">Близко к вокзалу</p>
+					</div>
+					<div className="icon">
+						<img src={att} alt="Иконка" />
+						<p className="p">Рядом достопримечательности</p>
+					</div>
+					<div className="icon">
+						<img src={ter} alt="Иконка" />
+						<p className="p">Красивая территория</p>
+					</div>
 				</div>
 			</div>
-			<div className="row">
-				<div className="icon">
-					<img src={num} alt="Иконка" />
-					<p className="p">Комфортные номера</p>
-				</div>
-				<div className="icon">
-					<img src={st} alt="Иконка" />
-					<p className="p">Близко к вокзалу</p>
-				</div>
-				<div className="icon">
-					<img src={att} alt="Иконка" />
-					<p className="p">Рядом достопримечательности</p>
-				</div>
-				<div className="icon">
-					<img src={ter} alt="Иконка" />
-					<p className="p">Красивая территория</p>
-				</div>
-			</div>
-		</div>
-	);
-};
-export default Icons;
+		);
+	}
+}

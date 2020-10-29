@@ -35,7 +35,7 @@ export default class Filter extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {price: this.value, count: this.value, category: this.value};
+		this.state = {price: this.props.value, count: this.value, category: this.value};
 	}
 
 	handleChangePrices = (event) => {

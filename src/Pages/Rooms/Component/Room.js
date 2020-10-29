@@ -79,7 +79,13 @@ export default class Room extends React.Component {
 					updateDataCategories={this.updateDataCategories}
 				/>
 				{rooms === null
-					? rooms.map((room) => {
+					? rooms.filter(
+							(room) =>
+								room.price >= this.state.price &&
+								room.count >= this.state.count &&
+								room.category === this.state.category,
+					  )
+					: rooms.map((room) => {
 							return (
 								<ComponentBlock
 									updateDataPrices={this.updateDataPrices}
@@ -89,13 +95,7 @@ export default class Room extends React.Component {
 									room={room}
 								/>
 							);
-					  })
-					: rooms.filter(
-							(room) =>
-								room.price >= this.state.price &&
-								room.count >= this.state.count &&
-								room.category === this.state.category,
-					  )}
+					  })}
 			</div>
 		);
 	}

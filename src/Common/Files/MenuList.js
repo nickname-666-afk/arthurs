@@ -1,25 +1,30 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
+const locationRooms = {
+	pathname: "/rooms",
+};
 
 const MenuList = () => {
 	return (
 		<ul>
 			<li>
-				<a className="link" href="/rooms">
+				<Link className="link" to={locationRooms}>
 					Номера и цены
-				</a>
+				</Link>
 			</li>
 			<li>
-				<a className="link" href="/rooms">
+				<Link className="link" to={locationRooms}>
 					Забронировать
-				</a>
+				</Link>
 			</li>
 			<li>
-				<a className="link action" href="/#handeling">
+				<a className="link action" href="#handeling">
 					Услуги
 				</a>
 			</li>
 			<li>
-				<a className="link action" href="/#contact">
+				<a className="link action" href="#contact">
 					Контакты
 				</a>
 			</li>

@@ -1,6 +1,11 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 import "./PromotionStyle.scss";
+
+const locationRooms = {
+	pathname: "/rooms",
+};
 
 export default class Promotion extends React.Component {
 	render() {
@@ -12,11 +17,11 @@ export default class Promotion extends React.Component {
 						Ночь в подарок
 					</div>
 					<div className="p">Забронируйте номер на 5 ночей и получите шестую ночь в подарок</div>
-					<a className="link" href="/rooms">
+					<Link className="link" to={locationRooms}>
 						<button type="button" className="button">
 							Забронировать прямо сейчас
 						</button>
-					</a>
+					</Link>
 				</div>
 			</div>
 		);

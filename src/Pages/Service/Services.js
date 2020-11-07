@@ -1,34 +1,36 @@
 import React from "react";
 
-import Handeling from "../../Common/Component/Handeling/Handeling";
-import BlockRooms from "./Component/BlockRooms";
-import BlockPurchase from "./Component/BlockPurchase";
+import {Link} from "react-router-dom";
 import "./ServicesStyle.scss";
-import {Context} from "../Rooms/Component/ComponentBlock";
+// import ContentContext from "../../App";
 
+const locationReg = {
+	pathname: "/registration",
+};
 export default class Services extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {purchase: 1};
+		this.state = {price: 1000};
 	}
-
-	updatePurchase = (value) => {
-		this.setState({purchase: value});
-	};
-
-	consumer = (<Context.Consumer>{(context) => this.countUpdate(context)}</Context.Consumer>);
-
 	render() {
 		return (
+			// <ContentContext.Consumer>
 			<div className="Services">
 				<div className="title">Дополнительные услуги</div>
 				<div className="service">
-					{/* {this.props.room} */}
-					<BlockRooms />
-					<Handeling />
-					<BlockPurchase updatePurchase={this.updatePurchase} />
+					<div className="block__rooms"></div>
+					{/* <Handeling /> */}
+					<div className="cart">
+						<div className="title">Сумма заказа:{this.price}</div>
+						<div className="content"></div>
+						<Link className="link" to={locationReg}>
+							<button className="button">Заказать</button>
+						</Link>
+					</div>
 				</div>
 			</div>
+
+			// </ContentContext.Consumer>
 		);
 	}
 }

@@ -1,6 +1,6 @@
-import React from "react";
+import React, {Component} from "react";
 
-import {MContext} from "../Rooms";
+import {RoomContext} from "../Rooms";
 import ComponentBlock from "./ComponentBlock";
 import Filter from "../../../Common/Component/Filter/Filter";
 
@@ -50,52 +50,76 @@ const rooms = [
 	},
 ];
 
-export default class Room extends React.Component {
+export default class Room extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {price: this.props.value, count: this.props.value, category: this.props.value};
+		this.state = {
+			price: this.props.value,
+			count: this.props.value,
+			category: this.props.value,
+			name: "Button not pressed",
+		};
+		this.updateData = this.updateData.bind(this);
+		console.log(this.state.name);
 	}
+
+	updateData = (value) => {
+		this.setState({
+			name: value,
+		});
+		console.log(value);
+	};
 
 	updateDataPrices = (value) => {
 		this.setState({price: value});
 	};
 	updateDataCounts = (value) => {
 		this.setState({count: value});
+		console.log(this.state.value);
 	};
 	updateDataCategories = (value) => {
 		this.setState({category: value});
 	};
 
-	consumer = (<MContext.Consumer>{(context) => this.countUpdate(context)}</MContext.Consumer>);
+	consumer = (<RoomContext.Consumer>{(room) => this.countUpdate(room)}</RoomContext.Consumer>);
 
 	render() {
 		return (
 			<div className="content">
-				{/* {this.consumer} */}
 				<div className="add-filter">Добавить фильтр</div>
 				<Filter
 					updateDataPrices={this.updateDataPrices}
 					updateDataCounts={this.updateDataCounts}
 					updateDataCategories={this.updateDataCategories}
 				/>
-				{rooms === null
-					? rooms.filter(
-							(room) =>
-								room.price >= this.state.price &&
-								room.count >= this.state.count &&
-								room.category === this.state.category,
-					  )
-					: rooms.map((room) => {
-							return (
-								<ComponentBlock
-									updateDataPrices={this.updateDataPrices}
-									updateDataCounts={this.updateDataCounts}
-									updateDataCategories={this.updateDataCategories}
-									key={room.id}
-									room={room}
-								/>
-							);
-					  })}
+				{
+					rooms === null
+						? rooms
+						: // .filter(
+						  // 		(room) =>
+						  // 			room.price >= this.state.price &&
+						  // 			room.count >= this.state.count &&
+						  // 			room.category === this.state.category,
+						  //   )
+						  rooms.map((room) => {
+								return (
+									<ComponentBlock
+										updateData={this.updateData}
+										updateDataPrices={this.updateDataPrices}
+										updateDataCounts={this.updateDataCounts}
+										updateDataCategories={this.updateDataCategories}
+										key={room.id}
+										room={room}
+									/>
+								);
+						  })
+					// .filter(
+					// 	(room) =>
+					// 		room.price >= this.state.price &&
+					// 		room.count >= this.state.count &&
+					// 		room.category === this.state.category,
+					// )
+				}
 			</div>
 		);
 	}

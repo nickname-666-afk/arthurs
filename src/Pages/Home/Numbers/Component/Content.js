@@ -1,4 +1,9 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
+const locationRooms = {
+	pathname: "/rooms",
+};
 
 export default class Content extends React.Component {
 	render() {
@@ -22,11 +27,11 @@ export default class Content extends React.Component {
 						<div className="p">{info.text}</div>
 					</div>
 				</div>
-				<a className="link" href="/rooms">
+				<Link className="link" to={locationRooms}>
 					<button type="button" className="button">
 						Подробнее
 					</button>
-				</a>
+				</Link>
 			</div>
 		);
 	}

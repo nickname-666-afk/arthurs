@@ -1,8 +1,9 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-import "./FilterStyle.scss";
 import Select from "react-select";
-import {MContext} from "../../../Pages/Rooms/Rooms";
+import {RoomContext} from "../../../Pages/Rooms/Rooms";
+import "./FilterStyle.scss";
 
 const prices = [
 	{id: 1, label: "от 3000 рублей", value: 3000},
@@ -10,18 +11,25 @@ const prices = [
 	{id: 3, label: "от 5000 рублей", value: 5000},
 ];
 const counts = [
-	{label: "от 2 мест", value: 2, id: 1},
-	{label: "от 4 мест", value: 4, id: 2},
-	{label: "от 6 мест", value: 6, id: 3},
+	{id: 1, label: "от 2 мест", value: 2},
+	{id: 2, label: "от 4 мест", value: 4},
+	{id: 3, label: "от 6 мест", value: 6},
 ];
 const categories = [
-	{label: "Люкс", value: "Люкс", id: 1},
-	{label: "Тройной делюкс", value: "Тройной делюкс", id: 2},
-	{label: "Семейный", value: "Семейный", id: 3},
-	{label: "Стандарт", value: "Стандарт", id: 4},
+	{id: 1, label: "Люкс", value: "Люкс"},
+	{id: 2, label: "Тройной делюкс", value: "Тройной делюкс"},
+	{id: 3, label: "Семейный", value: "Семейный"},
+	{id: 4, label: "Стандарт", value: "Стандарт"},
 ];
+const locationRooms = {
+	pathname: "/rooms",
+};
 
 export default class Filter extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {price: this.value, count: this.value, category: this.value};
+	}
 	isMain = window.location.pathname.includes("/home");
 	fStyle = this.isMain
 		? {boxShadow: "0px 0px 11px rgba(0, 0, 0, 0.35)"}
@@ -33,19 +41,17 @@ export default class Filter extends React.Component {
 	hStyle = this.isMain ? {display: "none"} : {display: "block"};
 	sStyle = this.isMain ? {display: "block"} : {display: "none"};
 
-	constructor(props) {
-		super(props);
-		this.state = {price: this.props.value, count: this.value, category: this.value};
-	}
-
 	handleChangePrices = (event) => {
 		this.setState({price: event.value});
+		console.log(event.value);
 	};
 	handleChangeCounts = (event) => {
 		this.setState({count: event.value});
+		console.log(event.value);
 	};
 	handleChangeCategories = (event) => {
 		this.setState({category: event.value});
+		console.log(event.value);
 	};
 
 	isMobileDevice() {
@@ -65,44 +71,41 @@ export default class Filter extends React.Component {
 				<div className="wrapper-filter" style={this.wStyle}>
 					<div className="custom-select">
 						<Select
-							onChange={this.handleChangePrices}
-							// value={this.state.prices}
+							onChange={this.handleChangePrices.bind(this)}
 							options={prices}
 							placeholder="Стоимость"
 						/>
 						<Select
-							onChange={this.handleChangeCounts}
-							// value={this.state.counts}
+							onChange={this.handleChangeCounts.bind(this)}
 							options={counts}
 							placeholder="Количество мест"
 						/>
 						<Select
-							onChange={this.handleChangeCategories}
-							// value={this.state.categories}
+							onChange={this.handleChangeCategories.bind(this)}
 							options={categories}
 							placeholder="Категория"
 						/>
 					</div>
-					<a href="/rooms" className="link" style={this.sStyle}>
+					<Link className="link" style={this.sStyle} to={locationRooms}>
 						<button className="button" type="button" style={this.sStyle}>
 							Забронировать
 						</button>
-					</a>
-					<MContext.Consumer>
-						{(context) => (
+					</Link>
+					<RoomContext.Consumer>
+						{() => (
 							<button
 								className="button"
 								style={this.hStyle}
 								type="button"
 								onClick={() => {
-									this.props.updateDataPrices(this.state.price);
-									this.props.updateDataCounts(this.state.count);
-									this.props.updateDataCategories(this.state.category);
+									this.props.updateDataPrices.bind(this);
+									this.props.updateDataCounts.bind(this);
+									this.props.updateDataCategories.bind(this);
 								}}>
 								Показать
 							</button>
 						)}
-					</MContext.Consumer>
+					</RoomContext.Consumer>
 				</div>
 			</div>
 		);

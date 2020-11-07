@@ -1,39 +1,45 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 import "./SideDrawer.scss";
-
-const sideDrawer = () => {
-	return (
-		<nav className="side-drawer">
-			<ul>
-				<div>
-					<a className="link" href="/home">
-						Главная
-					</a>
-				</div>
-				<div>
-					<a className="link" href="/rooms">
-						Номера и цены
-					</a>
-				</div>
-				<div>
-					<a className="link" href="/rooms">
-						Забронировать
-					</a>
-				</div>
-				<div>
-					<a className="link" href="/#handeling">
-						Услуги
-					</a>
-				</div>
-				<div>
-					<a className="link" href="/#contact">
-						Контакты
-					</a>
-				</div>
-			</ul>
-		</nav>
-	);
+const locationHome = {
+	pathname: "/home",
 };
-
-export default sideDrawer;
+const locationRooms = {
+	pathname: "/rooms",
+};
+export default class sideDrawer extends React.Component {
+	render() {
+		return (
+			<nav className="side-drawer">
+				<ul>
+					<div>
+						<Link className="link" to={locationHome}>
+							Главная
+						</Link>
+					</div>
+					<div>
+						<Link className="link" to={locationRooms}>
+							Номера и цены
+						</Link>
+					</div>
+					<div>
+						<Link className="link" to={locationRooms}>
+							Забронировать
+						</Link>
+					</div>
+					<div>
+						<a className="link" href="#handeling">
+							Услуги
+						</a>
+					</div>
+					<div>
+						<a className="link" href="#contact">
+							Контакты
+						</a>
+					</div>
+				</ul>
+			</nav>
+		);
+	}
+}

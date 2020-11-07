@@ -1,10 +1,24 @@
-import React from "react";
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
 
 import Carousel from "nuka-carousel";
-import {NavLink} from "react-router-dom";
-export const Context = React.createContext();
 
-export default class ComponentBlock extends React.Component {
+const locationService = {
+	pathname: "/service",
+};
+
+export default class ComponentBlock extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {name: "Button press"};
+	}
+
+	// updateDate = (event) => {
+	// 	this.setState({
+	// 		date: event.target.value,
+	// 	});
+	// 	console.log(event.value);
+	// };
 	render() {
 		return (
 			<div className="component-block">
@@ -38,11 +52,11 @@ export default class ComponentBlock extends React.Component {
 							<div>{this.props.room.comfort}</div>
 						</div>
 					</div>
-					<NavLink to="/service" className="link">
-						<button className="button" onClick={() => ""}>
+					<Link className="link" to={locationService}>
+						<button className="button" onClick={() => this.props.updateDate(this.state.name)}>
 							Забронировать
 						</button>
-					</NavLink>
+					</Link>
 				</div>
 			</div>
 		);

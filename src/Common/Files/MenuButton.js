@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import $ from "jquery";
 
@@ -6,10 +6,9 @@ $(document).ready(function () {
 	$(".trigger").on("click", function (event) {
 		event.preventDefault();
 		$(".modal-wrapper").toggleClass("open");
-		return false;
 	});
 });
-export default class Button extends Component {
+export default class Button extends React.Component {
 	render() {
 		return (
 			<div className="button_block">
@@ -29,4 +28,3 @@ export default class Button extends Component {
 		);
 	}
 }
-

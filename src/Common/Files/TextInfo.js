@@ -1,23 +1,23 @@
 import React from "react";
 
-import Button from "./Button";
+// import Button from "./Button";
 
 const TextInfo = () => {
-	let people = ["3"],
-		price = [4000],
-		type = ["Делюкс"],
-		amount = ["26"];
+	// const people = ["3"],
+	// 	price = [4000],
+	// 	type = ["Делюкс"],
+	// 	amount = ["26"];
 
-	let comfort = [
-		"Кабельное TV",
-		"Бесплатный WI-FI",
-		"Сплит-система",
-		"Фен",
-		"Чайник",
-	];
+	// let comfort = [
+	// 	"Кабельное TV",
+	// 	"Бесплатный WI-FI",
+	// 	"Сплит-система",
+	// 	"Фен",
+	// 	"Чайник",
+	// ];
 	return (
 		<div className="text">
-			<div className="p_type">{type}</div>
+			{/* <div className="p_type">{type}</div>
 			<div className="p_price">
 				от <span className="p">{price}</span> р/сутки
 			</div>
@@ -31,8 +31,8 @@ const TextInfo = () => {
 					Удобства: <br />
 					{comfort}
 				</div>
-			</div>
-			<Button text="Забронировать" />
+			</div> */}
+			{/* <Button text="Забронировать" /> */}
 		</div>
 	);
 };

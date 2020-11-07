@@ -61,15 +61,6 @@ $w: 100%;
 					}
 				}
 			}
-			.link {
-				display: block;
-				width: 50%;
-				max-width: 50%;
-				margin-top: 70px;
-				& > .button {
-					margin: 0;
-				}
-			}
 		}
 	}
 }
@@ -90,6 +81,18 @@ $w: 100%;
 					margin: 0;
 					width: 94%;
 					max-width: 94%;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 834px) {
+	.Welcome {
+		.content {
+			.right {
+				.info {
+					float: right;
+					width: 50%;
 				}
 			}
 		}
@@ -146,9 +149,6 @@ $w: 100%;
 						font-size: 20px;
 						margin: 0;
 					}
-				}
-				.link {
-					margin: 50px 0;
 				}
 			}
 		}

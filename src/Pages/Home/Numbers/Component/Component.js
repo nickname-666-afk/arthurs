@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 import Content from "./Content";
 import image from "../../../../Common/image/delux.png";
@@ -38,6 +39,9 @@ $(document).ready(function () {
 });
 
 const images = ["lux", "delux", "family"];
+const locationRooms = {
+	pathname: "/rooms",
+};
 
 export default class Column extends React.Component {
 	constructor(props) {
@@ -108,11 +112,11 @@ export default class Column extends React.Component {
 							<Content key={index} info={image} image={images[2]} />
 						))}
 					</div>
-					<a href="/rooms" className="link">
+					<Link className="link" to={locationRooms}>
 						<button type="button" className="button">
 							Показать все номера
 						</button>
-					</a>
+					</Link>
 				</div>
 				<div className="rightImage">
 					<div className="img">

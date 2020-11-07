@@ -3,7 +3,11 @@ import React from "react";
 import Text from "./Text";
 import Icon from "../../../../Common/Files/Icon";
 import Tel from "../../../../Common/Files/Tel";
+import {Link} from "react-router-dom";
 
+const location = {
+	pathname: "/rooms",
+};
 export default class Component extends React.Component {
 	render() {
 		return (
@@ -11,11 +15,11 @@ export default class Component extends React.Component {
 				<Text />
 				<Icon />
 				<Tel />
-				<a href="/rooms">
+				<Link className="link" to={location}>
 					<button type="button" className="button">
 						Забронировать
 					</button>
-				</a>
+				</Link>
 			</div>
 		);
 	}

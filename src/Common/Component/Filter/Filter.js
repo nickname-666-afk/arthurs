@@ -100,9 +100,13 @@ export default class Filter extends React.Component {
 						/>
 					</div>
 					<Link className="link" style={this.sStyle} to={locationRooms}>
-					<button className="button" type="button" style={this.sStyle} onClick={this.handleSubmit}>
-						Забронировать
-					</button>
+						<button
+							className="button"
+							type="button"
+							style={this.sStyle}
+							onClick={this.handleSubmit}>
+							Забронировать
+						</button>
 					</Link>
 					<RoomContext.Consumer>
 						{() => (

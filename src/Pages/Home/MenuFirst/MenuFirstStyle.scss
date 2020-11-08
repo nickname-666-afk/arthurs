@@ -33,18 +33,22 @@ $h: 100%;
 				width: $w;
 				float: left;
 				& > div {
+					z-index: 1;
+					position: absolute;
 					display: flex;
 					justify-content: center;
-					position: absolute;
 					width: $w;
-					height: 200vmax;
+					height: 100%;
 					left: 0;
-					top: 220vmax;
+					right: 0;
+					top: calc(800% / 2);
 					background: rgba(0, 0, 0, 0.7);
 					background-size: cover;
 					.image {
-						z-index: 1;
-						width: 50%;
+						position: sticky;
+						// top: 100%;
+						// bottom: 0;
+						// width: 50%;
 						max-width: 500px;
 					}
 				}

@@ -20,7 +20,7 @@ export default class Text extends React.Component {
 						<div className="p">info@arthurs-beregovoe.ru</div>
 					</div>
 					<div className="phone">
-						<p className="p">Телефон:</p>
+						<div className="p">Телефон:</div>
 						<Tel />
 					</div>
 				</div>

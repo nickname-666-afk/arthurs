@@ -9,17 +9,17 @@ const Icon = () => {
 		<div className="icon">
 			<a
 				className="link"
-				href="https://www.instagram.com/accounts/login/?next=/arturnechaev/">
+				href="https://www.instagram.com/accounts/login/?next=/arturnechaev/"
+				target="_black">
 				<img src={instagram} alt="Instagram" />
 			</a>
 			<a
 				className="link"
-				href="https://www.instagram.com/accounts/login/?next=/arturnechaev/">
+				href="https://www.vk.com/accounts/login/?next=/arturnechaev/"
+				target="_black">
 				<img src={vk} alt="VK" />
 			</a>
-			<a
-				className="link"
-				href="https://www.instagram.com/accounts/login/?next=/arturnechaev/">
+			<a className="link" href="whatsapp" target="_black">
 				<img src={whatsapp} alt="WhatsApp" />
 			</a>
 		</div>

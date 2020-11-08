@@ -6,37 +6,6 @@ import image from "../../../../Common/image/delux.png";
 import lux from "../../../../Common/image/lux.png";
 import delux from "../../../../Common/image/delux.png";
 import family from "../../../../Common/image/family.png";
-import $ from "jquery";
-
-$(document).ready(function () {
-	$(".first .column").click(function (event) {
-		event.preventDefault();
-		$(".second-text").remove();
-		$(".third-text").remove();
-		$(".img").append(
-			"<div class='first-text'><div class='title'>Люкс</div><div class='price'>от 5000р в сутки</div><div class='count'>Максимум 3 человека</div><div class='squad'>Площадь номера: 30м<sup>2</sup></div><div class='info'>В номере: 2 двуспальнии и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол</div></div>",
-		);
-		return false;
-	});
-	$(".second .column").click(function (event) {
-		event.preventDefault();
-		$(".first-text").remove();
-		$(".third-text").remove();
-		$(".img").append(
-			"<div class='second-text'><div class='title'>Тройной делюкс</div><div class='price'>от 3500р в сутки</div><div class='count'>Максимум 4 человека</div><div class='squad'>Площадь номера: 35м<sup>2</sup></div><div class='info'>В номере: 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол</div></div>",
-		);
-		return false;
-	});
-	$(".third .column").click(function (event) {
-		event.preventDefault();
-		$(".first-text").remove();
-		$(".second-text").remove();
-		$(".img").append(
-			"<div class='third-text'><div class='title'>Семейный</div><div class='price'>от 4000р в сутки</div><div class='count'>Максимум 5 человек</div><div class='squad'>Площадь номера: 40м<sup>2</sup></div><div class='info'>В номере: 2 двуспальнии и 2 односпальных кровати, шкаф, стулья, прикроватные тумбочки,стол</div></div>",
-		);
-		return false;
-	});
-});
 
 const images = ["lux", "delux", "family"];
 const locationRooms = {
@@ -50,7 +19,26 @@ export default class Column extends React.Component {
 			first: [],
 			second: [],
 			third: [],
+			showFirst: true,
+			showSecond: false,
+			showThird: false,
 		};
+	}
+
+	clickHandlerFirst() {
+		this.setState((prev) => ({showFirst: !prev.showFirst}));
+		this.setState(() => ({showSecond: false}));
+		this.setState(() => ({showThird: false}));
+	}
+	clickHandlerSecond() {
+		this.setState(()=> ({showFirst: false}))
+		this.setState((prev) => ({showSecond: !prev.showSecond}));
+		this.setState(()=> ({showThird: false}))
+	}
+	clickHandlerThird() {
+		this.setState(() => ({showFirst: false}));
+		this.setState(() => ({showSecond: false}));
+		this.setState((prev) => ({showThird: !prev.showThird}));
 	}
 	componentDidMount() {
 		this.setState({
@@ -97,17 +85,17 @@ export default class Column extends React.Component {
 			<div className="container-num">
 				<div className="title">Наши номера и цены</div>
 				<div className="leftListItems">
-					<div className="first">
+					<div className="first" onClick={this.clickHandlerFirst.bind(this)}>
 						{first.map((image, index) => (
 							<Content key={index} info={image} image={images[0]} />
 						))}
 					</div>
-					<div className="second">
+					<div className="second" onClick={this.clickHandlerSecond.bind(this)}>
 						{second.map((image, index) => (
 							<Content key={index} info={image} image={images[1]} />
 						))}
 					</div>
-					<div className="third">
+					<div className="third" onClick={this.clickHandlerThird.bind(this)}>
 						{third.map((image, index) => (
 							<Content key={index} info={image} image={images[2]} />
 						))}
@@ -121,6 +109,48 @@ export default class Column extends React.Component {
 				<div className="rightImage">
 					<div className="img">
 						<img src={image} alt="Изображение" />
+						{this.state.showFirst ? (
+							<div className="first-text">
+								<div className="title">Люкс</div>
+								<div className="price">от 5000р в сутки</div>
+								<div className="count">Максимум 3 человека</div>
+								<div className="squad">
+									Площадь номера: 30м<sup>2</sup>
+								</div>
+								<div className="info">
+									В номере: 2 двуспальнии и 1 односпальная кровати, шкаф, стулья, прикроватные
+									тумбочки,стол
+								</div>
+							</div>
+						) : null}
+						{this.state.showSecond ? (
+							<div className="second-text">
+								<div className="title">Тройной делюкс</div>
+								<div className="price">от 3500р в сутки</div>
+								<div className="count">Максимум 4 человека</div>
+								<div className="squad">
+									Площадь номера: 35м<sup>2</sup>
+								</div>
+								<div className="info">
+									В номере: 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные
+									тумбочки,стол
+								</div>
+							</div>
+						) : null}
+						{this.state.showThird ? (
+							<div className="third-text">
+								<div className="title">Семейный</div>
+								<div className="price">от 4000р в сутки</div>
+								<div className="count">Максимум 5 человек</div>
+								<div className="squad">
+									Площадь номера: 40м<sup>2</sup>
+								</div>
+								<div className="info">
+									В номере: 2 двуспальнии и 2 односпальных кровати, шкаф, стулья, прикроватные
+									тумбочки,стол
+								</div>
+							</div>
+						) : null}
 					</div>
 				</div>
 			</div>

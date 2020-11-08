@@ -37,22 +37,23 @@ $h: 100%;
 			}
 		}
 	}
-	@keyframes move {
-		from {
-			transform: scaleY(10);
-		}
-	}
 }
-@keyframes slide {
-	from {
-		transform: translateX(-100%);
-	}
-}
-@media (orientation: landscape) {
-	.side-drawer {
-		overflow-y: auto;
-		& > ul {
-			padding: 50px 0 0 0;
-		}
-	}
-}
+// 	@keyframes move {
+// 		from {
+// 			transform: scaleY(10);
+// 		}
+// 	}
+// }
+// @keyframes slide {
+// 	from {
+// 		transform: translateX(-100%);
+// 	}
+// }
+// @media (orientation: landscape) {
+// 	.side-drawer {
+// 		overflow-y: auto;
+// 		& > ul {
+// 			padding: 50px 0 0 0;
+// 		}
+// 	}
+// }

@@ -16,7 +16,7 @@ export default class Button extends React.Component {
 		return (
 			<div className="button_block" onClick={this.clickHandler.bind(this)}>
 				{this.state.show ? (
-					<div>
+					<div className='backdrop'>
 						<img className="image" src={imgMenu} alt="Меню" />
 					</div>
 				) : null}

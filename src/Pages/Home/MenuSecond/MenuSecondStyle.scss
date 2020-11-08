@@ -30,35 +30,20 @@ $h: 100%;
 			.button_block {
 				width: $w;
 				float: right;
-				.modal-wrapper {
-					z-index: 111;
-					position: fixed;
+				& > div {
+					display: flex;
+					justify-content: center;
+					position: absolute;
 					width: $w;
-					height: $h;
-					top: 0;
+					height: 192.4vmax;
 					left: 0;
-					background: rgba(0, 0, 0, 0.9);
-					visibility: hidden;
-					opacity: 0;
-					transition: all 0.4s linear;
-					.modal {
-						position: relative;
-						width: 80%;
-						max-width: 800px;
-						height: $h;
-						max-height: 600px;
-						display: block;
-						margin: 50% -40%;
-						top: 30%;
-						left: 50%;
-						background: #fff;
-						opacity: 0;
-						transition: all 0.5s linear;
-						background-image: url("../../../Common/image/menu.svg");
-						background-size: 40%;
-						background-repeat: no-repeat;
-						background-position: 50%;
-						background-position-y: 80%;
+					top: 255vmax;
+					background: rgba(0, 0, 0, 0.7);
+					background-size: cover;
+					.image {
+						z-index: 1;
+						width: 50%;
+						max-width: 500px;
 					}
 				}
 			}
@@ -69,6 +54,58 @@ $h: 100%;
 			& > img {
 				width: $w;
 				max-height: 550px;
+			}
+		}
+	}
+}
+@media (max-width: 1112px) {
+	.MenuSecond {
+		.content {
+			.text {
+				.button_block {
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 323vmax;
+						left: 0;
+						top: 330vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 50%;
+							max-width: 400px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1024px) {
+	.MenuSecond {
+		.content {
+			.text {
+				.button_block {
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 267vmax;
+						left: 0;
+						top: 380vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 50%;
+							max-width: 400px;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -121,18 +158,24 @@ $h: 100%;
 				.button_block {
 					margin: 30px 0;
 					float: none;
-					.modal-wrapper {
-						.modal {
-							top: 12rem;
-							left: 0;
-							margin: 0 auto !important;
-							width: $w;
-							max-width: 600px;
-							height: $h;
-						}
-					}
 					& > .button {
 						margin: 0;
+					}
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 317.5vmax;
+						left: 0;
+						top: 380vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 50%;
+							max-width: 400px;
+						}
 					}
 				}
 			}
@@ -143,6 +186,87 @@ $h: 100%;
 					border-radius: 8px;
 					max-height: 280px;
 					max-width: 500px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 414px) {
+	.MenuSecond {
+		.content {
+			.text {
+				.button_block {
+					& > .button {
+						margin: 0;
+					}
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 255vmax;
+						left: 0;
+						top: 665vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 80%;
+							max-width: 400px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 375px) {
+	.MenuSecond {
+		.content {
+			.text {
+				.button_block {
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 232vmax;
+						left: 0;
+						top: 600vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 80%;
+							max-width: 400px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 320px) {
+	.MenuSecond {
+		.content {
+			.text {
+				.button_block {
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 301vmax;
+						left: 0;
+						top: 920vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 90%;
+							max-width: 400px;
+						}
+					}
 				}
 			}
 		}

@@ -32,83 +32,21 @@ $h: 100%;
 			.button_block {
 				width: $w;
 				float: left;
-				.modal-wrapper {
-					z-index: 111;
-					position: fixed;
+				& > div {
+					display: flex;
+					justify-content: center;
+					position: absolute;
 					width: $w;
-					height: $h;
-					top: 0;
+					height: 200vmax;
 					left: 0;
-					background: rgba(0, 0, 0, 0.9);
-					visibility: hidden;
-					opacity: 0;
-					transition: all 0.4s linear;
-					.modal {
-						position: relative;
-						width: 80%;
-						max-width: 800px;
-						height: $h;
-						max-height: 700px;
-						display: block;
-						margin: 50% -30%;
-						top: 40%;
-						left: 50%;
-						background: #fff;
-						opacity: 0;
-						transition: all 0.5s linear;
-						background-image: url("../../../Common/image/menu.svg");
-						background-size: 40%;
-						background-repeat: no-repeat;
-						background-position: 50%;
-						background-position-y: 80%;
-						.head {
-							width: $w;
-							height: 50px;
-							overflow: hidden;
-							background: #ff7b51;
-							& > .title {
-								position: absolute;
-								top: 10px;
-								right: 45%;
-								font-size: 24px;
-								text-align: center;
-								color: #fff;
-							}
-							.btn-close {
-								position: absolute;
-								top: 10px;
-								right: 15px;
-								width: 30px;
-								height: 30px;
-								display: block;
-								cursor: pointer;
-								.line--left {
-									position: absolute;
-									top: 13px;
-									width: $w;
-									height: 3px;
-									background: #fff;
-									transform: rotate(-45deg);
-								}
-								.line--right {
-									position: absolute;
-									top: 12px;
-									width: $w;
-									height: 3px;
-									background: #fff;
-									transform: rotate(45deg);
-								}
-							}
-						}
+					top: 220vmax;
+					background: rgba(0, 0, 0, 0.7);
+					background-size: cover;
+					.image {
+						z-index: 1;
+						width: 50%;
+						max-width: 500px;
 					}
-				}
-				.modal-wrapper.open {
-					opacity: 1;
-					visibility: visible;
-				}
-				.modal-wrapper.open .modal {
-					margin-top: -12vmax;
-					opacity: 1;
 				}
 			}
 		}
@@ -127,14 +65,20 @@ $h: 100%;
 		.content {
 			& > .text {
 				.button_block {
-					.modal-wrapper {
-						.modal {
-							top: 0;
-							left: 0;
-							margin: 7rem auto !important;
-							width: 700px;
-							height: 600px;
-							background-size: 70%;
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 323vmax;
+						left: 0;
+						top: 280vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 50%;
+							max-width: 400px;
 						}
 					}
 				}
@@ -142,7 +86,7 @@ $h: 100%;
 		}
 	}
 }
-@media (max-width: 1024px) and (orientation: portrait) {
+@media (max-width: 1024px) {
 	.MenuFirst {
 		.content {
 			.text {
@@ -156,18 +100,24 @@ $h: 100%;
 					}
 				}
 				.button_block {
-					.modal-wrapper {
-						.modal {
-							top: 12rem;
-							left: 0;
-							margin: 0 auto !important;
-							width: $w;
-							max-width: 600px;
-							height: $h;
-						}
-					}
 					& > .button {
 						margin: 0;
+					}
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 267vmax;
+						left: 0;
+						top: 330vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 50%;
+							max-width: 400px;
+						}
 					}
 				}
 			}
@@ -188,12 +138,6 @@ $h: 100%;
 					}
 				}
 				.button_block {
-					.modal-wrapper {
-						.modal {
-							height: 79%;
-							background-size: 65%;
-						}
-					}
 					& > .button {
 						margin: 0;
 					}
@@ -226,18 +170,24 @@ $h: 100%;
 				.button_block {
 					margin: 30px 0;
 					float: none;
-					.modal-wrapper {
-						.modal {
-							top: 12rem;
-							left: 0;
-							margin: 0 auto !important;
-							width: $w;
-							max-width: 600px;
-							height: $h;
-						}
-					}
 					& > .button {
 						margin: 0;
+					}
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 327.5vmax;
+						left: 0;
+						top: 310vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 50%;
+							max-width: 400px;
+						}
 					}
 				}
 			}
@@ -258,18 +208,50 @@ $h: 100%;
 		.content {
 			.text {
 				.button_block {
-					.modal-wrapper {
-						.modal {
-							top: 14vmax;
-							left: 0;
-							margin: 0 auto !important;
-							width: 90%;
-							height: 80%;
-							background-size: $w;
-						}
-					}
 					& > .button {
 						margin: 0;
+					}
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 430vmax;
+						left: 0;
+						top: 465vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 80%;
+							max-width: 400px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 320px) {
+	.MenuFirst {
+		.content {
+			.text {
+				.button_block {
+					& > div {
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						width: $w;
+						height: 630vmax;
+						left: 0;
+						top: 591vmax;
+						background: rgba(0, 0, 0, 0.7);
+						background-size: cover;
+						.image {
+							z-index: 1;
+							width: 90%;
+							max-width: 400px;
+						}
 					}
 				}
 			}

@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 import Select from "react-select";
 import {RoomContext} from "../../../Pages/Rooms/Rooms";
@@ -30,6 +30,7 @@ export default class Filter extends React.Component {
 		super(props);
 		this.state = {price: this.value, count: this.value, category: this.value};
 	}
+
 	isMain = window.location.pathname.includes("/home");
 	fStyle = this.isMain
 		? {boxShadow: "0px 0px 11px rgba(0, 0, 0, 0.35)"}
@@ -65,7 +66,19 @@ export default class Filter extends React.Component {
 		});
 	}
 
+	state = {
+		toDashboard: false,
+	};
+	handleSubmit = () => {
+		this.setState(() => ({
+			toDashboard: true,
+		}));
+	};
+
 	render() {
+		if (this.state.toDashboard === true) {
+			return <Redirect to="/rooms" />;
+		}
 		return (
 			<div className="Filter box" style={this.fStyle}>
 				<div className="wrapper-filter" style={this.wStyle}>
@@ -87,9 +100,9 @@ export default class Filter extends React.Component {
 						/>
 					</div>
 					<Link className="link" style={this.sStyle} to={locationRooms}>
-						<button className="button" type="button" style={this.sStyle}>
-							Забронировать
-						</button>
+					<button className="button" type="button" style={this.sStyle} onClick={this.handleSubmit}>
+						Забронировать
+					</button>
 					</Link>
 					<RoomContext.Consumer>
 						{() => (

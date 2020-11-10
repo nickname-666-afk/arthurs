@@ -2,7 +2,7 @@ import React from "react";
 
 import "./DataStyle.scss";
 import {Link} from "react-router-dom";
-import Calendar from "../../Common/Component/Filter/Calendar";
+import Calendar from "../../assets/Component/Filter/Calendar";
 
 export default class Data extends React.Component {
 	render() {

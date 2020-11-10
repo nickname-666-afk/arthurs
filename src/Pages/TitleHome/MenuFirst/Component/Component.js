@@ -1,7 +1,7 @@
 import React from "react";
 
 import Text from "./Text";
-import image from "../../../../Common/image/6.png";
+import image from "../../../../assets/images/6.png";
 
 export default class Component extends React.Component {
 	render() {

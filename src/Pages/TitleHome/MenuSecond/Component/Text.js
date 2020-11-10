@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "../../../../Common/Files/MenuButton";
+import Button from "../../../../assets/Files/MenuButton";
 
 export default class Text extends React.Component {
 	render() {

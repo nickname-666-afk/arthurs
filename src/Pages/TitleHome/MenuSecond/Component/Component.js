@@ -1,6 +1,6 @@
 import React from "react";
 
-import image from "../../../../Common/image/7.png";
+import image from "../../../../assets/images/7.png";
 import Text from "./Text";
 
 export default class Component extends React.Component {

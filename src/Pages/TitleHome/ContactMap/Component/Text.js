@@ -1,6 +1,6 @@
 import React from "react";
 
-import Icon from "../../../../Common/Files/Icon";
+import Icon from "../../../../assets/Files/Icon";
 
 export default class Text extends React.Component {
 	render() {

@@ -2,9 +2,9 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import Content from "./Content";
-import lux from "../../../../Common/image/lux.png";
-import delux from "../../../../Common/image/delux.png";
-import family from "../../../../Common/image/family.png";
+import lux from "../../../../assets/images/lux.png";
+import delux from "../../../../assets/images/delux.png";
+import family from "../../../../assets/images/family.png";
 
 const locationRooms = {
 	pathname: "/rooms",

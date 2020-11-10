@@ -2,23 +2,22 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Carousel from "nuka-carousel";
 
-import lux from "../../../Common/image/lux.png";
-import delux from "../../../Common/image/delux.png";
-import family from "../../../Common/image/family.png";
-
 const locationService = {
 	pathname: "/service",
 };
-const images = require(lux, delux, family);
 
 export default class Content extends React.Component {
 	render() {
+		const sliderImage = ["lux", "delux", "family", "standart"];
+		const images = sliderImage.map((image) => {
+			return (
+				<img key={image} src={require(`../../../assets/images/${image}.png`)} alt="Изображение" />
+			);
+		});
 		return (
 			<div className="component-block">
 				<div className="left">
-					<Carousel>
-						<img src={require(`url(${images}.png)`)} />
-					</Carousel>
+					<Carousel>{images}</Carousel>
 				</div>
 				<div className="right">
 					<div className="text">

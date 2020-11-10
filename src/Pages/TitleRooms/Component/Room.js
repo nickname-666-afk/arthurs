@@ -2,12 +2,12 @@ import React from "react";
 
 import {RoomContext} from "../Rooms";
 import Content from "./Content";
-import Filter from "../../../Common/Component/Filter/Filter";
+import Filter from "../../../assets/Component/Filter/Filter";
 
-import lux from "../../../Common/image/lux.png";
-import delux from "../../../Common/image/delux.png";
-import family from "../../../Common/image/family.png";
-import standart from "../../../Common/image/standart.png";
+import lux from "../../../assets/images/lux.png";
+import delux from "../../../assets/images/delux.png";
+import family from "../../../assets/images/family.png";
+import standart from "../../../assets/images/standart.png";
 
 const images = [lux, delux, family,standart];
 const rooms = [

@@ -1,7 +1,7 @@
 import React from "react";
 
 import Text from "./Text";
-import Icon from "../../../../Common/Files/Icon";
+import Icon from "../../../../assets/Files/Icon";
 import {Link} from "react-router-dom";
 
 const location = {

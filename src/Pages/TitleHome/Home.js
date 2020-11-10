@@ -1,12 +1,12 @@
 import React from "react";
 
 import Start from "./Start/Start";
-import Filter from "../../Common/Component/Filter/Filter";
+import Filter from "../../assets/Component/Filter/Filter";
 import Welcome from "./Welcome/Welcome";
 import ImageIcon from "./ImageIcon/ImageIcon";
 import Numbers from "./Numbers/Numbers";
 import Promotion from "./Promotion/Promotion";
-import Handeling from "../../Common/Component/Handeling/Handeling";
+import Handeling from "../../assets/Component/Handeling/Handeling";
 import MenuFirst from "./MenuFirst/MenuFirst";
 import MenuSecond from "./MenuSecond/MenuSecond";
 import ContactMap from "./ContactMap/ContactMap";

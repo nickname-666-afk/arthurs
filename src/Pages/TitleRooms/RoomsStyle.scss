@@ -72,6 +72,15 @@ $h: 100%;
 					.slider {
 						height: 450px !important;
 						max-height: 500px !important;
+						.slider-slide {
+							& > img {
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								height: 450px;
+								max-height: 500px;
+							}
+						}
 						.each-slide {
 							.slide-show {
 								& > img {

@@ -1,13 +1,13 @@
 import React from "react";
 
-import sea from "../../../../Common/image/icon(1).png";
-import ent from "../../../../Common/image/icon(2).png";
-import safe from "../../../../Common/image/icon(3).png";
-import wifi from "../../../../Common/image/icon(4).png";
-import num from "../../../../Common/image/icon(5).png";
-import st from "../../../../Common/image/icon(6).png";
-import att from "../../../../Common/image/icon(7).png";
-import ter from "../../../../Common/image/icon(8).png";
+import sea from "../../../../assets/images/icon(1).png";
+import ent from "../../../../assets/images/icon(2).png";
+import safe from "../../../../assets/images/icon(3).png";
+import wifi from "../../../../assets/images/icon(4).png";
+import num from "../../../../assets/images/icon(5).png";
+import st from "../../../../assets/images/icon(6).png";
+import att from "../../../../assets/images/icon(7).png";
+import ter from "../../../../assets/images/icon(8).png";
 
 export default class Icons extends React.Component {
 	render() {

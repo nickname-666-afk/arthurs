@@ -1,8 +1,8 @@
 import React from "react";
 
-import instagram from "../image/instagram.png";
-import vk from "../image/vk.png";
-import whatsapp from "../image/whatsapp.png";
+import instagram from "../images/instagram.png";
+import vk from "../images/vk.png";
+import whatsapp from "../images/whatsapp.png";
 
 const Icon = () => {
 	return (

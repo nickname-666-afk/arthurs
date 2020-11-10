@@ -1,4 +1,5 @@
 import React from "react";
+
 import Welcome from "../../../../Common/image/1.png";
 
 export default class Image extends React.Component {

@@ -70,20 +70,25 @@ $h: 100%;
 					width: 48%;
 					max-width: 48%;
 					.slider {
-						.slider-control-bottomcenter {
-							& > ul {
-								& > li {
-									& > button {
-										width: 12px;
-										& > svg {
-											& > circle {
-												width: 3vh;
-												height: 3vh;
-											}
-										}
-									}
+						height: 450px !important;
+						max-height: 500px !important;
+						.each-slide {
+							.slide-show {
+								& > img {
+									width: 300px;
+									height: 200px;
 								}
 							}
+						}
+
+						.react-slideshow-container {
+							height: 450px !important;
+						}
+						.slider-control-centerleft {
+							display: none;
+						}
+						.slider-control-centerright {
+							display: none;
 						}
 					}
 				}

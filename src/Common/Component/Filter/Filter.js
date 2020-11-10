@@ -2,7 +2,7 @@ import React from "react";
 import {Link, Redirect} from "react-router-dom";
 
 import Select from "react-select";
-import {RoomContext} from "../../../Pages/Rooms/Rooms";
+import {RoomContext} from "../../../Pages/TitleRooms/Rooms";
 import "./FilterStyle.scss";
 
 const prices = [
@@ -41,18 +41,35 @@ export default class Filter extends React.Component {
 	tStyle = this.isMain ? "Забронировать" : "Показать";
 	hStyle = this.isMain ? {display: "none"} : {display: "block"};
 	sStyle = this.isMain ? {display: "block"} : {display: "none"};
-
-	handleChangePrices = (event) => {
+	// state = {
+	// 	toDashboard: false,
+	// };
+	// handleSubmit = () => {
+	// 	this.setState(() => ({
+	// 		toDashboard: true,
+	// 	}));
+	// };
+	handlePrices = (event) => {
 		this.setState({price: event.value});
 		console.log(event.value);
 	};
-	handleChangeCounts = (event) => {
+	handleCounts = (event) => {
 		this.setState({count: event.value});
 		console.log(event.value);
 	};
-	handleChangeCategories = (event) => {
+	handleCategories = (event) => {
 		this.setState({category: event.value});
 		console.log(event.value);
+	};
+
+	handleFilter = (name) => {
+		let filterCoffee = [];
+		if (name === "All") {
+			filterCoffee = this.state.coffees;
+		} else {
+			filterCoffee = this.state.coffees.filter((coffee) => coffee.origin === name);
+		}
+		this.setState({filterCoffee});
 	};
 
 	isMobileDevice() {
@@ -66,15 +83,6 @@ export default class Filter extends React.Component {
 		});
 	}
 
-	state = {
-		toDashboard: false,
-	};
-	handleSubmit = () => {
-		this.setState(() => ({
-			toDashboard: true,
-		}));
-	};
-
 	render() {
 		if (this.state.toDashboard === true) {
 			return <Redirect to="/rooms" />;
@@ -84,17 +92,17 @@ export default class Filter extends React.Component {
 				<div className="wrapper-filter" style={this.wStyle}>
 					<div className="custom-select">
 						<Select
-							onChange={this.handleChangePrices.bind(this)}
+							onChange={this.handlePrices.bind(this)}
 							options={prices}
 							placeholder="Стоимость"
 						/>
 						<Select
-							onChange={this.handleChangeCounts.bind(this)}
+							onChange={this.handleCounts.bind(this)}
 							options={counts}
 							placeholder="Количество мест"
 						/>
 						<Select
-							onChange={this.handleChangeCategories.bind(this)}
+							onChange={this.handleCategories.bind(this)}
 							options={categories}
 							placeholder="Категория"
 						/>
@@ -104,7 +112,7 @@ export default class Filter extends React.Component {
 							className="button"
 							type="button"
 							style={this.sStyle}
-							onClick={this.handleSubmit}>
+							onClick={(event)=>event.target.updatePrices}>
 							Забронировать
 						</button>
 					</Link>
@@ -114,11 +122,7 @@ export default class Filter extends React.Component {
 								className="button"
 								style={this.hStyle}
 								type="button"
-								onClick={() => {
-									this.props.updateDataPrices.bind(this);
-									this.props.updateDataCounts.bind(this);
-									this.props.updateDataCategories.bind(this);
-								}}>
+								onClick={(e) => e.target.updatePrices}>
 								Показать
 							</button>
 						)}

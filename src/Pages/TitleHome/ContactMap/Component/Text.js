@@ -1,7 +1,5 @@
 import React from "react";
 
-import Address from "../../../../Common/Files/Address";
-import Tel from "../../../../Common/Files/Tel";
 import Icon from "../../../../Common/Files/Icon";
 
 export default class Text extends React.Component {
@@ -13,7 +11,10 @@ export default class Text extends React.Component {
 				<div className="text">
 					<div className="adr">
 						<div className="title">Адрес:</div>
-						<Address />
+						<div className="p">
+							Республика Крым,
+							<br /> Береговое, ул. Приморская, 1В
+						</div>
 					</div>
 					<div className="email">
 						<div className="title">E-MAIL:</div>
@@ -21,7 +22,7 @@ export default class Text extends React.Component {
 					</div>
 					<div className="phone">
 						<div className="p">Телефон:</div>
-						<Tel />
+						<div className="tel">+7 (958) 756-80-39</div>
 					</div>
 				</div>
 				<a href="https://maps.yandex.ru/" target="_black">

@@ -2,7 +2,6 @@ import React from "react";
 
 import Text from "./Text";
 import Icon from "../../../../Common/Files/Icon";
-import Tel from "../../../../Common/Files/Tel";
 import {Link} from "react-router-dom";
 
 const location = {
@@ -14,7 +13,7 @@ export default class Component extends React.Component {
 			<div className="content">
 				<Text />
 				<Icon />
-				<Tel />
+				<div className="tel">+7 (958) 756-80-39</div>
 				<Link className="link" to={location}>
 					<button type="button" className="button">
 						Забронировать

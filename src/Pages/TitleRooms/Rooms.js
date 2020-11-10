@@ -6,14 +6,6 @@ import "./RoomsStyle.scss";
 export const RoomContext = React.createContext();
 
 export default class Rooms extends React.Component {
-	// state = {
-	// 	name: "Бумеранг не запущен",
-	// };
-	// updateData = (value) => {
-	// 	this.setState({name: value});
-	// 	console.log(value);
-	// };
-
 	render() {
 		const {room} = this.props;
 		return (
@@ -22,7 +14,7 @@ export default class Rooms extends React.Component {
 					<div className="component">
 						<div className="content">
 							<div className="title"> Наши номера</div>
-							<Room updateData={this.updateData} />
+							<Room />
 						</div>
 					</div>
 				</div>

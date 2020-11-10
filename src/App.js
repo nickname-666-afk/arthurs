@@ -3,10 +3,10 @@ import {Switch, Route, BrowserRouter} from "react-router-dom";
 
 import Header from "./Common/Component/Header/Header";
 import Footer from "./Common/Component/Footer/Footer";
-import Home from "./Pages/Home/Home";
-import Rooms from "./Pages/Rooms/Rooms";
-import Service from "./Pages/Service/Services";
-import Registration from "./Pages/Registration/Registration";
+import Home from "./Pages/TitleHome/Home";
+import Rooms from "./Pages/TitleRooms/Rooms";
+import Service from "./Pages/TitleService/Service";
+// import Reg from "./Pages/TitleRooms/Reg/Reg";
 import "./AppStyle.scss";
 
 const ContentContext = React.createContext(null);
@@ -29,12 +29,9 @@ export default class App extends React.Component {
 					<Switch>
 						<ContentContext.Provider value={content}>
 							<Route exact path="/home" render={() => AppLayout(<Home />)} />
-							<Route
-								path="/rooms"
-								render={() => AppLayout(<Rooms updateData='Hello' />)}
-							/>
+							<Route path="/rooms" render={() => AppLayout(<Rooms />)} />
 							<Route path="/service" render={() => AppLayout(<Service />)} />
-							<Route path="/registration" render={() => AppLayout(<Registration />)} />
+							{/* <Route path="/registration" render={() => AppLayout(<Reg />)} /> */}
 						</ContentContext.Provider>
 					</Switch>
 				</div>

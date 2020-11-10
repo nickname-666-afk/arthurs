@@ -14,7 +14,7 @@ import ContactMap from "./ContactMap/ContactMap";
 export default class Home extends React.Component {
 	render() {
 		return (
-			<div className="App" path="/home">
+			<div className="App">
 				<Start />
 				<Filter />
 				<div className="component">

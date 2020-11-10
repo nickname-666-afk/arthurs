@@ -1,39 +1,23 @@
-import React, {Component} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
-
 import Carousel from "nuka-carousel";
+
+import lux from "../../../Common/image/lux.png";
+import delux from "../../../Common/image/delux.png";
+import family from "../../../Common/image/family.png";
 
 const locationService = {
 	pathname: "/service",
 };
+const images = require(lux, delux, family);
 
-export default class ComponentBlock extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {name: "Button press"};
-	}
-
-	// updateDate = (event) => {
-	// 	this.setState({
-	// 		date: event.target.value,
-	// 	});
-	// 	console.log(event.value);
-	// };
+export default class Content extends React.Component {
 	render() {
 		return (
 			<div className="component-block">
 				<div className="left">
 					<Carousel>
-						{this.props.room.images.map((image) => {
-							return (
-								<img
-									key={image}
-									src={require(`../../../Common/image/${image}.png`)}
-									className="image"
-									alt="Изображение"
-								/>
-							);
-						})}
+						<img src={require(`url(${images}.png)`)} />
 					</Carousel>
 				</div>
 				<div className="right">
@@ -53,7 +37,11 @@ export default class ComponentBlock extends Component {
 						</div>
 					</div>
 					<Link className="link" to={locationService}>
-						<button className="button" onClick={() => this.props.updateDate(this.state.name)}>
+						<button
+							className="button"
+							onClick={() => {
+								this.props.updatePrices(this.state.name);
+							}}>
 							Забронировать
 						</button>
 					</Link>

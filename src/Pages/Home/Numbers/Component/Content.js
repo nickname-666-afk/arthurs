@@ -7,24 +7,21 @@ const locationRooms = {
 
 export default class Content extends React.Component {
 	render() {
-		const info = this.props.info;
+		const text = this.props.text;
 		return (
 			<div className="list">
 				<div className="column">
 					<div className="image">
-						<img
-							src={require(`../../../../Common/image/${this.props.image}.png`)}
-							alt="Изображение"
-						/>
+						<img src={this.props.images} alt="Изображение" />
 					</div>
 					<div className="text">
-						<div className="title">{info.title}</div>
-						<div className="amount">{info.count}</div>
+						<div className="title">{text.title}</div>
+						<div className="amount">{text.count}</div>
 						<div className="square">
-							{info.square}
+							{text.square}
 							<sup>2</sup>
 						</div>
-						<div className="p">{info.text}</div>
+						<div className="p">{text.text}</div>
 					</div>
 				</div>
 				<Link className="link" to={locationRooms}>

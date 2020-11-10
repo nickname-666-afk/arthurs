@@ -2,15 +2,14 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import Content from "./Content";
-import image from "../../../../Common/image/delux.png";
 import lux from "../../../../Common/image/lux.png";
 import delux from "../../../../Common/image/delux.png";
 import family from "../../../../Common/image/family.png";
 
-const images = ["lux", "delux", "family"];
 const locationRooms = {
 	pathname: "/rooms",
 };
+const images = [lux, delux, family];
 
 export default class Column extends React.Component {
 	constructor(props) {
@@ -22,30 +21,41 @@ export default class Column extends React.Component {
 			showFirst: true,
 			showSecond: false,
 			showThird: false,
+			imageFirst: true,
+			imageSecond: false,
+			imageThird: false,
 		};
 	}
 
 	clickHandlerFirst() {
-		this.setState((prev) => ({showFirst: !prev.showFirst}));
+		this.setState(() => ({imageFirst: true}));
+		this.setState(() => ({imageSecond: false}));
+		this.setState(() => ({imageThird: false}));
+		this.setState(() => ({showFirst: true}));
 		this.setState(() => ({showSecond: false}));
 		this.setState(() => ({showThird: false}));
 	}
 	clickHandlerSecond() {
-		this.setState(()=> ({showFirst: false}))
-		this.setState((prev) => ({showSecond: !prev.showSecond}));
-		this.setState(()=> ({showThird: false}))
+		this.setState(() => ({imageFirst: false}));
+		this.setState(() => ({imageSecond: true}));
+		this.setState(() => ({imageThird: false}));
+		this.setState(() => ({showFirst: false}));
+		this.setState(() => ({showSecond: true}));
+		this.setState(() => ({showThird: false}));
 	}
 	clickHandlerThird() {
+		this.setState(() => ({imageFirst: false}));
+		this.setState(() => ({imageSecond: false}));
+		this.setState(() => ({imageThird: true}));
 		this.setState(() => ({showFirst: false}));
 		this.setState(() => ({showSecond: false}));
-		this.setState((prev) => ({showThird: !prev.showThird}));
+		this.setState(() => ({showThird: true}));
 	}
 	componentDidMount() {
 		this.setState({
 			first: [
 				{
 					id: 1,
-					image: lux,
 					title: "Люкс",
 					count: "Максимум: 3 человека",
 					text: "от 5000р в сутки",
@@ -57,7 +67,6 @@ export default class Column extends React.Component {
 			second: [
 				{
 					id: 2,
-					image: delux,
 					title: "Тройной делюкс",
 					count: "Максимум: 4 человека",
 					text: "от 3500 в сутки",
@@ -69,7 +78,6 @@ export default class Column extends React.Component {
 			third: [
 				{
 					id: 3,
-					image: family,
 					title: "Семейный",
 					count: "Максимум: 5 человек",
 					text: "от 4000р в сутки",
@@ -86,18 +94,18 @@ export default class Column extends React.Component {
 				<div className="title">Наши номера и цены</div>
 				<div className="leftListItems">
 					<div className="first" onClick={this.clickHandlerFirst.bind(this)}>
-						{first.map((image, index) => (
-							<Content key={index} info={image} image={images[0]} />
+						{first.map((image) => (
+							<Content key={image} text={image} images={images[0]} />
 						))}
 					</div>
 					<div className="second" onClick={this.clickHandlerSecond.bind(this)}>
-						{second.map((image, index) => (
-							<Content key={index} info={image} image={images[1]} />
+						{second.map((image) => (
+							<Content key={image} text={image} images={images[1]} />
 						))}
 					</div>
 					<div className="third" onClick={this.clickHandlerThird.bind(this)}>
-						{third.map((image, index) => (
-							<Content key={index} info={image} image={images[2]} />
+						{third.map((image) => (
+							<Content key={image} text={image} images={images[2]} />
 						))}
 					</div>
 					<Link className="link" to={locationRooms}>
@@ -107,8 +115,8 @@ export default class Column extends React.Component {
 					</Link>
 				</div>
 				<div className="rightImage">
-					<div className="img">
-						<img src={image} alt="Изображение" />
+					<div className="image">
+						{this.state.imageFirst ? <img src={lux} alt="Изображение" /> : null}
 						{this.state.showFirst ? (
 							<div className="first-text">
 								<div className="title">Люкс</div>
@@ -123,6 +131,7 @@ export default class Column extends React.Component {
 								</div>
 							</div>
 						) : null}
+						{this.state.imageSecond ? <img src={delux} alt="Изображение" /> : null}
 						{this.state.showSecond ? (
 							<div className="second-text">
 								<div className="title">Тройной делюкс</div>
@@ -137,6 +146,7 @@ export default class Column extends React.Component {
 								</div>
 							</div>
 						) : null}
+						{this.state.imageThird ? <img src={family} alt="Изображение" /> : null}
 						{this.state.showThird ? (
 							<div className="third-text">
 								<div className="title">Семейный</div>

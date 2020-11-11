@@ -88,6 +88,14 @@ html {
 		max-width: 1240px;
 		margin: 50px auto;
 	}
+	.NotFound {
+		background: #f3eeea;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		height: 100vh;
+		font-size: 36px;
+	}
 }
 @media (max-width: 1112px) {
 	.App {
@@ -135,6 +143,13 @@ html {
 		.m {
 			@include width-height;
 			padding: 0 10px;
+		}
+		.NotFound {
+			background: #f3eeea;
+			height: 100vh;
+			& > img {
+				width: 100%;
+			}
 		}
 	}
 }

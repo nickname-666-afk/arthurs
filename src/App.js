@@ -7,6 +7,7 @@ import Home from "./Pages/TitleHome/Home";
 import Rooms from "./Pages/TitleRooms/Rooms";
 import Service from "./Pages/TitleService/Service";
 import Reg from "./Pages/TitleReg/Reg";
+import NotFound from "./NotFound";
 import "./AppStyle.scss";
 
 const ContentContext = React.createContext(null);
@@ -31,7 +32,8 @@ export default class App extends React.Component {
 							<Route exact path="/home" render={() => AppLayout(<Home />)} />
 							<Route path="/rooms" render={() => AppLayout(<Rooms />)} />
 							<Route path="/service" render={() => AppLayout(<Service />)} />
-							<Route path="/registration" render={() => AppLayout(<Reg />)} />
+							<Route path="/reg" render={() => AppLayout(<Reg />)} />
+							<Route path="*" component={NotFound} />
 						</ContentContext.Provider>
 					</Switch>
 				</div>

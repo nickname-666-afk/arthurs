@@ -9,7 +9,7 @@ import delux from "../../../assets/images/delux.png";
 import family from "../../../assets/images/family.png";
 import standart from "../../../assets/images/standart.png";
 
-const images = [lux, delux, family,standart];
+const images = [lux, delux, family, standart];
 const rooms = [
 	{
 		id: 1,
@@ -63,6 +63,7 @@ export default class Room extends React.Component {
 			price: this.props.value,
 			count: this.props.value,
 			category: this.props.value,
+			filter: this.props.value,
 		};
 	}
 
@@ -75,8 +76,11 @@ export default class Room extends React.Component {
 	updateCategories = (event) => {
 		this.setState({category: event.target.value});
 	};
+	filterOnSearch = (event) => {
+		this.setState({filter: event.target.value});
+	};
 
-	consumer = (<RoomContext.Consumer>{(room) => this.countUpdate(room)}</RoomContext.Consumer>);
+	consumer = (<RoomContext.Consumer>{(room) => this.Content(room)}</RoomContext.Consumer>);
 
 	render() {
 		return (
@@ -86,6 +90,7 @@ export default class Room extends React.Component {
 					updatePrices={this.updatePrices}
 					updateCounts={this.updateCounts}
 					updateCategories={this.updateCategories}
+					filterOnSearch={this.filterOnSearch}
 				/>
 				{rooms
 					? rooms.map((room) => {
@@ -100,13 +105,12 @@ export default class Room extends React.Component {
 								/>
 							);
 					  })
-					: rooms
-							.filter
-							// (room) => room.price >= this.state.price,
-							// &&
-							// room.count >= this.state.count &&
-							// room.category === this.state.category,
-							()}
+					: rooms.filter(
+							(room) =>
+								room.price >= this.state.price &&
+								room.count >= this.state.count &&
+								room.category === this.state.category,
+					  )}
 			</div>
 		);
 	}

@@ -108,3 +108,12 @@ $w: 100%;
 		}
 	}
 }
+@media (max-width: 320px) {
+	.Footer {
+		.content {
+			& > .tel {
+				font-size: 12px;
+			}
+		}
+	}
+}

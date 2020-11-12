@@ -11,9 +11,10 @@ $w: 100%;
 			width: 50%;
 			max-width: 55%;
 			.maps {
+				max-height: 600px;
 				.yandex-maps {
 					width: $w;
-					height: 60vmin;
+					height: 60vmax;
 					border: none;
 				}
 			}

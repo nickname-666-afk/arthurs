@@ -1,6 +1,6 @@
 $w: 100%;
 @mixin boxshadow {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
+	box-shadow: 0 0.1rem 0.5rem #2022241a, 0 0.5rem 1rem -0.75rem #2022241a;
 }
 .Handeling {
 	.content-main {
@@ -121,14 +121,18 @@ $w: 100%;
 			.content-column {
 				display: block;
 				.content {
-					box-shadow: none !important;
+					box-shadow: none;
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
 					width: $w;
 					border-top: 0.8px solid #ededed;
+					border-bottom: 0.8px solid #ededed;
 					padding: 10px;
 					margin: 0 auto;
+					&:nth-child(2) {
+						border: none;
+					}
 					&:hover {
 						@include boxshadow;
 						transform: none;

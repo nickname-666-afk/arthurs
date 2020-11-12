@@ -25,7 +25,7 @@ export default class Text extends React.Component {
 						<div className="tel">+7 (958) 756-80-39</div>
 					</div>
 				</div>
-				<a href="https://maps.yandex.ru/" target="_black">
+				<a href="https://yandex.com/maps/-/CCUAu0HjCD" target="_black">
 					<button className="button">Как проехать</button>
 				</a>
 			</div>

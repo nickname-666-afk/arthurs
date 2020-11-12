@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, Redirect} from "react-router-dom";
+import {Link, Redirect, useHistory} from "react-router-dom";
 
 import Select from "react-select";
 import {RoomContext} from "../../../Pages/TitleRooms/Rooms";
@@ -32,11 +32,7 @@ export default class Filter extends React.Component {
 	}
 
 	isMain = window.location.pathname.includes("/home");
-	fStyle = this.isMain
-		? {boxShadow: "0px 0px 11px rgba(0, 0, 0, 0.35)"}
-		: {
-				boxShadow: "none",
-		  };
+	fStyle = this.isMain ? {boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)"} : {boxShadow: "none"};
 	wStyle = this.isMain ? {width: "90%"} : {width: "100%"};
 	tStyle = this.isMain ? "Забронировать" : "Показать";
 	hStyle = this.isMain ? {display: "none"} : {display: "block"};
@@ -51,7 +47,6 @@ export default class Filter extends React.Component {
 	// };
 	handlePrices = (event) => {
 		this.setState({price: event.value});
-		console.log(event.value);
 	};
 	handleCounts = (event) => {
 		this.setState({count: event.value});
@@ -59,18 +54,18 @@ export default class Filter extends React.Component {
 	};
 	handleCategories = (event) => {
 		this.setState({category: event.value});
-		console.log(event.value);
 	};
 
-	handleFilter = (name) => {
-		let filterCoffee = [];
-		if (name === "All") {
-			filterCoffee = this.state.coffees;
-		} else {
-			filterCoffee = this.state.coffees.filter((coffee) => coffee.origin === name);
-		}
-		this.setState({filterCoffee});
+	handleFilter = (event) => {
+		this.setState({prices: event.value});
 	};
+	// let filterRooms = [];
+	// if (this.handleCategories === prices) {
+	// 	filterRooms = this.state.rooms;
+	// } else {
+	// 	filterRooms = this.state.rooms.filter((room) => room.origin === prices);
+	// }
+	// this.setState({filterRooms});
 
 	isMobileDevice() {
 		return (
@@ -108,11 +103,7 @@ export default class Filter extends React.Component {
 						/>
 					</div>
 					<Link className="link" style={this.sStyle} to={locationRooms}>
-						<button
-							className="button"
-							type="button"
-							style={this.sStyle}
-							onClick={(event)=>event.target.updatePrices}>
+						<button className="button" type="button" style={this.sStyle}>
 							Забронировать
 						</button>
 					</Link>
@@ -122,7 +113,7 @@ export default class Filter extends React.Component {
 								className="button"
 								style={this.hStyle}
 								type="button"
-								onClick={(e) => e.target.updatePrices}>
+								onClick={this.props.filterOnSearch}>
 								Показать
 							</button>
 						)}

@@ -1,0 +1,220 @@
+$w: 100%;
+
+@mixin size {
+	width: calc(100% - 52%);
+	max-width: calc(100% - 52%);
+}
+@mixin style {
+	border-radius: 8px;
+	box-shadow: 0 0.1rem 0.5rem #2022241a, 0 0.5rem 1rem -0.75rem #2022241a;
+}
+@mixin reset-size {
+	float: none;
+	width: $w;
+	max-width: $w;
+}
+@mixin width-front {
+	width: 50%;
+	font-size: 24px;
+}
+
+.Additionaly {
+	padding: 100px 10px 0 10px;
+	width: $w;
+	margin: auto;
+	text-align: center;
+	.title {
+		font-size: 36px;
+		text-align: center;
+	}
+	.service {
+		width: $w;
+		max-width: 1240px;
+		margin: 100px auto;
+		.contentShow {
+			@include style;
+			margin: 0 auto;
+		}
+		.Handeling {
+			float: left;
+			@include size;
+			margin: 0;
+			.content-main {
+				@include reset-size;
+				& > .title {
+					display: none;
+				}
+				.content-column {
+					@include reset-size;
+					display: block;
+					.content {
+						width: $w;
+						display: flex;
+						justify-content: space-between;
+						transform: none;
+						margin-top: 0;
+						&:hover {
+							box-shadow: 0 0.1rem 0.5rem #2022241a, 0 0.5rem 1rem -0.75rem #2022241a !important;
+						}
+						.text {
+							display: flex;
+							flex-direction: column;
+							justify-content: space-between;
+							align-items: flex-end;
+							width: 55%;
+							text-align: right;
+							& > .title {
+								width: $w;
+								font-size: 21px;
+								text-align: left;
+							}
+							& > .info {
+								text-align: left;
+							}
+							& > .price {
+								width: $w;
+								text-align: left;
+							}
+							.button {
+								width: 140px;
+								height: 40px;
+								margin: 20px 0 0 0;
+								color: #ff7b51;
+								background: #fff;
+								box-shadow: none;
+								outline: 1px solid #ff7b51;
+								transform: none;
+								&:hover {
+									box-shadow: none !important;
+								}
+							}
+						}
+					}
+					.addBed {
+						display: none;
+					}
+				}
+			}
+		}
+		.cart {
+			float: right;
+			padding: 25px 30px;
+			text-align: right;
+			@include size;
+			@include style;
+			& > .title {
+				text-align: left;
+			}
+			& > .content {
+				margin: 10px 0;
+			}
+			& > .link {
+				& > .button {
+					background: #408cff;
+					&:hover {
+						color: #408cff;
+						background: #fff;
+						outline: 1px solid #408cff;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.Additionaly {
+		.title {
+			font-size: 22px;
+		}
+		.service {
+			width: $w;
+			max-width: 1240px;
+			.contentShow {
+				@include reset-size;
+				margin: 50px auto;
+			}
+			.Handeling {
+				float: none;
+				@include reset-size;
+				box-shadow: none;
+				.content-main {
+					@include reset-size;
+					& > .title {
+						display: none;
+					}
+					.content-column {
+						@include reset-size;
+						display: block;
+						.content {
+							width: $w;
+							padding: 15px 10px;
+							margin: 0 auto;
+							box-shadow: none;
+							.text {
+								width: 55%;
+								max-width: $w;
+								text-align: left;
+								& > .title {
+									text-align: left;
+								}
+								& > .p {
+									width: $w;
+								}
+								& > .button {
+									font-size: 14px;
+									width: 100px;
+									height: 35px;
+								}
+							}
+						}
+					}
+				}
+			}
+			.cart {
+				float: none;
+				text-align: center;
+				@include reset-size;
+				box-shadow: none;
+				& > .title {
+					text-align: left;
+				}
+				& > .content {
+					margin: 10px 0;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 320px) {
+	.Additionaly {
+		.service {
+			margin: 0;
+			.contentShow {
+				margin: 0;
+			}
+			.Handeling {
+				.content-main {
+					.content-column {
+						.content {
+							display: block;
+							& > .image {
+								float: none;
+								& > img {
+									width: $w;
+									max-height: 250px;
+								}
+							}
+							& > .text {
+								float: none;
+								padding: 0;
+								width: $w;
+								align-items: center;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

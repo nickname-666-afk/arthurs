@@ -7,19 +7,21 @@ import fourth from "../../images/5(4).png";
 import "./HandelingStyle.scss";
 
 export default class Handeling extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {price: this.value};
-	}
 	isButton = window.location.pathname.includes("/home");
 	bStyle = this.isButton ? {display: "none"} : {display: "inline"};
+	constructor(props) {
+		super(props);
+		this.state = {fisrtPrice: 300, secondPrice: 350, thirdPrice: 200, fourthPrice: 400};
+		this.TogglePrice = this.TogglePrice.bind(this);
+	}
+	TogglePrice() {
+		this.setState({fisrtPrice: this.value});
+		console.log(this.state.fisrtPrice);
+	}
 
-	handlePrice = (event) => {
-		this.setState({price: event.value});
-	};
 	render() {
 		const button = (
-			<button className="button" style={this.bStyle} onClick={this.props.onPrice}>
+			<button className="button" style={this.bStyle} onClick={this.TogglePrice}>
 				Добавить
 			</button>
 		);
@@ -38,7 +40,7 @@ export default class Handeling extends React.Component {
 								</div>
 								<div className="info">Халат, тапочки, дополнительные полотенца</div>
 								<div className="price">
-									<b>350</b> р/набор
+									<b>{this.state.fisrtPrice}</b> р/набор
 								</div>
 								{button}
 							</div>
@@ -51,7 +53,7 @@ export default class Handeling extends React.Component {
 								<div className="title">Завтрак</div>
 								<div className="info">Комплексный завтрак на 1 человека На выбор из меню</div>
 								<div className="price">
-									<b>300</b> р/в день на человека
+									<b>{this.state.secondPrice}</b> р/в день на человека
 								</div>
 								{button}
 							</div>
@@ -66,7 +68,7 @@ export default class Handeling extends React.Component {
 								<div className="title">Трафнсфер до отеля</div>
 								<div className="info">Трансфер от вокзала до отеля в комфортном автомобиле</div>
 								<div className="price">
-									<b>200</b> р
+									<b>{this.state.thirdPrice}</b> р
 								</div>
 								{button}
 							</div>
@@ -79,7 +81,7 @@ export default class Handeling extends React.Component {
 								<div className="title">Дополнительная кровать</div>
 								<div className="info">Трансфер от вокзала до отеля в комфортном автомобиле</div>
 								<div className="price">
-									от <b>400</b> р
+									от <b>{this.state.fourthPrice}</b> р
 								</div>
 							</div>
 						</div>

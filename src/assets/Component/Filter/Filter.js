@@ -1,8 +1,8 @@
 import React from "react";
-import {Link, Redirect, useHistory} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import Select from "react-select";
-import {RoomContext} from "../../../Pages/TitleRooms/Rooms";
+import {RoomContext} from "../../../pages/Rooms/Rooms";
 import "./FilterStyle.scss";
 
 const prices = [
@@ -21,7 +21,7 @@ const categories = [
 	{id: 3, label: "Семейный", value: "Семейный"},
 	{id: 4, label: "Стандарт", value: "Стандарт"},
 ];
-const locationRooms = {
+const rooms = {
 	pathname: "/rooms",
 };
 
@@ -37,13 +37,10 @@ export default class Filter extends React.Component {
 	tStyle = this.isMain ? "Забронировать" : "Показать";
 	hStyle = this.isMain ? {display: "none"} : {display: "block"};
 	sStyle = this.isMain ? {display: "block"} : {display: "none"};
-	// state = {
-	// 	toDashboard: false,
-	// };
-	// handleSubmit = () => {
-	// 	this.setState(() => ({
-	// 		toDashboard: true,
-	// 	}));
+
+	// redirectRoute = () => {
+	// 	this.setState({redirect: JSON.stringify(this.state.price)});
+	// 	console.log(this.redirect);
 	// };
 	handlePrices = (event) => {
 		this.setState({price: event.value});
@@ -55,17 +52,9 @@ export default class Filter extends React.Component {
 	handleCategories = (event) => {
 		this.setState({category: event.value});
 	};
-
 	handleFilter = (event) => {
 		this.setState({prices: event.value});
 	};
-	// let filterRooms = [];
-	// if (this.handleCategories === prices) {
-	// 	filterRooms = this.state.rooms;
-	// } else {
-	// 	filterRooms = this.state.rooms.filter((room) => room.origin === prices);
-	// }
-	// this.setState({filterRooms});
 
 	isMobileDevice() {
 		return (
@@ -79,9 +68,9 @@ export default class Filter extends React.Component {
 	}
 
 	render() {
-		if (this.state.toDashboard === true) {
-			return <Redirect to="/rooms" />;
-		}
+		// if (this.state.redirect) {
+		// 	return <Redirect to={this.state.redirect} />;
+		// }
 		return (
 			<div className="Filter box" style={this.fStyle}>
 				<div className="wrapper-filter" style={this.wStyle}>
@@ -102,7 +91,7 @@ export default class Filter extends React.Component {
 							placeholder="Категория"
 						/>
 					</div>
-					<Link className="link" style={this.sStyle} to={locationRooms}>
+					<Link className="link" style={this.sStyle} to={rooms}>
 						<button className="button" type="button" style={this.sStyle}>
 							Забронировать
 						</button>

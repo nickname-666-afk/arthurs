@@ -5,16 +5,18 @@ import DrawerToggleButton from "../SideDrawer/DrawerToggleButton";
 import MenuList from "../../../../Files/MenuList";
 import "./Toolbar.modules.scss";
 
-const locationHome = {
+const home = {
 	pathname: "/home",
 };
-
+const scrollTop = () => {
+	window.scrollTo({top: 0, behavior: "smooth"});
+};
 const Toolbar = (click) => (
 	<div className="toolbar">
 		<div className="toolbar__navigation">
 			<DrawerToggleButton click={click.drawerClickHandler} />
-			<div className="toolbar__logo">
-				<Link className="link" to={locationHome}>
+			<div className="toolbar__logo" onClick={scrollTop}>
+				<Link className="link" to={home}>
 					Отель Arthurs
 				</Link>
 			</div>

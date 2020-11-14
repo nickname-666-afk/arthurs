@@ -1,35 +1,35 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const locationRooms = {
+const rooms = {
 	pathname: "/rooms",
 };
 
-const MenuList = () => {
-	return (
-		<ul>
-			<li>
-				<Link className="link" to={locationRooms}>
-					Номера и цены
-				</Link>
-			</li>
-			<li>
-				<Link className="link" to={locationRooms}>
-					Забронировать
-				</Link>
-			</li>
-			<li>
-				<a className="link action" href="#handeling">
-					Услуги
-				</a>
-			</li>
-			<li>
-				<a className="link action" href="#contact">
-					Контакты
-				</a>
-			</li>
-		</ul>
-	);
-};
-
-export default MenuList;
+export default class MenuList extends React.Component {
+	render() {
+		return (
+			<ul>
+				<li>
+					<Link className="link" to={rooms}>
+						Номера и цены
+					</Link>
+				</li>
+				<li>
+					<Link className="link" to={rooms}>
+						Забронировать
+					</Link>
+				</li>
+				<li>
+					<a className="link action" href="#handeling">
+						Услуги
+					</a>
+				</li>
+				<li>
+					<a className="link action" href="#contact">
+						Контакты
+					</a>
+				</li>
+			</ul>
+		);
+	}
+}

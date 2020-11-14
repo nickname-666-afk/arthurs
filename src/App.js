@@ -1,12 +1,12 @@
-import React, {Fragment} from "react";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
+import React from "react";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 import Header from "./assets/Component/Header/Header";
 import Footer from "./assets/Component/Footer/Footer";
-import Home from "./Pages/TitleHome/Home";
-import Rooms from "./Pages/TitleRooms/Rooms";
-import Additionaly from "./Pages/TitleAdditionaly/Additionaly";
-import Reg from "./Pages/TitleReg/Reg";
+import Home from "./pages/Home/Home";
+import Rooms from "./pages/Rooms/Rooms";
+import Service from "./pages/Service/Service";
+import Reg from "./pages/Reg/Reg";
 import NotFound from "./NotFound";
 import "./AppStyle.scss";
 
@@ -14,25 +14,26 @@ const ContentContext = React.createContext(null);
 
 export default class App extends React.Component {
 	render() {
-		const content = this.props;
-		const AppLayout = (content) => {
+		const {room} = this.props;
+		const pages = (content) => {
 			return (
-				<Fragment>
+				<React.Fragment>
 					<Header />
 					{content}
 					<Footer />
-				</Fragment>
+				</React.Fragment>
 			);
 		};
+
 		return (
 			<BrowserRouter>
 				<div className="App">
 					<Switch>
-						<ContentContext.Provider value={content}>
-							<Route exact path="/home" render={() => AppLayout(<Home />)} />
-							<Route path="/rooms" render={() => AppLayout(<Rooms />)} />
-							<Route path="/service" render={() => AppLayout(<Additionaly />)} />
-							<Route path="/reg" render={() => AppLayout(<Reg />)} />
+						<ContentContext.Provider value={room}>
+							<Route exact path="/home" render={() => pages(<Home />)} />
+							<Route path="/rooms" render={() => pages(<Rooms />)} />
+							<Route path="/service" render={() => pages(<Service />)} />
+							<Route path="/reg" render={() => pages(<Reg />)} />
 							<Route path="*" component={NotFound} />
 						</ContentContext.Provider>
 					</Switch>

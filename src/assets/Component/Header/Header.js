@@ -1,25 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Toolbar from "./components/Toolbar/Toolbar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Backdrop from "./components/Backdrop/Backdrop";
 
-export default class Header extends Component {
-	state = {
-		sideDrawerOpen: false,
-	};
+export default class Header extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			sideDrawerOpen: false,
+		};
+	}
+
 	drawerToggleClickHandler = () => {
 		this.setState((prevState) => {
-			return { sideDrawerOpen: !prevState.sideDrawerOpen };
+			return {sideDrawerOpen: !prevState.sideDrawerOpen};
 		});
 	};
 
 	backdropClickHandler = () => {
-		this.setState({ sideDrawerOpen: false });
+		this.setState({sideDrawerOpen: false});
 	};
 
 	hStyle = window.location.pathname.includes("/home")
-		? { background: "transparent" }
+		? {background: "transparent"}
 		: {
 				background: "#FF7B51",
 				boxShadow: "0px 4px 11px rgba(0, 0, 0, 0.25)",
@@ -36,7 +40,7 @@ export default class Header extends Component {
 			backdrop = <Backdrop click={this.backdropClickHandler} />;
 		}
 		return (
-			<header className="header" style={this.hStyle}>
+			<header className="header" style={this.hStyle} >
 				<Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
 				{sideDrawer}
 				{backdrop}

@@ -44,6 +44,7 @@ export default class Filter extends React.Component {
 	// };
 	handlePrices = (event) => {
 		this.setState({price: event.value});
+		console.log(event.value);
 	};
 	handleCounts = (event) => {
 		this.setState({count: event.value});
@@ -51,11 +52,11 @@ export default class Filter extends React.Component {
 	};
 	handleCategories = (event) => {
 		this.setState({category: event.value});
+		console.log(event.value);
 	};
-	handleFilter = (event) => {
-		this.setState({prices: event.value});
+	handleSearch = (event) => {
+		this.setState({filter: event.target.filterOnSearch});
 	};
-
 	isMobileDevice() {
 		return (
 			typeof window.orientation !== "undefined" || navigator.userAgent.indexOf("IEMobile") !== -1

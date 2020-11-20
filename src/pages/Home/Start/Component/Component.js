@@ -13,7 +13,11 @@ export default class Component extends React.Component {
 			<div className="content">
 				<Text />
 				<Icon />
-				<div className="tel">+7 (958) 756-80-39</div>
+				<div className="tel">
+					<a className="link" href="tel: +7 (958) 756-80-39">
+						+7 (958) 756-80-39
+					</a>
+				</div>
 				<Link className="link" to={location}>
 					<button type="button" className="button">
 						Забронировать

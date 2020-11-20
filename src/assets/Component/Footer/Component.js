@@ -12,7 +12,11 @@ export default class Content extends React.Component {
 					Республика Крым,
 					<br /> Береговое, ул. Приморская, 1В
 				</div>
-				<div className="tel">+7 (958) 756-80-39</div>
+				<div className="tel">
+					<a className="link" href="tel: +7 (958) 756-80-39">
+						+7 (958) 756-80-39
+					</a>
+				</div>
 				<Icon />
 			</div>
 		);

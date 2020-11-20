@@ -11,17 +11,16 @@ export default class Handeling extends React.Component {
 	bStyle = this.isButton ? {display: "none"} : {display: "inline"};
 	constructor(props) {
 		super(props);
-		this.state = {fisrtPrice: 300, secondPrice: 350, thirdPrice: 200, fourthPrice: 400};
-		this.TogglePrice = this.TogglePrice.bind(this);
+		this.state = {fisrtPrice: 300, secondPrice: 350, thirdPrice: 200, fourthPrice: 400, count: 0};
 	}
-	TogglePrice() {
-		this.setState({fisrtPrice: this.value});
-		console.log(this.state.fisrtPrice);
-	}
+	handleClick = () => {
+		this.setState({count: this.state.fisrtPrice});
+	};
 
 	render() {
+		console.log(this.state.fisrtPrice);
 		const button = (
-			<button className="button" style={this.bStyle} onClick={this.TogglePrice}>
+			<button className="button" style={this.bStyle} onClick={this.props.handlePrice}>
 				Добавить
 			</button>
 		);

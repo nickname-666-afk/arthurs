@@ -39,7 +39,7 @@ export default class Content extends React.Component {
 						<button
 							className="button"
 							onClick={() => {
-								this.props.updatePrices(this.state.name);
+								// this.props.updatePrices(this.state.name);
 							}}>
 							Забронировать
 						</button>

@@ -2,14 +2,6 @@ import React from "react";
 
 import "./FormStyle.scss";
 export default class Form extends React.Component {
-	handleChange(event) {
-		this.setState({ value: event.target.value });
-	}
-
-	handleSubmit(event) {
-		alert("A name was submitted: " + this.state.value);
-		event.preventDefault();
-	}
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>

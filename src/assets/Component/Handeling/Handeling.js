@@ -7,18 +7,22 @@ import fourth from "../../images/5(4).png";
 import "./HandelingStyle.scss";
 
 export default class Handeling extends React.Component {
-	isButton = window.location.pathname.includes("/home");
-	bStyle = this.isButton ? {display: "none"} : {display: "inline"};
 	constructor(props) {
 		super(props);
-		this.state = {fisrtPrice: 300, secondPrice: 350, thirdPrice: 200, fourthPrice: 400, count: 0};
+		this.state = {fisrtPrice: 300, secondPrice: 350, thirdPrice: 200, count: 0};
 	}
+
+	isButton = window.location.pathname.includes("/home");
+	bStyle = this.isButton ? {display: "none"} : {display: "inline"};
+
 	handleClick = () => {
 		this.setState({count: this.state.fisrtPrice});
+		this.setState({count: this.state.secondPrice});
+		this.setState({count: this.state.thirdPrice});
 	};
 
 	render() {
-		console.log(this.state.fisrtPrice);
+		// console.log(this.state.fisrtPrice);
 		const button = (
 			<button className="button" style={this.bStyle} onClick={this.props.handlePrice}>
 				Добавить

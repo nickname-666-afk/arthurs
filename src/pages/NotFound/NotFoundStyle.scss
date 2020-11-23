@@ -1,0 +1,174 @@
+$color: #666;
+$size: 30;
+$speed: 0.66s;
+//$speed: (.01 * random(100)) * (random(2)-1) + .66s; // randomly change speed at each compilation
+
+@mixin paper() {
+	width: 55%;
+	height: 50%;
+	background: $color;
+	position: absolute;
+	z-index: 4;
+	left: 22.5%;
+	box-sizing: border-box;
+	color: $color;
+
+	& > div {
+		position: absolute;
+		background: #fff;
+		top: 9.5%;
+		bottom: 9.5%;
+		left: 10%;
+		right: 10%;
+		font-family: monospace;
+		text-align: center;
+		font-size: $size * 2px;
+	}
+}
+
+#printer-404 {
+	width: $size * 10px;
+	height: $size * 10px;
+	position: relative;
+	margin: 5% auto;
+
+	.body {
+		background: $color;
+		width: 100%;
+		height: 50%;
+		border-radius: 16% 16% 0 0;
+		position: relative;
+		top: 28%;
+
+		&:before {
+			content: "";
+			display: block;
+			width: 11%;
+			height: 22%;
+			position: absolute;
+			right: 11.5%;
+			top: 22%;
+			background: #fff;
+			border-radius: 50%;
+		}
+	}
+
+	.back {
+		width: 55%;
+		height: 22%;
+		background: $color;
+		position: absolute;
+		z-index: 1;
+		left: 22.5%;
+		top: 0;
+	}
+
+	.front {
+		width: 55%;
+		height: 43%;
+		background: $color;
+		position: absolute;
+		z-index: 3;
+		left: 22.5%;
+		bottom: 1%;
+		box-sizing: border-box;
+
+		div {
+			position: absolute;
+			background: #fff;
+			top: 10%;
+			bottom: 14%;
+			left: 10%;
+			right: 10%;
+		}
+	}
+
+	.paper1 {
+		@include paper();
+		top: 48.5%;
+		bottom: auto;
+		//display: none;
+		animation: print $speed infinite;
+	}
+	.paper2 {
+		@include paper();
+		bottom: auto;
+		top: -5%;
+		//display: none;
+		animation: firstpaper $speed;
+		z-index: 1;
+	}
+
+	.mask {
+		background: $color;
+		width: 55%;
+		height: 32%;
+		position: absolute;
+		left: 22.5%;
+		z-index: 5;
+		top: 28%;
+	}
+}
+
+@keyframes print {
+	// Entrée papier
+	0% {
+		transform: translate3d(0);
+		color: #fff;
+	}
+	5% {
+		transform: translate3d(0);
+	}
+	14% {
+		transform: translate3d(0, -25%, 0);
+		color: #fff;
+	}
+	15% {
+		color: $color;
+	}
+
+	// Impression
+	$start_percent: 15;
+	$start_pos: -25;
+	@for $i from 0 through 9 {
+		$next_pos: $start_percent + $i * 4;
+		$next_top: $start_pos - $i * 4;
+		#{$next_pos * 1%} {
+			transform: translate3d(0, #{$next_top * 1%}, 0);
+		}
+		$next_pos: $start_percent + $i * 4 + 2;
+		#{$next_pos * 1%} {
+			transform: translate3d(0, #{$next_top * 1%}, 0);
+		}
+		$next_pos: $start_percent + $i * 4 + 3;
+		$next_top: $start_pos - $i * 4 - 1;
+		#{$next_pos * 1%} {
+			transform: translate3d(0, #{$next_top * 1%}, 0);
+		}
+	}
+
+	// Sortie papier
+	60% {
+		transform: translate3d(0, -80%, 0);
+	}
+	75% {
+		transform: translate3d(0, -110%, 0);
+	}
+	79% {
+		transform: translate3d(0, -107%, 0);
+	}
+	100% {
+		transform: translate3d(0, -107%, 0);
+	}
+}
+@keyframes firstpaper {
+	0% {
+		opacity: 0;
+	}
+	99% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

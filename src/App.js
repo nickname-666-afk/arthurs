@@ -7,10 +7,10 @@ import Home from "./pages/Home/Home";
 import Rooms from "./pages/Rooms/Rooms";
 import Service from "./pages/Service/Service";
 import Reg from "./pages/Reg/Reg";
-import NotFound from "./NotFound";
+import NotFound from "./pages/NotFound/NotFound";
 import "./AppStyle.scss";
 
-const ContentContext = React.createContext(null);
+const ContentContext = React.createContext("Hello");
 
 export default class App extends React.Component {
 	render() {

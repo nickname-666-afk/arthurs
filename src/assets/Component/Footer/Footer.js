@@ -1,13 +1,17 @@
 import React from "react";
 
-import Component from "./Component";
 import "./FooterStyle.scss";
 
 export default class Footer extends React.Component {
 	render() {
 		return (
 			<footer className="Footer">
-				<Component />
+				<div className="content">
+					{this.props.sidebar}
+					{this.props.address}
+					{this.props.phone}
+					{this.props.icons}
+				</div>
 			</footer>
 		);
 	}

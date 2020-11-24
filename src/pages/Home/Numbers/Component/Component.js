@@ -93,17 +93,17 @@ export default class Column extends React.Component {
 			<div className="container-num">
 				<div className="title">Наши номера и цены</div>
 				<div className="leftListItems">
-					<div className="first" onClick={this.clickHandlerFirst.bind(this)}>
+					<div className="first" onMouseOver={this.clickHandlerFirst.bind(this)}>
 						{first.map((image) => (
 							<Content key={image} text={image} images={images[0]} />
 						))}
 					</div>
-					<div className="second" onClick={this.clickHandlerSecond.bind(this)}>
+					<div className="second" onMouseOver={this.clickHandlerSecond.bind(this)}>
 						{second.map((image) => (
 							<Content key={image} text={image} images={images[1]} />
 						))}
 					</div>
-					<div className="third" onClick={this.clickHandlerThird.bind(this)}>
+					<div className="third" onMouseOver={this.clickHandlerThird.bind(this)}>
 						{third.map((image) => (
 							<Content key={image} text={image} images={images[2]} />
 						))}

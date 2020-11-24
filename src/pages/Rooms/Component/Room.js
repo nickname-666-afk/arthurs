@@ -2,14 +2,14 @@ import React from "react";
 
 import {RoomContext} from "../Rooms";
 import Content from "./Content";
-import Filter from "../../../assets/Component/Filter/Filter";
+import Filter from "../../../assets/component/filter/Filter";
 
-import lux from "../../../assets/images/lux.png";
-import delux from "../../../assets/images/delux.png";
-import family from "../../../assets/images/family.png";
-import standart from "../../../assets/images/standart.png";
+// import lux from "../../../assets/images/lux.png";
+// import delux from "../../../assets/images/delux.png";
+// import family from "../../../assets/images/family.png";
+// import standart from "../../../assets/images/standart.png";
 
-const images = [lux, delux, family, standart];
+// const images = [lux, delux, family, standart];
 const rooms = [
 	{
 		id: 1,
@@ -20,7 +20,7 @@ const rooms = [
 		info:
 			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
 		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
-		images: [family, family, family],
+		// images: [family, family, family],
 	},
 	{
 		id: 2,
@@ -30,7 +30,7 @@ const rooms = [
 		squad: 40,
 		info: "В номере 2 двуспальные кровати, шкаф, стулья, прикроватные тумбочки,стол, балкон",
 		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
-		images: [lux, lux, lux],
+		// images: [lux, lux, lux],
 	},
 	{
 		id: 3,
@@ -41,7 +41,7 @@ const rooms = [
 		info:
 			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
 		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
-		images: [delux, delux, delux],
+		// images: [delux, delux, delux],
 	},
 	{
 		id: 4,
@@ -52,7 +52,7 @@ const rooms = [
 		info:
 			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
 		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
-		images: [standart, standart, standart],
+		// images: [standart, standart, standart],
 	},
 ];
 
@@ -61,16 +61,16 @@ export default class Room extends React.Component {
 		super(props);
 		this.state = {
 			price: this.props.value,
-			count: this.props.value,
-			category: this.props.value,
-			filter: this.props.value,
+			count: this.props.handleCount,
+			category: this.props.handleCategory,
 		};
-		// this.getRooms();
-		// this.rooms = [];
+		// setTimeout(() => {
+		// 	return console.log(this.state.price);
+		// }, 4000);
 	}
-
 	updatePrices = (event) => {
 		this.setState({price: event.target.value});
+		console.log(this.updatePrices);
 	};
 	updateCounts = (event) => {
 		this.setState({count: event.target.value});
@@ -79,22 +79,8 @@ export default class Room extends React.Component {
 		this.setState({category: event.target.value});
 	};
 	filterOnSearch = (event) => {
-		this.setState({filter: event.target.value});
+		console.log(this.props.price);
 	};
-	// getRooms = () => {
-	// 	fetch(rooms)
-	// 		.then((rooms) => {
-	// 			return rooms();
-	// 		})
-	// 		.then((rooms) => {
-	// 			this.setState({rooms: rooms.rooms});
-	// 			let result = {};
-	// 			for (let i = 0; i < this.rooms.lenght; i++) {
-	// 				result[this.rooms[i]] = rooms.rates[this.rooms[i]];
-	// 			}
-	// 			console.log(result);
-	// 		});
-	// };
 
 	consumer = (<RoomContext.Consumer>{(room) => this.Content(room)}</RoomContext.Consumer>);
 
@@ -108,25 +94,20 @@ export default class Room extends React.Component {
 					updateCategories={this.updateCategories}
 					filterOnSearch={this.filterOnSearch}
 				/>
-				{rooms
-					? rooms.map((room) => {
-							return (
-								<Content
-									updatePrices={this.updatePrices}
-									updateCounts={this.updateCounts}
-									updateCategories={this.updateCategories}
-									images={images[0]}
-									key={room.id}
-									room={room}
-								/>
-							);
-					  })
-					: rooms.filter(
-							(room) =>
-								room.price >= this.state.price &&
-								room.count >= this.state.count &&
-								room.category === this.state.category,
-					  )}
+				{rooms.map((room) => {
+					if (room.price <= 3000 || room.count >= 5 || room.category === "Люкс") {
+						return (
+							<Content
+								updatePrices={this.updatePrices}
+								updateCounts={this.updateCounts}
+								updateCategories={this.updateCategories}
+								//images={images[0]}
+								key={room.id}
+								room={room}
+							/>
+						);
+					}
+				})}
 			</div>
 		);
 	}

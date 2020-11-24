@@ -1,7 +1,6 @@
 import React from "react";
 
-import Component from "./Component/Component";
-import "./NumberStyle.scss";
+import Component from "./component/Component";
 
 export default class Numbers extends React.Component {
 	render() {

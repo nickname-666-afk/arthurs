@@ -1,5 +1,6 @@
 import React from "react";
-import imgMenu from "../images/menu.svg";
+
+import img from "../../images/menu.svg";
 
 export default class Button extends React.Component {
 	constructor(props) {
@@ -8,16 +9,15 @@ export default class Button extends React.Component {
 			show: false,
 		};
 	}
-	clickHandler() {
+	clickHandler = () => {
 		this.setState((prev) => ({show: !prev.show}));
-	}
-
+	};
 	render() {
 		return (
 			<div className="button_block" onClick={this.clickHandler.bind(this)}>
 				{this.state.show ? (
-					<div className='backdrop'>
-						<img className="image" src={imgMenu} alt="Меню" />
+					<div className="backdrop">
+						<img className="image" src={img} alt="Меню" />
 					</div>
 				) : null}
 				<button className="button trigger">Показать меню</button>

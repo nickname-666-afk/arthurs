@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
+// import ls from "local-storage";
 import Select from "react-select";
-import {RoomContext} from "../../../pages/Rooms/Rooms";
+import {RoomContext} from "../../../pages/rooms/Rooms";
 import "./FilterStyle.scss";
 
 const prices = [
@@ -25,10 +25,28 @@ const rooms = {
 	pathname: "/rooms",
 };
 
+localStorage.setItem("price", JSON.stringify(prices));
+localStorage.setItem("count", JSON.stringify(counts));
+localStorage.setItem("category", JSON.stringify(categories));
+// localStorage.getItem("price");
+console.log(localStorage.getItem("price"));
+// let filter = localStorage.getItem("price");
+// filter = JSON.parse(filter);
+// console.log(typeof filter);
+
+window.addEventListener("storage", function (e) {
+	console.log("change");
+	// document.querySelector().textContent.localStorage.getItem("");
+});
 export default class Filter extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {price: this.value, count: this.value, category: this.value};
+		this.state = {
+			price: this.handlePrices,
+			count: this.handleCounts,
+			category: this.handleCategories,
+		};
+		// console.log("filter" + ` ${this.state}`);
 	}
 
 	isMain = window.location.pathname.includes("/home");
@@ -42,9 +60,11 @@ export default class Filter extends React.Component {
 	// 	this.setState({redirect: JSON.stringify(this.state.price)});
 	// 	console.log(this.redirect);
 	// };
-	handlePrices = (event) => {
-		this.setState({price: event.value});
-		console.log(event.value);
+
+	handlePrices = (price) => {
+		// this.setState({price: event.value});
+		localStorage.setItem("price", JSON.stringify(prices[price]));
+		console.log(localStorage.setItem("price", JSON.stringify(prices[price])));
 	};
 	handleCounts = (event) => {
 		this.setState({count: event.value});
@@ -53,9 +73,6 @@ export default class Filter extends React.Component {
 	handleCategories = (event) => {
 		this.setState({category: event.value});
 		console.log(event.value);
-	};
-	handleSearch = (event) => {
-		this.setState({filter: event.target.filterOnSearch});
 	};
 	isMobileDevice() {
 		return (
@@ -72,6 +89,16 @@ export default class Filter extends React.Component {
 		// if (this.state.redirect) {
 		// 	return <Redirect to={this.state.redirect} />;
 		// }
+
+		// const [state, dispatch] = useReducer(fetchPricesReducer, {
+		// 	prices: [
+		// 		{id: 1, label: "от 3000 рублей", value: 3000},
+		// 		{id: 2, label: "от 4000 рублей", value: 4000},
+		// 		{id: 3, label: "от 5000 рублей", value: 5000},
+		// 	],
+		// 	loading: false,
+		// 	error: false,
+		// });
 		return (
 			<div className="Filter box" style={this.fStyle}>
 				<div className="wrapper-filter" style={this.wStyle}>
@@ -103,7 +130,7 @@ export default class Filter extends React.Component {
 								className="button"
 								style={this.hStyle}
 								type="button"
-								onClick={this.props.filterOnSearch}>
+								onClick={this.handleSaveFilterToRead}>
 								Показать
 							</button>
 						)}

@@ -40,8 +40,8 @@ export default class Header extends React.Component {
 			backdrop = <Backdrop click={this.backdropClickHandler} />;
 		}
 		return (
-			<header className="header" style={this.hStyle} >
-				<Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+			<header className="header" style={this.hStyle}>
+				<Toolbar drawerClickHandler={this.drawerToggleClickHandler} sidebar={this.props.sidebar} />
 				{sideDrawer}
 				{backdrop}
 			</header>

@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import DrawerToggleButton from "../SideDrawer/DrawerToggleButton";
-import MenuList from "../../../../Files/MenuList";
 import "./Toolbar.modules.scss";
 
 const home = {
@@ -11,6 +10,7 @@ const home = {
 const scrollTop = () => {
 	window.scrollTo({top: 0, behavior: "smooth"});
 };
+
 const Toolbar = (click) => (
 	<div className="toolbar">
 		<div className="toolbar__navigation">
@@ -21,9 +21,7 @@ const Toolbar = (click) => (
 				</Link>
 			</div>
 			<div className="spacer" />
-			<div className="toolbar_navigation-items">
-				<MenuList />
-			</div>
+			<div className="toolbar_navigation-items"></div>
 		</div>
 	</div>
 );

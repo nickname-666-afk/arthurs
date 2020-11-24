@@ -4,7 +4,6 @@ import first from "../../images/5(1).png";
 import second from "../../images/5(2).png";
 import third from "../../images/5(3).png";
 import fourth from "../../images/5(4).png";
-import "./HandelingStyle.scss";
 
 export default class Handeling extends React.Component {
 	constructor(props) {
@@ -29,7 +28,7 @@ export default class Handeling extends React.Component {
 			</button>
 		);
 		return (
-			<div className="Handeling box" id="handeling">
+			<div className="Handeling box">
 				<div className="content-main">
 					<div className="title">Услуги</div>
 					<div className="content-column">

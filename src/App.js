@@ -1,16 +1,86 @@
 import React from "react";
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 
-import Header from "./assets/Component/Header/Header";
-import Footer from "./assets/Component/Footer/Footer";
-import Home from "./pages/Home/Home";
-import Rooms from "./pages/Rooms/Rooms";
-import Service from "./pages/Service/Service";
-import Reg from "./pages/Reg/Reg";
-import NotFound from "./pages/NotFound/NotFound";
+import Header from "./assets/component/header/Header";
+import Footer from "./assets/component/footer/Footer";
+import Home from "./pages/home/Home";
+import Rooms from "./pages/rooms/Rooms";
+import Service from "./pages/service/Service";
+import Reg from "./pages/reg/Reg";
+import NotFound from "./pages/notFound/NotFound";
 import "./AppStyle.scss";
 
-const ContentContext = React.createContext("Hello");
+import instagram from "./assets/images/icons/instagram.png";
+import vk from "./assets/images/icons/vk.png";
+import whatsapp from "./assets/images/icons/whatsapp.png";
+
+const ContentContext = React.createContext(null);
+
+const routeRooms = {
+	pathname: "/rooms",
+};
+const roteService = {
+	pathname: "/service",
+};
+const routeContact = {
+	pathname: "/contact",
+};
+const icons = [
+	<div className="icon" key={0}>
+		<a
+			className="link"
+			href="https://www.instagram.com/accounts/login/?next=/arturnechaev/"
+			target="_black">
+			<img src={instagram} alt="Instagram" />
+		</a>
+		<a
+			className="link"
+			href="https://www.vk.com/accounts/login/?next=/arturnechaev/"
+			target="_black">
+			<img src={vk} alt="VK" />
+		</a>
+		<a className="link" href="whatsapp" target="_black">
+			<img src={whatsapp} alt="WhatsApp" />
+		</a>
+	</div>,
+];
+const phone = [
+	<div className="tel" key={1}>
+		<a className="link" href="tel: +7 (958) 756-80-39">
+			+7 (958) 756-80-39
+		</a>
+	</div>,
+];
+const address = [
+	<div className="p" key={2}>
+		Республика Крым,
+		<br /> Береговое, ул. Приморская, 1В
+	</div>,
+];
+const sidebar = [
+	<ul key={3}>
+		<li>
+			<Link className="link" to={routeRooms}>
+				Номера и цены
+			</Link>
+		</li>
+		<li>
+			<Link className="link" to={routeRooms}>
+				Забронировать
+			</Link>
+		</li>
+		<li>
+			<Link className="link" to={roteService}>
+				Услуги
+			</Link>
+		</li>
+		<li>
+			<Link className="link" to={routeContact}>
+				Контакты
+			</Link>
+		</li>
+	</ul>,
+];
 
 export default class App extends React.Component {
 	render() {
@@ -18,9 +88,9 @@ export default class App extends React.Component {
 		const pages = (content) => {
 			return (
 				<React.Fragment>
-					<Header />
+					<Header sidebar={sidebar} />
 					{content}
-					<Footer />
+					<Footer sidebar={sidebar} phone={phone} icons={icons} address={address} />
 				</React.Fragment>
 			);
 		};
@@ -30,11 +100,15 @@ export default class App extends React.Component {
 				<div className="App">
 					<Switch>
 						<ContentContext.Provider value={room}>
-							<Route exact path="/home" render={() => pages(<Home />)} />
+							<Route
+								exact
+								path="/home"
+								render={() => pages(<Home phone={phone} icons={icons} address={address} />)}
+							/>
 							<Route path="/rooms" render={() => pages(<Rooms />)} />
 							<Route path="/service" render={() => pages(<Service />)} />
 							<Route path="/reg" render={() => pages(<Reg />)} />
-							<Route path="*" component={NotFound} />
+							<Route component={NotFound} />
 						</ContentContext.Provider>
 					</Switch>
 				</div>

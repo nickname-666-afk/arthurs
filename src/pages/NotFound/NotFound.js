@@ -8,11 +8,7 @@ const home = {
 };
 
 export default class NotFound extends React.Component {
-	isHome =
-		window.location.pathname.includes("/home") ||
-		window.location.pathname.includes("/rooms") ||
-		window.location.pathname.includes("/service") ||
-		window.location.pathname.includes("/reg");
+	isHome = window.location.pathname.includes("/home");
 
 	hStyle = this.isHome ? {display: "none"} : {display: "flex"};
 

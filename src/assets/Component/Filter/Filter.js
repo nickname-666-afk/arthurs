@@ -1,6 +1,5 @@
 import React from "react";
 import {Link} from "react-router-dom";
-// import ls from "local-storage";
 import Select from "react-select";
 import {RoomContext} from "../../../pages/rooms/Rooms";
 import "./FilterStyle.scss";

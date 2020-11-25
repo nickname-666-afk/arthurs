@@ -1,5 +1,6 @@
 import React from "react";
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
+// import ls from "local-storage";
 
 import Header from "./assets/component/header/Header";
 import Footer from "./assets/component/footer/Footer";
@@ -8,7 +9,8 @@ import Rooms from "./pages/rooms/Rooms";
 import Service from "./pages/service/Service";
 import Reg from "./pages/reg/Reg";
 import NotFound from "./pages/notFound/NotFound";
-import "./AppStyle.scss";
+
+import "./assets/styles/AppStyle.scss";
 
 import instagram from "./assets/images/icons/instagram.png";
 import vk from "./assets/images/icons/vk.png";
@@ -83,6 +85,20 @@ const sidebar = [
 ];
 
 export default class App extends React.Component {
+	// componentDidMount() {
+	// 	fetch(URL)
+	// 		.then((response) => response.json())
+	// 		.then((json) =>
+	// 			this.setState({
+	// 				articles: json.results,
+	// 				readNow: ls.get("readNow") || [],
+	// 				readLater: ls.get("readLater") || [],
+	// 				likedSections: ls.get("likedSections") || [],
+	// 			}),
+	// 		);
+	// 	this.startInterval();
+	// }
+
 	render() {
 		const {room} = this.props;
 		const pages = (content) => {
@@ -108,7 +124,7 @@ export default class App extends React.Component {
 							<Route path="/rooms" render={() => pages(<Rooms />)} />
 							<Route path="/service" render={() => pages(<Service />)} />
 							<Route path="/reg" render={() => pages(<Reg />)} />
-							<Route component={NotFound} />
+							<Route to="*" component={NotFound} />
 						</ContentContext.Provider>
 					</Switch>
 				</div>

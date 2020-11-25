@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import Handeling from "../../assets/component/handeling/Handeling";
-import "./ServiceStyle.scss";
+import "../../assets/styles/ServiceStyle.scss";
 
 const reg = {
 	pathname: "/reg",

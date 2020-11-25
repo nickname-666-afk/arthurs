@@ -1,8 +1,6 @@
 import React from "react";
 
-import Component from "./component/Component";
-
-import img from "../../../assets/images/1.png";
+import img from "../../assets/images/1.png";
 
 const text = [
 	<div className="text" key={7}>
@@ -21,7 +19,6 @@ const text = [
 		<div className="p">Отель ARTHURS станет лучшим местом для семейного отдыха в Крыму.</div>
 	</div>,
 ];
-
 const image = [
 	<div className="image" key={8}>
 		<img src={img} alt="Изображение" />
@@ -55,7 +52,16 @@ export default class Welcome extends React.Component {
 		return (
 			<div className="Welcome box">
 				<div className="title">Добро пожаловать в ARTHUR’S!</div>
-				<Component text={text} image={image} info={info} button={this.props.button} />
+				<div className="content">
+					<div className="left">
+						{text}
+						{image}
+					</div>
+					<div className="right">
+						{info}
+						{this.props.button}
+					</div>
+				</div>
 			</div>
 		);
 	}

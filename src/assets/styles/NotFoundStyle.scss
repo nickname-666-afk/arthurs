@@ -1,7 +1,7 @@
 $color: #666;
 $size: 30;
 $speed: 0.66s;
-//$speed: (.01 * random(100)) * (random(2)-1) + .66s; // randomly change speed at each compilation
+$speed: (0.01 * random(100)) * (random(2)-1) + 0.66s; // randomly change speed at each compilation
 
 @mixin paper() {
 	width: 55%;
@@ -12,7 +12,6 @@ $speed: 0.66s;
 	left: 22.5%;
 	box-sizing: border-box;
 	color: $color;
-
 	& > div {
 		position: absolute;
 		background: #fff;
@@ -25,13 +24,11 @@ $speed: 0.66s;
 		font-size: $size * 2px;
 	}
 }
-
 #printer-404 {
 	width: $size * 10px;
 	height: $size * 10px;
 	position: relative;
 	margin: 5% auto;
-
 	.body {
 		background: $color;
 		width: 100%;
@@ -39,7 +36,6 @@ $speed: 0.66s;
 		border-radius: 16% 16% 0 0;
 		position: relative;
 		top: 28%;
-
 		&:before {
 			content: "";
 			display: block;
@@ -52,7 +48,6 @@ $speed: 0.66s;
 			border-radius: 50%;
 		}
 	}
-
 	.back {
 		width: 55%;
 		height: 22%;
@@ -62,7 +57,6 @@ $speed: 0.66s;
 		left: 22.5%;
 		top: 0;
 	}
-
 	.front {
 		width: 55%;
 		height: 43%;
@@ -72,8 +66,7 @@ $speed: 0.66s;
 		left: 22.5%;
 		bottom: 1%;
 		box-sizing: border-box;
-
-		div {
+		& > div {
 			position: absolute;
 			background: #fff;
 			top: 10%;
@@ -82,23 +75,19 @@ $speed: 0.66s;
 			right: 10%;
 		}
 	}
-
 	.paper1 {
 		@include paper();
 		top: 48.5%;
 		bottom: auto;
-		//display: none;
 		animation: print $speed infinite;
 	}
 	.paper2 {
 		@include paper();
 		bottom: auto;
 		top: -5%;
-		//display: none;
 		animation: firstpaper $speed;
 		z-index: 1;
 	}
-
 	.mask {
 		background: $color;
 		width: 55%;
@@ -109,9 +98,7 @@ $speed: 0.66s;
 		top: 28%;
 	}
 }
-
 @keyframes print {
-	// Entrée papier
 	0% {
 		transform: translate3d(0);
 		color: #fff;
@@ -126,8 +113,6 @@ $speed: 0.66s;
 	15% {
 		color: $color;
 	}
-
-	// Impression
 	$start_percent: 15;
 	$start_pos: -25;
 	@for $i from 0 through 9 {
@@ -146,8 +131,6 @@ $speed: 0.66s;
 			transform: translate3d(0, #{$next_top * 1%}, 0);
 		}
 	}
-
-	// Sortie papier
 	60% {
 		transform: translate3d(0, -80%, 0);
 	}

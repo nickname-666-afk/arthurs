@@ -9,15 +9,26 @@ export default class Button extends React.Component {
 			show: false,
 		};
 	}
+
 	clickHandler = () => {
 		this.setState((prev) => ({show: !prev.show}));
 	};
+
 	render() {
 		return (
 			<div className="button_block" onClick={this.clickHandler.bind(this)}>
 				{this.state.show ? (
 					<div className="backdrop">
-						<img className="image" src={img} alt="Меню" />
+						<div className="wrapper-backdrop">
+							<div className="wrapper-image">
+								<div className="nav-image">
+									<button className="btn-nav">
+										<div className="btn-line" /> <div className="btn-line" />
+									</button>
+								</div>
+								<img className="image" src={img} alt="Меню" />
+							</div>
+						</div>
 					</div>
 				) : null}
 				<button className="button trigger">Показать меню</button>

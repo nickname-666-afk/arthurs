@@ -4,11 +4,6 @@ import {RoomContext} from "../Rooms";
 import Content from "./Content";
 import Filter from "../../../assets/component/filter/Filter";
 
-// import lux from "../../../assets/images/lux.png";
-// import delux from "../../../assets/images/delux.png";
-// import family from "../../../assets/images/family.png";
-// import standart from "../../../assets/images/standart.png";
-
 // const images = [lux, delux, family, standart];
 const rooms = [
 	{

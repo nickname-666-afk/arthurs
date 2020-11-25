@@ -31,3 +31,5 @@ src/App.test.js
 public/favicon.ico
 public/favicon.ico
 public/logo192.png
+.yarnclean
+yarn.lock

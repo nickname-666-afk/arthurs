@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 import Start from "./Start";
 import Filter from "../../assets/component/filter/Filter";
-import Welcome from "./welcome/Welcome";
+import Welcome from "./Welcome";
 import Icons from "./Icons";
 import Numbers from "./numbers/Numbers";
 import Promotion from "./Promotion";

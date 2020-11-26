@@ -11,6 +11,8 @@ import Reg from "./pages/reg/Reg";
 import NotFound from "./pages/notFound/NotFound";
 
 import "./assets/styles/AppStyle.scss";
+import "./assets/styles/HeaderStyle.scss";
+import "./assets/styles/FooterStyle.scss";
 
 import instagram from "./assets/images/icons/instagram.png";
 import vk from "./assets/images/icons/vk.png";

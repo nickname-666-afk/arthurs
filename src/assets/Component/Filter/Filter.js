@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Select from "react-select";
 import {RoomContext} from "../../../pages/rooms/Rooms";
-import "./FilterStyle.scss";
+import "../../styles/FilterStyle.scss";
 
 const prices = [
 	{id: 1, label: "от 3000 рублей", value: 3000},

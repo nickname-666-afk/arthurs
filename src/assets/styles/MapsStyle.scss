@@ -48,36 +48,39 @@ $w: 100%;
 				float: right;
 				width: $w;
 				font-size: 24px;
-				.address {
-					& > .title {
-						font-weight: bold;
-						margin: 10px 0;
-					}
-					.address_link {
-						.link {
-							color: #000;
+				.wrapper-text {
+					width: 50%;
+					.address {
+						& > .title {
+							font-weight: bold;
+							margin: 10px 0;
+						}
+						.address_link {
+							.link {
+								color: #000;
+							}
 						}
 					}
-				}
-				.email {
-					margin: 30px 0;
-					& > .title {
-						margin: 10px 0;
-						font-weight: bold;
-					}
-					.email_link {
-						& > .link {
-							color: #000;
+					.email {
+						margin: 30px 0;
+						& > .title {
+							margin: 10px 0;
+							font-weight: bold;
+						}
+						.email_link {
+							& > .link {
+								color: #000;
+							}
 						}
 					}
-				}
-				.phone {
-					.phone_link {
-						font-size: 32px;
-						font-weight: 500;
-						margin: 10px 0;
-						.link {
-							color: #000;
+					.phone {
+						.phone_link {
+							font-size: 32px;
+							font-weight: 500;
+							margin: 10px 0;
+							.link {
+								color: #000;
+							}
 						}
 					}
 				}
@@ -90,14 +93,16 @@ $w: 100%;
 		.content {
 			.right {
 				.text {
-					.address {
-						& > .address_link {
-							font-size: 18px;
+					.wrapper-text {
+						.address {
+							& > .address_link {
+								font-size: 18px;
+							}
 						}
-					}
-					.email {
-						& > .email_link {
-							font-size: 18px;
+						.email {
+							& > .email_link {
+								font-size: 18px;
+							}
 						}
 					}
 				}
@@ -110,12 +115,15 @@ $w: 100%;
 		.content {
 			.right {
 				.text {
-					.phone {
-						& > .phone_text {
-							font-size: 18px;
-						}
-						& > .phone_link {
-							font-size: 22px;
+					.wrapper-text {
+						width: $w;
+						.phone {
+							& > .phone_text {
+								font-size: 18px;
+							}
+							& > .phone_link {
+								font-size: 22px;
+							}
 						}
 					}
 				}
@@ -156,18 +164,21 @@ $w: 100%;
 					width: $w;
 				}
 				.text {
-					text-align: left;
+					text-align: center;
 					float: none;
 					width: $w;
 					font-size: 16px;
-					.phone {
-						& > .phone_link {
-							font-size: 24px;
+					.wrapper-text {
+						text-align: left;
+						.phone {
+							& > .phone_link {
+								font-size: 24px;
+							}
 						}
 					}
-				}
-				.button {
-					float: none;
+					.button {
+						float: none;
+					}
 				}
 			}
 		}

@@ -38,7 +38,6 @@ $h: 100%;
 						width: calc(100% - 51%);
 						margin: 0 auto;
 						& > img {
-							border-radius: 8px;
 							width: $w;
 						}
 					}
@@ -82,11 +81,17 @@ $h: 100%;
 				width: $w;
 				height: $h;
 				max-height: 550px;
+				overflow: hidden;
 				& > img {
 					width: $w;
 					height: $h;
 					min-height: 550px;
 					max-height: 550px;
+					transition: transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s,
+						-webkit-transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+					&:hover {
+						transform: scale(1.2);
+					}
 				}
 				.first-text,
 				.second-text,

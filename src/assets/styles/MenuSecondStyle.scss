@@ -104,9 +104,15 @@ $h: 100%;
 		.image {
 			float: left;
 			@include size;
+			overflow: hidden;
 			& > img {
 				width: $w;
 				max-height: 550px;
+				transition: transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s,
+					-webkit-transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+				&:hover {
+					transform: scale(1.2);
+				}
 			}
 		}
 	}
@@ -263,10 +269,13 @@ $h: 100%;
 							.wrapper-image {
 								height: $h;
 								.nav-image {
+									position: absolute;
+									top: 100px;
+									width: 73%;
 								}
 								.image {
 									width: $w;
-									max-width: 500px;
+									max-width: 300px;
 								}
 							}
 						}

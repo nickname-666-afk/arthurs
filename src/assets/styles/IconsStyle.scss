@@ -39,9 +39,14 @@ $w: 100%;
 						& > img {
 							width: 9vmax;
 							height: 8vmax;
-							max-width: 110px;
+							max-width: 120px;
 							max-height: 110px;
 							box-shadow: none !important;
+							transition: transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s,
+								-webkit-transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+							&:hover {
+								transform: scale(1.2);
+							}
 						}
 						& > .p {
 							font-size: 16px;

@@ -81,7 +81,7 @@ export default class Home extends React.Component {
 					<Promotion promotion={promotion} />
 				</div>
 				<div className="component">
-					<Handeling />
+					<Handeling handeling={this.props.handeling} />
 				</div>
 				<div className="component">
 					<MenuFirst />

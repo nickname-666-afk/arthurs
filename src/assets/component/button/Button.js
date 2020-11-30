@@ -16,13 +16,13 @@ export default class Button extends React.Component {
 
 	render() {
 		return (
-			<div className="button_block" onClick={this.clickHandler.bind(this)}>
+			<div className="button_block">
 				{this.state.show ? (
 					<div className="backdrop">
 						<div className="wrapper-backdrop">
 							<div className="wrapper-image">
 								<div className="nav-image">
-									<button className="btn-nav">
+									<button className="btn-nav" onClick={this.clickHandler.bind(this)}>
 										<div className="btn-line" /> <div className="btn-line" />
 									</button>
 								</div>
@@ -31,7 +31,9 @@ export default class Button extends React.Component {
 						</div>
 					</div>
 				) : null}
-				<button className="button trigger">Показать меню</button>
+				<button className="button" onClick={this.clickHandler.bind(this)}>
+					Показать меню
+				</button>
 			</div>
 		);
 	}

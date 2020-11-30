@@ -22,8 +22,8 @@ const maps = [
 	</div>,
 ];
 const text = [
-	<div key={13}>
-		<div className="text">
+	<div className="text" key={13}>
+		<div className="wrapper-text">
 			<div className="address">
 				<div className="title">Адрес:</div>
 				<div className="address_link">

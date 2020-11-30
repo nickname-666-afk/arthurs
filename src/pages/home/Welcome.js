@@ -58,7 +58,7 @@ export default class Welcome extends React.Component {
 						{image}
 					</div>
 					<div className="right">
-						{info}
+						<div className="wrapper-info">{info}</div>
 						{this.props.button}
 					</div>
 				</div>

@@ -1,14 +1,11 @@
-$w: 100%;
-$h: 100%;
-
+$max: 100%;
 @mixin reset-width {
 	float: none;
-	width: $w;
-	max-width: $w;
+	width: $max;
+	max-width: $max;
 }
-
 .Rooms {
-	width: $w;
+	width: $max;
 	& > .component {
 		text-align: center;
 		margin: 100px auto !important;
@@ -16,24 +13,23 @@ $h: 100%;
 		.content {
 			text-align: center;
 			flex-wrap: wrap;
-			& > .title {
+			.title {
 				font-size: 48px;
 				text-align: center;
-				margin: 15px auto;
 			}
 			.add-filter {
 				text-align: left;
 				font-size: 18px;
-				margin-bottom: 40px;
+				margin: 15px 0;
 			}
 			.filter {
-				width: $w;
+				width: $max;
 				max-width: 1240px;
 				text-align: left;
 				.wrapper-filter {
 					display: flex;
 					justify-content: space-between;
-					width: $w;
+					width: $max;
 					.custom-select {
 						margin: 0;
 						width: 50%;
@@ -59,10 +55,10 @@ $h: 100%;
 			.component-block {
 				display: flex;
 				justify-content: space-between;
-				width: $w;
+				width: $max;
 				max-width: 1240px;
 				padding: 25px 30px;
-				margin: 30px auto;
+				margin: 40px auto;
 				box-shadow: 0 0.1rem 0.5rem rgba(32, 34, 36, 0.1),
 					0 0.5rem 1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
 				.left {
@@ -70,15 +66,26 @@ $h: 100%;
 					width: 48%;
 					max-width: 48%;
 					.slider {
-						height: 450px !important;
-						max-height: 500px !important;
+						height: 400px;
+						ul {
+							li {
+								margin: 0 5px;
+							}
+						}
 						.slider-slide {
+							position: relative;
+							overflow: hidden;
 							& > img {
+								cursor: default;
 								display: flex;
 								align-items: center;
 								justify-content: center;
-								height: 450px;
-								max-height: 500px;
+								height: 400px;
+								max-height: 400px;
+								transition: transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+								&:hover {
+									transform: scale(1.2);
+								}
 							}
 						}
 						.each-slide {
@@ -89,9 +96,8 @@ $h: 100%;
 								}
 							}
 						}
-
 						.react-slideshow-container {
-							height: 450px !important;
+							height: 400px;
 						}
 						.slider-control-centerleft {
 							display: none;
@@ -107,6 +113,7 @@ $h: 100%;
 					max-width: 48%;
 					text-align: right;
 					.text {
+						display: inline-block;
 						text-align: left;
 						color: #848484;
 						& > .title {
@@ -123,16 +130,16 @@ $h: 100%;
 						}
 						& > .count {
 							float: left;
-							width: $w;
+							width: $max;
 							margin: 10px 0;
 						}
 						& > .square {
 							float: left;
-							width: $w;
+							width: $max;
 						}
 						& > .info {
 							float: left;
-							width: $w;
+							width: $max;
 							margin: 15px 0;
 							& > div {
 								max-width: 88%;
@@ -141,20 +148,21 @@ $h: 100%;
 						}
 						& > .comfort {
 							float: left;
-							width: $w;
+							width: $max;
 							margin: 10px 0;
 							& > p {
 								margin: 10px 0;
 							}
 							& > div {
-								max-width: 40%;
+								max-width: 50%;
 							}
 						}
 					}
 					.link {
-						display: inline-block;
+						display: block;
 						height: 40px;
 						text-align: right;
+						margin: 80px 0 0 0;
 						.button {
 							width: 15vmax;
 							margin: 0;
@@ -234,7 +242,6 @@ $h: 100%;
 		}
 	}
 }
-
 @media (max-width: 834px) and (orientation: portrait) {
 	.Rooms {
 		& > .component {
@@ -252,7 +259,7 @@ $h: 100%;
 				.component-block {
 					.right {
 						.text {
-							width: $w;
+							width: $max;
 							& > .title {
 								font-size: 16px;
 							}
@@ -273,14 +280,14 @@ $h: 100%;
 								margin: 0;
 								font-size: 12px;
 								& > div {
-									width: $w;
+									width: $max;
 									max-width: 80%;
 								}
 							}
 						}
 						.link {
+							margin: 20px 0 0 0;
 							.button {
-								margin: 20px 0;
 								width: 150px;
 								height: 35px;
 								font-size: 12px;
@@ -296,24 +303,24 @@ $h: 100%;
 	.Rooms {
 		& > .component {
 			.content {
-				width: $w;
+				width: $max;
 				& > .title {
 					font-size: 22px;
 					text-align: center;
 					margin: 20px auto;
 				}
 				.filter {
-					width: $w;
+					width: $max;
 					max-width: 1240px;
 					margin: 20px 0;
 					.add-filter {
 						font-size: 18px;
-						margin-bottom: 40px;
+						margin: 20px 0;
 					}
 					.wrapper-filter {
 						display: block;
 						.custom-select {
-							width: $w;
+							width: $max;
 							height: 40px;
 							.css-2b097c-container {
 								width: 33%;
@@ -327,7 +334,7 @@ $h: 100%;
 							width: 33%;
 							.button {
 								margin: 0 !important;
-								width: $w;
+								width: $max;
 								border-radius: 0;
 								font-size: 12px;
 							}
@@ -335,54 +342,61 @@ $h: 100%;
 					}
 				}
 				.component-block {
-					width: $w;
+					width: $max;
 					padding: 20px 10px;
-					margin: 20px 0;
+					margin: 30px 0;
 					border-radius: 8px;
 					.left {
-						@include reset-width;
+						max-width: 50%;
+						.slider {
+							height: 300px;
+							.slider-slide {
+								& > img {
+									height: 300px;
+								}
+							}
+						}
 					}
 					.right {
-						@include reset-width;
+						max-width: 48%;
 						text-align: right;
 						.text {
 							text-align: left;
 							& > .title {
-								font-size: 24px;
+								font-size: 20px;
 							}
 							& > .price {
-								float: none;
-								font-size: 24px;
+								// float: none;
+								font-size: 20px;
 							}
 							& > .count {
 								margin: 10px 0;
-								width: $w;
+								width: $max;
 								font-size: 14px;
 							}
 							& > .square {
-								float: left;
-								width: $w;
+								// float: none;
+								width: $max;
 								font-size: 14px;
 							}
 							& > .info {
-								float: none;
-								width: $w;
+								// float: none;
+								width: $max;
 								font-size: 14px;
 								& > div {
 									float: none;
 								}
 							}
 							& > .comfort {
-								float: none;
+								// float: none;
 								line-height: 150%;
 								font-size: 14px;
 								& > div {
-									width: 42%;
+									width: 80%;
 								}
 							}
 						}
 						.link {
-							height: auto;
 							.button {
 								float: right;
 								margin: 0;
@@ -401,12 +415,24 @@ $h: 100%;
 		& > .component {
 			.content {
 				& > .title {
-					margin: 0 auto 20px auto;
+					margin: 20px auto;
 				}
+				.add-filter {
+				}
+
 				.component-block {
-					display: block;
+					flex-direction: column;
+					.left {
+						width: $max;
+						max-width: $max;
+						float: none;
+					}
 					.right {
+						width: $max;
+						max-width: $max;
+						float: none;
 						text-align: center;
+						padding: 20px 0;
 						.text {
 							.title {
 								font-size: 18px;
@@ -419,11 +445,14 @@ $h: 100%;
 							}
 							.comfort {
 								& > div {
-									width: $w;
+									width: $max;
 								}
 							}
 						}
 						.link {
+							display: flex;
+							justify-content: center;
+							margin: 0;
 							.button {
 								margin: 30px 0 0 0;
 							}
@@ -436,9 +465,19 @@ $h: 100%;
 }
 @media (max-width: 320px) {
 	.Rooms {
-		.component {
+		& > .component {
 			.content {
 				.component-block {
+					.left {
+						.slider {
+							height: 230px;
+							.slider-slide {
+								& > img {
+									height: 230px;
+								}
+							}
+						}
+					}
 					.right {
 						.text {
 							.title {
@@ -450,13 +489,13 @@ $h: 100%;
 							.info {
 								float: none;
 								& > div {
-									max-width: $w;
+									max-width: $max;
 								}
 							}
 							.comfort {
 								& > div {
-									width: $w;
-									max-width: $w;
+									width: $max;
+									max-width: 95%;
 								}
 							}
 						}

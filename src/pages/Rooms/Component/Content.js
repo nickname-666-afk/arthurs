@@ -8,16 +8,14 @@ const service = {
 
 export default class Content extends React.Component {
 	render() {
-		const sliderImage = ["lux", "delux", "family", "standart"];
-		const images = sliderImage.map((image) => {
-			return (
-				<img key={image} src={require(`../../../assets/images/${image}.png`)} alt="Изображение" />
-			);
-		});
 		return (
 			<div className="component-block">
 				<div className="left">
-					<Carousel>{images}</Carousel>
+					<Carousel>
+						<img src={this.props.room.image[0]} alt="Изображение" />
+						<img src={this.props.room.image[1]} alt="Изображение" />
+						<img src={this.props.room.image[2]} alt="Изображение" />
+					</Carousel>
 				</div>
 				<div className="right">
 					<div className="text">

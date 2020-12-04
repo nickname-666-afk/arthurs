@@ -1,14 +1,11 @@
 import React from "react";
-import {Link} from "react-router-dom";
-
-import "../../assets/styles/NotFoundStyle.scss";
-
-const home = {
-	pathname: "/home",
-};
 
 export default class NotFound extends React.Component {
-	isHome = window.location.pathname.includes("/home");
+	isHome =
+		window.location.pathname.includes("/home") ||
+		window.location.pathname.includes("/rooms") ||
+		window.location.pathname.includes("/service") ||
+		window.location.pathname.includes("/reg");
 
 	hStyle = this.isHome ? {display: "none"} : {display: "flex"};
 
@@ -28,9 +25,9 @@ export default class NotFound extends React.Component {
 					</div>
 					<div className="mask"></div>
 				</div>
-				<Link className="link" to={home}>
+				<a className="link" href="/home">
 					Вернуться домой
-				</Link>
+				</a>
 			</div>
 		);
 	}

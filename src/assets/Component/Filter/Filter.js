@@ -28,7 +28,7 @@ localStorage.setItem("price", JSON.stringify(prices));
 localStorage.setItem("count", JSON.stringify(counts));
 localStorage.setItem("category", JSON.stringify(categories));
 // localStorage.getItem("price");
-console.log(localStorage.getItem("price"));
+// console.log(localStorage.getItem("price"));
 // let filter = localStorage.getItem("price");
 // filter = JSON.parse(filter);
 // console.log(typeof filter);

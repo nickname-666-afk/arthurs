@@ -4,7 +4,11 @@ import {RoomContext} from "../Rooms";
 import Content from "./Content";
 import Filter from "../../../assets/component/filter/Filter";
 
-// const images = [lux, delux, family, standart];
+import family from "../../../assets/images/family.png";
+import lux from "../../../assets/images/lux.png";
+import delux from "../../../assets/images/delux.png";
+import standart from "../../../assets/images/standart.png";
+
 const rooms = [
 	{
 		id: 1,
@@ -15,7 +19,7 @@ const rooms = [
 		info:
 			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
 		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
-		// images: [family, family, family],
+		image: [family, family, family],
 	},
 	{
 		id: 2,
@@ -25,7 +29,7 @@ const rooms = [
 		squad: 40,
 		info: "В номере 2 двуспальные кровати, шкаф, стулья, прикроватные тумбочки,стол, балкон",
 		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
-		// images: [lux, lux, lux],
+		image: [lux, lux, lux],
 	},
 	{
 		id: 3,
@@ -36,7 +40,7 @@ const rooms = [
 		info:
 			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
 		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
-		// images: [delux, delux, delux],
+		image: [delux, delux, delux],
 	},
 	{
 		id: 4,
@@ -47,7 +51,7 @@ const rooms = [
 		info:
 			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
 		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
-		// images: [standart, standart, standart],
+		image: [standart, standart, standart],
 	},
 ];
 
@@ -73,7 +77,7 @@ export default class Room extends React.Component {
 	updateCategories = (event) => {
 		this.setState({category: event.target.value});
 	};
-	filterOnSearch = (event) => {
+	filterOnSearch = () => {
 		console.log(this.props.price);
 	};
 
@@ -89,19 +93,20 @@ export default class Room extends React.Component {
 					updateCategories={this.updateCategories}
 					filterOnSearch={this.filterOnSearch}
 				/>
+				{/* {rooms.map((slider) => { */}
+				{/* <img src={require(`../../../assets/images/${slider}.png`)} /> */}
+				{/* <div style={{backgroundImage: `url(${slider})`, height: "200px"}} alt="Изображение" /> */}
+				{/* })} */}
 				{rooms.map((room) => {
-					if (room.price <= 3000 || room.count >= 5 || room.category === "Люкс") {
-						return (
-							<Content
-								updatePrices={this.updatePrices}
-								updateCounts={this.updateCounts}
-								updateCategories={this.updateCategories}
-								//images={images[0]}
-								key={room.id}
-								room={room}
-							/>
-						);
-					}
+					return (
+						<Content
+							updatePrices={this.updatePrices}
+							updateCounts={this.updateCounts}
+							updateCategories={this.updateCategories}
+							key={room.id}
+							room={room}
+						/>
+					);
 				})}
 			</div>
 		);

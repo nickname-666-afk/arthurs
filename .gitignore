@@ -33,3 +33,7 @@ public/favicon.ico
 public/logo192.png
 .yarnclean
 yarn.lock
+package-lock.json
+yarn.lock
+*.lock
+yarn.lock

@@ -51,25 +51,6 @@ export default class Header extends React.Component {
 				</div>
 			);
 		}
-		// &:active {
-		// 	transition: all 2s ease;
-		// 	.toggle-button__line:first-child {
-		// 		position: absolute;
-		// 		top: 12px;
-		// 		left: 2px;
-		// 		transform: rotate(45deg);
-		// 	}
-		// 	.toggle-button__line:nth-child(2) {
-		// 		display: none;
-		// 	}
-		// 	.toggle-button__line:nth-child(3) {
-		// 		position: absolute;
-		// 		top: 12px;
-		// 		left: 2px;
-		// 		transform: rotate(-45deg);
-		// 	}
-		// }
-
 		return (
 			<header className="header" style={this.hStyle}>
 				{this.state.sideDrawerOpen ? this.sideDrawer : null}

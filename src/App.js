@@ -8,11 +8,12 @@ import Home from "./pages/home/Home";
 import Rooms from "./pages/rooms/Rooms";
 import Service from "./pages/service/Service";
 import Reg from "./pages/reg/Reg";
-import NotFound from "./pages/notFound/NotFound";
+import NotFound from "./pages/NotFound";
 
 import "./assets/styles/AppStyle.scss";
 import "./assets/styles/HeaderStyle.scss";
 import "./assets/styles/FooterStyle.scss";
+import "./assets/styles/NotFoundStyle.scss";
 
 import instagram from "./assets/images/icons/instagram.png";
 import vk from "./assets/images/icons/vk.png";
@@ -85,22 +86,9 @@ const sidebar = [
 		</li>
 	</ul>,
 ];
+const handeling = [{fisrtPrice: 300, secondPrice: 350, thirdPrice: 200, fourthPrice: 400}];
 
 export default class App extends React.Component {
-	// componentDidMount() {
-	// 	fetch(URL)
-	// 		.then((response) => response.json())
-	// 		.then((json) =>
-	// 			this.setState({
-	// 				articles: json.results,
-	// 				readNow: ls.get("readNow") || [],
-	// 				readLater: ls.get("readLater") || [],
-	// 				likedSections: ls.get("likedSections") || [],
-	// 			}),
-	// 		);
-	// 	this.startInterval();
-	// }
-
 	render() {
 		const {room} = this.props;
 		const pages = (content) => {
@@ -121,10 +109,14 @@ export default class App extends React.Component {
 							<Route
 								exact
 								path="/home"
-								render={() => pages(<Home phone={phone} icons={icons} address={address} />)}
+								render={() =>
+									pages(
+										<Home phone={phone} icons={icons} address={address} handeling={handeling} />,
+									)
+								}
 							/>
 							<Route path="/rooms" render={() => pages(<Rooms />)} />
-							<Route path="/service" render={() => pages(<Service />)} />
+							<Route path="/service" render={() => pages(<Service handeling={handeling} />)} />
 							<Route path="/reg" render={() => pages(<Reg />)} />
 							<Route to="*" component={NotFound} />
 						</ContentContext.Provider>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import img from "../../images/menu.svg";
+import image from "../../assets/images/menu.svg";
 
 export default class Button extends React.Component {
 	constructor(props) {
@@ -26,7 +26,7 @@ export default class Button extends React.Component {
 										<div className="btn-line" /> <div className="btn-line" />
 									</button>
 								</div>
-								<img className="image" src={img} alt="Меню" />
+								<img className="image" src={image} alt="Меню" />
 							</div>
 						</div>
 					</div>

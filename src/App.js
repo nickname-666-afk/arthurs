@@ -1,19 +1,17 @@
 import React from "react";
+
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 // import ls from "local-storage";
 
-import Header from "./assets/component/header/Header";
-import Footer from "./assets/component/footer/Footer";
+import Header from "./elem/header/Header";
+import Footer from "./elem/footer/Footer";
 import Home from "./pages/home/Home";
 import Rooms from "./pages/rooms/Rooms";
-import Service from "./pages/service/Service";
+import Services from "./pages/services/Service";
 import Reg from "./pages/reg/Reg";
 import NotFound from "./pages/NotFound";
 
-import "./assets/styles/AppStyle.scss";
-import "./assets/styles/HeaderStyle.scss";
-import "./assets/styles/FooterStyle.scss";
-import "./assets/styles/NotFoundStyle.scss";
+import "./styles/AppStyle.scss";
 
 import instagram from "./assets/images/icons/instagram.png";
 import vk from "./assets/images/icons/vk.png";
@@ -86,7 +84,8 @@ const sidebar = [
 		</li>
 	</ul>,
 ];
-const handeling = [{fisrtPrice: 300, secondPrice: 350, thirdPrice: 200, fourthPrice: 400}];
+// const cart = 0;
+const services = [{accessory: 250, breakfast: 350, transfer: 200, bunk: 400}];
 
 export default class App extends React.Component {
 	render() {
@@ -110,13 +109,11 @@ export default class App extends React.Component {
 								exact
 								path="/home"
 								render={() =>
-									pages(
-										<Home phone={phone} icons={icons} address={address} handeling={handeling} />,
-									)
+									pages(<Home phone={phone} icons={icons} address={address} services={services} />)
 								}
 							/>
 							<Route path="/rooms" render={() => pages(<Rooms />)} />
-							<Route path="/service" render={() => pages(<Service handeling={handeling} />)} />
+							<Route path="/service" render={() => pages(<Services services={services} />)} />
 							<Route path="/reg" render={() => pages(<Reg />)} />
 							<Route to="*" component={NotFound} />
 						</ContentContext.Provider>

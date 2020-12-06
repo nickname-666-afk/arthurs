@@ -1,7 +1,7 @@
 import React from "react";
 
 import Room from "./Component/Room";
-import "../../assets/styles/RoomsStyle.scss";
+
 
 export const RoomContext = React.createContext();
 

@@ -54,6 +54,7 @@ $max: 100%;
 			}
 			.component-block {
 				display: flex;
+				align-items: center;
 				justify-content: space-between;
 				width: $max;
 				max-width: 1240px;
@@ -66,7 +67,7 @@ $max: 100%;
 					width: 48%;
 					max-width: 48%;
 					.slider {
-						height: 400px;
+						height: 450px;
 						ul {
 							li {
 								margin: 0 5px;
@@ -80,8 +81,7 @@ $max: 100%;
 								display: flex;
 								align-items: center;
 								justify-content: center;
-								height: 400px;
-								max-height: 400px;
+								height: 450px;
 								transition: transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
 								&:hover {
 									transform: scale(1.2);
@@ -164,7 +164,7 @@ $max: 100%;
 						text-align: right;
 						margin: 80px 0 0 0;
 						.button {
-							width: 15vmax;
+							width: 45%;
 							margin: 0;
 						}
 					}
@@ -201,6 +201,16 @@ $max: 100%;
 					}
 				}
 				.component-block {
+					.left {
+						.slider {
+							height: 400px;
+							.slider-slide {
+								& > img {
+									height: 400px;
+								}
+							}
+						}
+					}
 					.right {
 						.link {
 							.button {
@@ -221,6 +231,16 @@ $max: 100%;
 		& > .component {
 			.content {
 				.component-block {
+					.left {
+						.slider {
+							height: 350px;
+							.slider-slide {
+								& > img {
+									height: 350px;
+								}
+							}
+						}
+					}
 					.right {
 						.text {
 							& > .comfort {
@@ -230,8 +250,8 @@ $max: 100%;
 							}
 						}
 						.link {
+							margin: 0;
 							.button {
-								width: 150px;
 								height: 40px;
 								font-size: 14px;
 							}

@@ -1,26 +1,17 @@
 import React from "react";
+
 import {Link} from "react-router-dom";
 
 import Start from "./Start";
-import Filter from "../../assets/component/filter/Filter";
+import Filter from "../../elem/filter/Filter";
 import Welcome from "./Welcome";
 import Icons from "./Icons";
 import Numbers from "./numbers/Numbers";
 import Promotion from "./Promotion";
-import Handeling from "../../assets/component/handeling/Handeling";
+import Service from "../../elem/service/Service";
 import MenuFirst from "./MenuFirst";
 import MenuSecond from "./MenuSecond";
 import Maps from "./Maps";
-
-import "../../assets/styles/HandelingStyle.scss";
-import "../../assets/styles/IconsStyle.scss";
-import "../../assets/styles/MapsStyle.scss";
-import "../../assets/styles/MenuFirstStyle.scss";
-import "../../assets/styles/MenuSecondStyle.scss";
-import "../../assets/styles/NumberStyle.scss";
-import "../../assets/styles/PromotionStyle.scss";
-import "../../assets/styles/StartStyle.scss";
-import "../../assets/styles/WelcomeStyle.scss";
 
 const routeRooms = {
 	pathname: "/rooms",
@@ -81,7 +72,7 @@ export default class Home extends React.Component {
 					<Promotion promotion={promotion} />
 				</div>
 				<div className="component">
-					<Handeling handeling={this.props.handeling} />
+					<Service services={this.props.services} />
 				</div>
 				<div className="component">
 					<MenuFirst />

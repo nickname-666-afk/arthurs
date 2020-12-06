@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import Handeling from "../../assets/component/handeling/Handeling";
-import "../../assets/styles/ServiceStyle.scss";
+import Service from "../../elem/service/Service";
+
 
 const reg = {
 	pathname: "/reg",
@@ -12,7 +12,7 @@ const reg = {
 // 	count++;
 // 	localStorage.setItem("filter", count);
 // };
-export default class Service extends React.Component {
+export default class Services extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -33,11 +33,11 @@ export default class Service extends React.Component {
 	render() {
 		return (
 			// <ContentContext.Consumer>
-			<div className="Service">
+			<div className="Services">
 				<div className="title">Дополнительные услуги</div>
 				<div className="service">
 					<div className="contentShow"></div>
-					<Handeling handlePrice={this.handlePrice} />
+					<Service service={this.props.services} />
 					<div className="cart">
 						<div className="title">Сумма заказа: {this.state.count}</div>
 						<div className="content"></div>

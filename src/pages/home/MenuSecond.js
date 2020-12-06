@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from ".././../assets/component/button/Button";
+import Button from "../../elem/button/Button";
 import image from "../../assets/images/7.png";
 
 const text = [

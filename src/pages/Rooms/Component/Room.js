@@ -2,7 +2,7 @@ import React from "react";
 
 import {RoomContext} from "../Rooms";
 import Content from "./Content";
-import Filter from "../../../assets/component/filter/Filter";
+import Filter from "../../../elem/filter/Filter";
 
 import family from "../../../assets/images/family.png";
 import lux from "../../../assets/images/lux.png";

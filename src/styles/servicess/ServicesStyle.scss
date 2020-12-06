@@ -1,8 +1,6 @@
-$w: 100%;
-
+$max: 100%;
 @mixin size {
-	width: calc(100% - 52%);
-	max-width: calc(100% - 52%);
+	width: 48%;
 }
 @mixin style {
 	border-radius: 8px;
@@ -10,17 +8,16 @@ $w: 100%;
 }
 @mixin reset-size {
 	float: none;
-	width: $w;
-	max-width: $w;
+	width: $max;
+	max-width: $max;
 }
 @mixin width-front {
 	width: 50%;
 	font-size: 24px;
 }
-
 .Services {
 	padding: 100px 10px 0 10px;
-	width: $w;
+	width: $max;
 	margin: auto;
 	text-align: center;
 	.title {
@@ -28,197 +25,255 @@ $w: 100%;
 		text-align: center;
 	}
 	.service {
-		width: $w;
+		width: $max;
 		max-width: 1240px;
 		margin: 100px auto;
 		.contentShow {
 			@include style;
 			margin: 0 auto;
 		}
-		.Service {
-			float: left;
-			@include size;
-			margin: 0;
-			.content-main {
-				@include reset-size;
-				& > .title {
-					display: none;
-				}
-				.wrapper-serv {
-					display: flex;
-					justify-content: space-between;
-					.content-column {
-						@include reset-size;
-						display: block;
-						.content {
-							width: $w;
-							display: flex;
-							justify-content: space-between;
-							transform: none;
-							margin-top: 0;
-							&:hover {
-								box-shadow: 0 0.1rem 0.5rem #2022241a, 0 0.5rem 1rem -0.75rem #2022241a !important;
-							}
-							.text {
-								display: flex;
-								flex-direction: column;
-								justify-content: space-between;
-								align-items: flex-end;
-								width: 55%;
-								text-align: right;
-								& > .title {
-									width: $w;
-									font-size: 21px;
-									text-align: left;
-								}
-								& > .info {
-									text-align: left;
-								}
-								& > .price {
-									width: $w;
-									text-align: left;
-								}
-								.button {
-									width: 140px;
-									height: 40px;
-									margin: 20px 0 0 0;
-									color: #ff7b51;
-									background: #fff;
-									box-shadow: none;
-									outline: 1px solid #ff7b51;
-									transform: none;
-									&:hover {
-										box-shadow: none !important;
-									}
-								}
-							}
-						}
-						.addBed {
-							display: none;
-						}
-					}
-				}
-			}
-		}
-		.cart {
-			float: right;
-			padding: 25px 30px;
-			text-align: right;
-			@include size;
-			@include style;
-			& > .title {
-				text-align: left;
-			}
-			& > .content {
-				margin: 10px 0;
-			}
-			& > .link {
-				& > .button {
-					background: #408cff;
-					&:hover {
-						color: #408cff;
-						background: #fff;
-						outline: 1px solid #408cff;
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 768px) {
-	.Service {
-		.title {
-			font-size: 22px;
-		}
-		.service {
-			width: $w;
-			max-width: 1240px;
-			.contentShow {
-				@include reset-size;
-				margin: 50px auto;
-			}
-			.Services {
-				float: none;
-				@include reset-size;
-				box-shadow: none;
-				.content-main {
+		.wrapper-serv__cart {
+			display: flex;
+			justify-content: space-between;
+			.wrapper-serv {
+				max-width: 45%;
+				display: block;
+				justify-content: space-between;
+				.content-column {
 					@include reset-size;
-					& > .title {
-						display: none;
-					}
-					.wrapper-serv {
-						.content-column {
-							@include reset-size;
-							display: block;
-							.content {
-								width: $w;
-								padding: 15px 10px;
-								margin: 0 auto;
+					display: block;
+					.content {
+						width: $max;
+						display: flex;
+						justify-content: space-between;
+						transform: none;
+						padding: 10px;
+						box-shadow: 0 0.1rem 0.5rem #2022241a, 0 0.5rem 1rem -0.75rem #2022241a;
+						&:hover {
+							box-shadow: 0 0.1rem 0.5rem #2022241a, 0 0.5rem 1rem -0.75rem #2022241a !important;
+						}
+						.image {
+							width: 40%;
+							& > img {
+								width: $max;
+								max-width: 550px;
+							}
+						}
+						.text {
+							width: 55%;
+							text-align: right;
+							& > .title {
+								font-size: 24px;
+								text-align: left;
+							}
+							& > .info {
+								text-align: left;
+								margin: 20px 0;
+								color: #848484;
+							}
+							& > .price {
+								text-align: left;
+								color: #848484;
+							}
+							.button {
+								width: 140px;
+								height: 40px;
+								margin: 20px 0 0 0;
+								color: #ff7b51;
+								background: #fff;
 								box-shadow: none;
-								.text {
-									width: 55%;
-									max-width: $w;
-									text-align: left;
-									& > .title {
-										text-align: left;
-									}
-									& > .p {
-										width: $w;
-									}
-									& > .button {
-										font-size: 14px;
-										width: 100px;
-										height: 35px;
-									}
+								outline: 1px solid #ff7b51;
+								transform: none;
+								&:hover {
+									box-shadow: none !important;
 								}
 							}
 						}
+					}
+					.content:nth-child(2) {
+						margin: 40px auto;
+					}
+					.addBed {
+						display: none;
 					}
 				}
 			}
 			.cart {
-				float: none;
-				text-align: center;
-				@include reset-size;
-				box-shadow: none;
+				padding: 25px 30px;
+				text-align: right;
+				@include size;
+				@include style;
 				& > .title {
 					text-align: left;
+					display: flex;
+					.p:last-child {
+						color: #848484;
+						margin-left: 10px;
+					}
 				}
 				& > .content {
 					margin: 10px 0;
+				}
+				& > .link {
+					& > .button {
+						background: #408cff;
+						&:hover {
+							color: #408cff;
+							background: #fff;
+							outline: 1px solid #408cff;
+						}
+					}
 				}
 			}
 		}
 	}
 }
-@media (max-width: 320px) {
-	.Service {
+@media (max-width: 1112px) {
+	.Services {
+		.service {
+			.wrapper-serv__cart {
+				.wrapper-serv {
+					.content-column {
+						.content {
+							.text {
+								& > .title {
+									font-size: 20px;
+								}
+								& > .button {
+									font-size: 12px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 834px) {
+	.Services {
+		.service {
+			.wrapper-serv__cart {
+				.wrapper-serv {
+					.content-column {
+						.content {
+							.text {
+								& > .title {
+									font-size: 16px;
+								}
+								& > .info {
+									font-size: 12px;
+								}
+								& > .price {
+									font-size: 12px;
+								}
+								& > .button {
+									font-size: 12px;
+									width: 120px;
+									height: 35px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.Services {
+		.title {
+			font-size: 22px;
+		}
+		.service {
+			.contentShow {
+				@include reset-size;
+				margin: 50px auto;
+			}
+			.wrapper-serv__cart {
+				display: block;
+				.wrapper-serv {
+					max-width: $max;
+					& > .title {
+						display: none;
+					}
+					.content-column {
+						display: block;
+						.content {
+							width: 60%;
+							padding: 15px 10px;
+							margin: 0 auto;
+							border-radius: 8px;
+							.text {
+								width: 55%;
+								max-width: $max;
+								& > .title {
+									text-align: left;
+								}
+								& > .p {
+									width: $max;
+								}
+								& > .button {
+									font-size: 14px;
+									width: 100px;
+									height: 35px;
+								}
+							}
+						}
+					}
+				}
+				.cart {
+					width: 60%;
+					text-align: center;
+					margin: 50px auto;
+					& > .title {
+						text-align: left;
+					}
+					& > .content {
+						margin: 10px 0;
+					}
+					.link {
+						.button {
+							margin: 30px 0 0 0;
+							width: 160px;
+							height: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 414px) {
+	.Services {
 		.service {
 			margin: 0;
 			.contentShow {
 				margin: 0;
 			}
-			.Services {
-				.content-main {
+			.wrapper-serv__cart {
+				.wrapper-serv {
 					.content-column {
 						.content {
+							width: $max;
 							display: block;
-							& > .image {
-								float: none;
+							.image {
+								width: $max;
 								& > img {
-									width: $w;
+									width: $max;
 									max-height: 250px;
 								}
 							}
 							& > .text {
-								float: none;
 								padding: 0;
-								width: $w;
+								width: $max;
 								align-items: center;
 							}
 						}
 					}
+				}
+				.cart {
+					width: $max;
 				}
 			}
 		}

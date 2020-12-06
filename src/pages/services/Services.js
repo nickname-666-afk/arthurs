@@ -1,10 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import Service from "../../elem/service/Service";
+import ElemServ from "../../elem/elemServ/ElemService";
 
-
-const reg = {
+const routeReg = {
 	pathname: "/reg",
 };
 
@@ -37,13 +36,20 @@ export default class Services extends React.Component {
 				<div className="title">Дополнительные услуги</div>
 				<div className="service">
 					<div className="contentShow"></div>
-					<Service service={this.props.services} />
-					<div className="cart">
-						<div className="title">Сумма заказа: {this.state.count}</div>
-						<div className="content"></div>
-						<Link className="link" to={reg}>
-							<button className="button ls">Заказать</button>
-						</Link>
+					<div className="wrapper-serv__cart">
+						{this.props.services.map((service) => {
+							return <ElemServ key={service} service={service} />;
+						})}
+						<div className="cart">
+							<div className="title">
+								<div className="p">Сумма заказа:</div>
+								<div className="p">{this.state.count}</div>
+							</div>
+							<div className="content"></div>
+							<Link className="link" to={routeReg}>
+								<button className="button ls">Заказать</button>
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>

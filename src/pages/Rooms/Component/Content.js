@@ -2,8 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Carousel from "nuka-carousel";
 
-const service = {
-	pathname: "/service",
+const routeServ = {
+	pathname: "/services",
 };
 
 export default class Content extends React.Component {
@@ -33,7 +33,7 @@ export default class Content extends React.Component {
 							<div>{this.props.room.comfort}</div>
 						</div>
 					</div>
-					<Link className="link" to={service}>
+					<Link className="link" to={routeServ}>
 						<button
 							className="button"
 							onClick={() => {

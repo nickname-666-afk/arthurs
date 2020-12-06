@@ -20,7 +20,7 @@ const categories = [
 	{id: 3, label: "Семейный", value: "Семейный"},
 	{id: 4, label: "Стандарт", value: "Стандарт"},
 ];
-const rooms = {
+const routeRooms = {
 	pathname: "/rooms",
 };
 
@@ -118,7 +118,7 @@ export default class Filter extends React.Component {
 							placeholder="Категория"
 						/>
 					</div>
-					<Link className="link" style={this.sStyle} to={rooms}>
+					<Link className="link" style={this.sStyle} to={routeRooms}>
 						<button className="button" type="button" style={this.sStyle}>
 							Забронировать
 						</button>

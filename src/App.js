@@ -7,7 +7,7 @@ import Header from "./elem/header/Header";
 import Footer from "./elem/footer/Footer";
 import Home from "./pages/home/Home";
 import Rooms from "./pages/rooms/Rooms";
-import Services from "./pages/services/Service";
+import Services from "./pages/services/Services";
 import Reg from "./pages/reg/Reg";
 import NotFound from "./pages/NotFound";
 
@@ -23,7 +23,7 @@ const routeRooms = {
 	pathname: "/rooms",
 };
 const roteService = {
-	pathname: "/service",
+	pathname: "/services",
 };
 const routeContact = {
 	pathname: "/contact",
@@ -113,7 +113,7 @@ export default class App extends React.Component {
 								}
 							/>
 							<Route path="/rooms" render={() => pages(<Rooms />)} />
-							<Route path="/service" render={() => pages(<Services services={services} />)} />
+							<Route path="/services" render={() => pages(<Services services={services} />)} />
 							<Route path="/reg" render={() => pages(<Reg />)} />
 							<Route to="*" component={NotFound} />
 						</ContentContext.Provider>

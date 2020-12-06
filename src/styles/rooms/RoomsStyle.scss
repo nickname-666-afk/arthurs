@@ -262,7 +262,7 @@ $max: 100%;
 		}
 	}
 }
-@media (max-width: 834px) and (orientation: portrait) {
+@media (max-width: 834px) {
 	.Rooms {
 		& > .component {
 			.content {
@@ -277,6 +277,16 @@ $max: 100%;
 					}
 				}
 				.component-block {
+					.left {
+						.slider {
+							height: 300px;
+							.slider-slide {
+								& > img {
+									height: 300px;
+								}
+							}
+						}
+					}
 					.right {
 						.text {
 							width: $max;

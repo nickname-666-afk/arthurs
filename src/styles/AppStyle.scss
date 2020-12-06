@@ -46,7 +46,6 @@ a {
 	border: none;
 	box-sizing: border-box;
 }
-
 body,
 html {
 	@include width-height;
@@ -153,8 +152,8 @@ html {
 		.button {
 			@include style;
 			margin: 30px auto;
-			width: 220px;
-			height: 45px;
+			width: 200px;
+			height: 40px;
 			color: #fff;
 			font-size: 18px;
 			border: none;
@@ -179,17 +178,29 @@ html {
 		}
 	}
 }
+@media (max-width: 375px) {
+	.App {
+		.link {
+			.button {
+				width: 170px;
+			}
+		}
+		.button {
+			width: 170px;
+		}
+	}
+}
 @media (max-width: 320px) {
 	.App {
 		.link {
 			.button {
-				width: 180px;
-				height: 40px;
+				width: 160px;
+				height: 35px;
 			}
 		}
 		.button {
-			width: 180px;
-			height: 40px;
+			width: 160px;
+			height: 35px;
 		}
 	}
 }

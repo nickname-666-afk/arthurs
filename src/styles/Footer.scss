@@ -1,0 +1,123 @@
+$max: 100%;
+@mixin right {
+	text-align: right;
+	float: right;
+	width: 55%;
+}
+.Footer {
+	width: $max;
+	background-color: #ff7b51;
+	.content {
+		max-width: 1240px;
+		text-align: center;
+		padding: 50px 0;
+		box-sizing: border-box;
+		margin: 0 auto;
+		color: #fff;
+		& > ul {
+			display: flex;
+			justify-content: center;
+			& > li {
+				list-style: none;
+				width: 30%;
+				& > .link {
+					color: #fff;
+					font-size: 24px;
+					text-decoration: none;
+				}
+			}
+		}
+		.address {
+			display: block;
+			margin: 7% auto;
+			font-size: 24px;
+			line-height: 150%;
+			color: #fff;
+		}
+		.tel {
+			font-size: 24px;
+			font-weight: 500;
+			margin: 20px auto;
+			.mobile_phone {
+				display: block;
+				color: #fff;
+				margin-top: 10px;
+			}
+		}
+		.icon {
+			display: inline-flex;
+			.link {
+				&:nth-child(2) {
+					margin: 0 15px;
+				}
+				& > img {
+					width: 50px;
+					&:hover {
+						box-shadow: none !important;
+						transform: none;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.Footer {
+		padding: 20px;
+		display: flex;
+		.content {
+			display: block;
+			width: $max;
+			text-align: left;
+			padding: 0;
+			& > ul {
+				width: 45%;
+				float: left;
+				height: auto;
+				display: block;
+				& > li {
+					margin: 0;
+					width: auto;
+					line-height: 200%;
+					.link {
+						font-size: 16px;
+						margin: 0;
+					}
+				}
+			}
+			.address {
+				@include right;
+				margin: 0;
+				font-size: 12px;
+				line-height: 150%;
+			}
+			.tel {
+				@include right;
+				font-size: 16px;
+				font-weight: 800;
+				margin: 10px 0 20px 0;
+			}
+			.icon {
+				float: right;
+				:last-child {
+					float: right;
+				}
+				.link {
+					width: 50px;
+					& > img {
+						width: 30px;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 320px) {
+	.Footer {
+		.content {
+			& > .tel {
+				font-size: 12px;
+			}
+		}
+	}
+}

@@ -5,7 +5,9 @@ import Content from "./Content";
 import Filter from "../../../elem/filter/Filter";
 
 import family from "../../../assets/images/family.png";
-import lux from "../../../assets/images/lux.png";
+import luxFirst from "../../../assets/images/lux/first.jpg";
+import luxSecond from "../../../assets/images/lux/second.jpg";
+import luxThird from "../../../assets/images/lux/third.jpg";
 import delux from "../../../assets/images/delux.png";
 import standart from "../../../assets/images/standart.png";
 
@@ -29,7 +31,7 @@ const rooms = [
 		squad: 40,
 		info: "В номере 2 двуспальные кровати, шкаф, стулья, прикроватные тумбочки,стол, балкон",
 		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
-		image: [lux, lux, lux],
+		image: [luxFirst, luxSecond, luxThird],
 	},
 	{
 		id: 3,
@@ -103,7 +105,7 @@ export default class Room extends React.Component {
 							updatePrices={this.updatePrices}
 							updateCounts={this.updateCounts}
 							updateCategories={this.updateCategories}
-							key={room.id}
+							key={`${room}`}
 							room={room}
 						/>
 					);

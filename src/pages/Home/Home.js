@@ -1,16 +1,13 @@
 import React from "react";
-
 import {Link} from "react-router-dom";
-
 import Start from "./Start";
 import Filter from "../../elem/filter/Filter";
 import Welcome from "./Welcome";
 import Icons from "./Icons";
 import Numbers from "./numbers/Numbers";
-import Promotion from "./Promotion";
 import Service from "../../elem/service/Service";
-import MenuFirst from "./MenuFirst";
-import MenuSecond from "./MenuSecond";
+import Canteen from "./Canteen";
+import Barbecue from "./Barbecue";
 import Maps from "./Maps";
 
 const routeRooms = {
@@ -38,20 +35,6 @@ const text = [
 		</div>
 	</div>,
 ];
-const promotion = [
-	<div className="content text" key={6}>
-		<div className="title">
-			Акция! <br />
-			Ночь в подарок
-		</div>
-		<div className="p">Забронируйте номер на 5 ночей и получите шестую ночь в подарок</div>
-		<Link className="link" to={routeRooms}>
-			<button type="button" className="button">
-				Забронировать прямо сейчас
-			</button>
-		</Link>
-	</div>,
-];
 
 export default class Home extends React.Component {
 	render() {
@@ -68,19 +51,16 @@ export default class Home extends React.Component {
 				<div className="component">
 					<Numbers />
 				</div>
-				<div className="m">
-					<Promotion promotion={promotion} />
-				</div>
 				<div className="component">
 					<Service services={this.props.services} />
 				</div>
 				<div className="component">
-					<MenuFirst />
+					<Canteen />
 				</div>
 				<div className="component">
-					<MenuSecond />
+					<Barbecue />
 				</div>
-				<Maps icons={this.props.icons} address={this.props.address} />
+				<Maps icons={this.props.icons} />
 			</div>
 		);
 	}

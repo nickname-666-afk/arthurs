@@ -1,6 +1,6 @@
 import React from "react";
 
-import img from "../../assets/images/1.png";
+import main from "../../assets/images/main.jpg";
 
 const text = [
 	<div className="text" key={7}>
@@ -21,18 +21,18 @@ const text = [
 ];
 const image = [
 	<div className="image" key={8}>
-		<img src={img} alt="Изображение" />
+		<img src={main} alt="Изображение" />
 	</div>,
 ];
 const info = [
 	<div className="info" key={9}>
 		<div className="span">
-			<div className="p">1</div>
-			минута <br />
+			<div className="p">60</div>
+			метров <br />
 			до моря
 		</div>
 		<div className="span">
-			<div className="p">22</div>
+			<div className="p">33</div>
 			номера
 		</div>
 		<div className="span">

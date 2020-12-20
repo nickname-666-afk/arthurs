@@ -1,8 +1,5 @@
 import React from "react";
-
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
-// import ls from "local-storage";
-
 import Header from "./elem/header/Header";
 import Footer from "./elem/footer/Footer";
 import Home from "./pages/home/Home";
@@ -10,9 +7,7 @@ import Rooms from "./pages/rooms/Rooms";
 import Services from "./pages/services/Services";
 import Reg from "./pages/reg/Reg";
 import NotFound from "./pages/NotFound";
-
 import "./styles/AppStyle.scss";
-
 import instagram from "./assets/images/icons/instagram.png";
 import vk from "./assets/images/icons/vk.png";
 import whatsapp from "./assets/images/icons/whatsapp.png";
@@ -49,16 +44,19 @@ const icons = [
 ];
 const phone = [
 	<div className="tel" key={1}>
-		<a className="link" href="tel: +7 (958) 756-80-39">
-			+7 (958) 756-80-39
+		<a className="mobile_phone" href="tel: +7 (978) 030-71-52">
+			+7 (978) 030-71-52
+		</a>
+		<a className="mobile_phone" href="tel: +7 (928) 362-63-33">
+			+7 (928) 362-63-33
 		</a>
 	</div>,
 ];
 const address = [
-	<div className="p" key={2}>
+	<a className="address" href="https://yandex.fr/maps/-/CCUAbGQQdC" target="_black" key={2}>
 		Республика Крым,
 		<br /> Береговое, ул. Приморская, 1В
-	</div>,
+	</a>,
 ];
 const sidebar = [
 	<ul key={3}>
@@ -84,7 +82,6 @@ const sidebar = [
 		</li>
 	</ul>,
 ];
-// const cart = 0;
 const services = [{accessory: 250, breakfast: 350, transfer: 200, bunk: 400}];
 
 export default class App extends React.Component {
@@ -92,11 +89,11 @@ export default class App extends React.Component {
 		const {room} = this.props;
 		const pages = (content) => {
 			return (
-				<React.Fragment>
+				<>
 					<Header sidebar={sidebar} />
 					{content}
 					<Footer sidebar={sidebar} phone={phone} icons={icons} address={address} />
-				</React.Fragment>
+				</>
 			);
 		};
 
@@ -108,9 +105,7 @@ export default class App extends React.Component {
 							<Route
 								exact
 								path="/home"
-								render={() =>
-									pages(<Home phone={phone} icons={icons} address={address} services={services} />)
-								}
+								render={() => pages(<Home phone={phone} icons={icons} services={services} />)}
 							/>
 							<Route path="/rooms" render={() => pages(<Rooms />)} />
 							<Route path="/services" render={() => pages(<Services services={services} />)} />

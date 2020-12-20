@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import Content from "./Content";
-import lux from "../../../../assets/images/lux.png";
+import lux from "../../../../assets/images/lux/first.jpg";
 import delux from "../../../../assets/images/delux.png";
 import family from "../../../../assets/images/family.png";
 

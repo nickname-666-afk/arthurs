@@ -1,11 +1,9 @@
-$max: 100%;
-$middle: 50%;
-
+@import "~bootstrap/scss/bootstrap";
 @import "./Header.scss";
 @import "./Footer.scss";
+@import "./Filter.scss";
 
 @import "./home/Start.scss";
-@import "./Filter.scss";
 @import "./home/Welcome.scss";
 @import "./home/Icons.scss";
 @import "./home/Number.scss";
@@ -17,13 +15,10 @@ $middle: 50%;
 @import "./rooms/Rooms.scss";
 @import "./reg/Reg.scss";
 @import "./servicess/Services.scss";
-
 @import "./NotFound.scss";
 
-@mixin style {
-	background-color: #ff7b51;
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);
-}
+$max: 100%;
+$middle: 50%;
 *:focus {
 	outline: none;
 }
@@ -39,6 +34,9 @@ a {
 	text-decoration: none;
 	border: none;
 	box-sizing: border-box;
+	&:hover {
+		text-decoration: none;
+	}
 }
 body,
 html {
@@ -49,40 +47,92 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-.App {
-	cursor: default;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	background: #fff;
-	.link {
-		.icon {
-			display: flex;
-			margin: 10px auto;
-			& > img {
-				display: block;
-				width: 45px;
-				height: 45px;
-				border-radius: 12px;
-				transition: all 1s ease;
-				&:nth-child(2) {
-					margin: auto 20px;
+.modal-open {
+	.modal-backdrop {
+		opacity: 0.9;
+	}
+	.modal {
+		.modal-dialog {
+			height: 60vh;
+			.modal-content {
+				top: 15%;
+				.modal-header {
+					.modal-title {
+						width: $max;
+						text-align: center;
+					}
+				}
+				.modal-body {
+					text-align: center;
+					& > img {
+						width: $max;
+					}
 				}
 			}
 		}
 	}
-	.button {
-		@include style;
-		margin-top: 50px;
-		width: 250px;
-		height: 40px;
-		border: none;
+}
+.link {
+	.icon {
+		display: flex;
+		margin: 10px auto;
+		& > img {
+			display: block;
+			width: 45px;
+			height: 45px;
+			border-radius: 12px;
+			transition: all 1s ease;
+			&:nth-child(2) {
+				margin: auto 20px;
+			}
+		}
+	}
+}
+.button {
+	background-color: #ff7b51;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);
+	margin-top: 50px;
+	width: 250px;
+	height: 40px;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.35s ease-in-out;
+	&:hover {
+		background-color: #fff;
+		color: #ff7b51;
+		outline: 1px solid #ff7b51;
+		box-shadow: 0 0.1rem 2.5rem rgba(32, 34, 36, 0.1),
+			0 0.5rem 0.1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
+		transform: translate3d(0, -3px, 0);
+	}
+}
+.component {
+	display: flex;
+	width: $max;
+	max-width: 1240px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+.NotFound {
+	background: #f3eeea;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100vh;
+	font-size: 24px;
+	.link {
+		background-color: #ff7b51;
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);
 		color: #fff;
-		font-size: 16px;
-		outline: none;
+		width: 220px;
+		padding: 10px 0;
+		text-align: center;
+		border-radius: 8px;
 		cursor: pointer;
-		// transition: all 1s ease;
-		transition: all 0.35s ease-in-out;
+		transition: all 1s ease;
 		&:hover {
 			background-color: #fff;
 			color: #ff7b51;
@@ -92,109 +142,126 @@ html {
 			transform: translate3d(0, -3px, 0);
 		}
 	}
-	.component {
-		width: $max;
-		max-width: 1240px;
-		margin: 50px auto;
-	}
-	.NotFound {
-		background: #f3eeea;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		height: 100vh;
-		font-size: 24px;
-		.link {
-			color: #fff;
-			width: 220px;
-			padding: 10px 0;
-			text-align: center;
-			border-radius: 8px;
-			@include style;
-			cursor: pointer;
-			transition: all 1s ease;
-			&:hover {
-				background-color: #fff;
-				color: #ff7b51;
-				outline: 1px solid #ff7b51;
-				box-shadow: 0 0.1rem 2.5rem rgba(32, 34, 36, 0.1),
-					0 0.5rem 0.1rem -0.75rem rgba(32, 34, 36, 0.1) !important;
-				transform: translate3d(0, -3px, 0);
+}
+
+@media (max-width: 1112px) {
+	.modal-open {
+		.modal {
+			.modal-dialog {
+				height: 90vh;
+				text-align: center;
+				.modal-content {
+					top: 2%;
+					left: 5%;
+					width: $max - 10%;
+					.modal-header {
+						.modal-title {
+							width: $max;
+							text-align: center;
+						}
+					}
+					.modal-body {
+						text-align: center;
+					}
+				}
 			}
 		}
 	}
+	.component {
+		width: 90%;
+	}
 }
-@media (max-width: 1112px) {
-	.App {
-		.component {
-			width: 90%;
+@media (max-width: 1024px) {
+	.modal-open {
+		.modal {
+			.modal-dialog {
+				height: 85vh;
+				text-align: center;
+				.modal-content {
+					top: 2%;
+					left: 5%;
+					width: $max - 15%;
+					.modal-header {
+						.modal-title {
+							width: $max;
+							text-align: center;
+						}
+					}
+					.modal-body {
+						text-align: center;
+					}
+				}
+			}
 		}
 	}
 }
 @media (max-width: 768px) {
-	.App {
-		text-align: center;
-		display: block;
-		.box {
-			margin: 20px 0;
-			border-radius: 8px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-			& > img {
-				max-height: 250px;
-				max-width: 400px;
-				border-radius: 8px;
+	.modal-open {
+		.modal {
+			.modal-dialog {
+				height: 90vh;
+				text-align: center;
+				.modal-content {
+					top: 4%;
+					left: 0;
+					width: $max;
+					.modal-header {
+						.modal-title {
+							width: $max;
+							text-align: center;
+						}
+					}
+					.modal-body {
+						text-align: center;
+					}
+				}
 			}
-		}
-		.button {
-			@include style;
-			margin: 30px auto;
-			width: 200px;
-			height: 40px;
-			color: #fff;
-			font-size: 18px;
-			border: none;
-			outline: none;
-			border-radius: 0;
-			&:hover {
-				@include style;
-				color: #fff;
-				outline: none;
-				transform: none;
-			}
-		}
-		.component {
-			display: block;
-			margin: 0 auto;
-		}
-		.m {
-			margin: 0 auto;
-			width: 90%;
 		}
 	}
-}
-@media (max-width: 375px) {
-	.App {
-		.link {
-			.button {
-				width: 170px;
-			}
+	.box {
+		border-radius: 8px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+		& > img {
+			max-height: 250px;
+			max-width: 400px;
+			border-radius: 8px;
 		}
-		.button {
-			width: 170px;
+	}
+	.button {
+		background-color: #ff7b51;
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);
+		margin: 30px auto;
+		width: 200px;
+		height: 40px;
+		color: #fff;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		border-radius: 0;
+		&:hover {
+			background-color: #ff7b51;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);
+			color: #fff;
+			outline: none;
+			transform: none;
 		}
+	}
+	.component {
+		width: $max - 5%;
+		display: block;
+		margin: 0 auto;
+		padding: 35px 0;
 	}
 }
 @media (max-width: 320px) {
-	.App {
-		.link {
-			.button {
-				width: 160px;
-				height: 35px;
-			}
-		}
+	.link {
 		.button {
 			width: 160px;
 			height: 35px;
 		}
+	}
+	.button {
+		width: 160px;
+		height: 35px;
 	}
 }

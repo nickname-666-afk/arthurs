@@ -1,7 +1,5 @@
 import React from "react";
-
 import Room from "./Component/Room";
-
 
 export const RoomContext = React.createContext();
 
@@ -12,10 +10,8 @@ export default class Rooms extends React.Component {
 			<RoomContext.Provider value={room}>
 				<div className="Rooms">
 					<div className="component">
-						<div className="content">
-							<div className="title"> Наши номера</div>
-							<Room />
-						</div>
+						<div className="title"> Наши номера</div>
+						<Room />
 					</div>
 				</div>
 			</RoomContext.Provider>

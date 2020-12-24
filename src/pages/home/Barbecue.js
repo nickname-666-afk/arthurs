@@ -1,10 +1,10 @@
 import React from "react";
 
-import Button from "../../elem/button/Button";
+import Buttons from "../../elem/button/Buttons";
 import barbecue from "../../assets/images/barbecue/first.jpg";
 
 const text = [
-	<div className="text" key={11}>
+	<div className="flex" key={11}>
 		<div className="title">Кафе-шашлычная</div>
 		<div className="title_p">
 			<div className="p">
@@ -14,7 +14,7 @@ const text = [
 				приготовить как напитки, которые известны на весь мир
 			</div>
 		</div>
-		<Button />
+		<Buttons />
 	</div>,
 ];
 
@@ -23,7 +23,7 @@ export default class Barbecue extends React.Component {
 		return (
 			<div className="Barbecue box">
 				<div className="content">
-					<div className="image">
+					<div className="flex">
 						<img src={barbecue} alt="Изображение" />
 					</div>
 					{text}

@@ -45,7 +45,6 @@ $max: 100%;
 			}
 		}
 		.icon {
-			display: inline-flex;
 			.link {
 				&:nth-child(2) {
 					margin: 0 15px;
@@ -98,12 +97,10 @@ $max: 100%;
 				margin: 10px 0 20px 0;
 			}
 			.icon {
-				float: right;
-				:last-child {
-					float: right;
-				}
+				width: $max;
+				float: left;
+				text-align: right;
 				.link {
-					width: 50px;
 					& > img {
 						width: 30px;
 					}

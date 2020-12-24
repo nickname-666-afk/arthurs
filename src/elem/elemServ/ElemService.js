@@ -1,14 +1,19 @@
 import React from "react";
-
 import accessory from "../../assets/images/5(1).png";
 import breakfast from "../../assets/images/5(2).png";
 import transfer from "../../assets/images/5(3).png";
 import bunk from "../../assets/images/5(4).png";
 
 export default class ElemServ extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			updatePrice: this.props.handlePrice,
+		};
+	}
 	render() {
 		const button = (
-			<button className="button" style={this.bStyle} onClick={this.props.handlePrice}>
+			<button className="button" style={this.bStyle} onClick={this.state.updatePrice}>
 				Добавить
 			</button>
 		);

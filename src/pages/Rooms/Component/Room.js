@@ -1,9 +1,7 @@
 import React from "react";
-
 import {RoomContext} from "../Rooms";
 import Content from "./Content";
 import Filter from "../../../elem/filter/Filter";
-
 import family from "../../../assets/images/family.png";
 import luxFirst from "../../../assets/images/lux/first.jpg";
 import luxSecond from "../../../assets/images/lux/second.jpg";
@@ -13,19 +11,7 @@ import standart from "../../../assets/images/standart.png";
 
 const rooms = [
 	{
-		id: 1,
-		category: "Семейный",
-		price: 4000,
-		count: 5,
-		squad: 25,
-		info:
-			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
-		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
-		image: [family, family, family],
-	},
-	{
-		id: 2,
-		category: "Люкс",
+		category: "Люкс с двумя спальнями и видом на море",
 		price: 5000,
 		count: 6,
 		squad: 40,
@@ -34,8 +20,7 @@ const rooms = [
 		image: [luxFirst, luxSecond, luxThird],
 	},
 	{
-		id: 3,
-		category: "Тройной делюкс",
+		category: "Двухместный делюкс с видом на море",
 		price: 3500,
 		count: 3,
 		squad: 25,
@@ -45,8 +30,37 @@ const rooms = [
 		image: [delux, delux, delux],
 	},
 	{
-		id: 4,
-		category: "Стандарт",
+		category: "Двухместный делюкс",
+		price: 3500,
+		count: 3,
+		squad: 25,
+		info:
+			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
+		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
+		image: [delux, delux, delux],
+	},
+	{
+		category: "Трехместный делюкс с видом на море",
+		price: 3500,
+		count: 3,
+		squad: 25,
+		info:
+			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
+		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
+		image: [delux, delux, delux],
+	},
+	{
+		category: "Трехместный делюкс",
+		price: 3500,
+		count: 3,
+		squad: 25,
+		info:
+			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
+		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
+		image: [delux, delux, delux],
+	},
+	{
+		category: "Четырёхместный",
 		price: 4000,
 		count: 4,
 		squad: 25,
@@ -55,32 +69,36 @@ const rooms = [
 		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
 		image: [standart, standart, standart],
 	},
+	{
+		category: "Семейный",
+		price: 4000,
+		count: 5,
+		squad: 25,
+		info:
+			"В номере 1 двуспальная и 1 односпальная кровати, шкаф, стулья, прикроватные тумбочки,стол",
+		comfort: "Кабельное TV,   Бесплатный WI-FI,    Сплит-система,   Фен, Чайник",
+		image: [family, family, family],
+	},
 ];
 
 export default class Room extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			price: this.props.value,
-			count: this.props.handleCount,
-			category: this.props.handleCategory,
+			price: this.props.handlePrices,
+			count: this.props.handleCounts,
+			category: this.props.handleCategories,
 		};
-		// setTimeout(() => {
-		// 	return console.log(this.state.price);
-		// }, 4000);
 	}
 	updatePrices = (event) => {
 		this.setState({price: event.target.value});
-		console.log(this.updatePrices);
 	};
 	updateCounts = (event) => {
 		this.setState({count: event.target.value});
+		console.log(this.updateCounts);
 	};
 	updateCategories = (event) => {
 		this.setState({category: event.target.value});
-	};
-	filterOnSearch = () => {
-		console.log(this.props.price);
 	};
 
 	consumer = (<RoomContext.Consumer>{(room) => this.Content(room)}</RoomContext.Consumer>);
@@ -90,25 +108,22 @@ export default class Room extends React.Component {
 			<div className="content">
 				<div className="add-filter">Добавить фильтр</div>
 				<Filter
-					updatePrices={this.updatePrices}
+					updatePrice={this.updatePrice}
 					updateCounts={this.updateCounts}
 					updateCategories={this.updateCategories}
-					filterOnSearch={this.filterOnSearch}
 				/>
-				{/* {rooms.map((slider) => { */}
-				{/* <img src={require(`../../../assets/images/${slider}.png`)} /> */}
-				{/* <div style={{backgroundImage: `url(${slider})`, height: "200px"}} alt="Изображение" /> */}
-				{/* })} */}
-				{rooms.map((room) => {
-					return (
-						<Content
-							updatePrices={this.updatePrices}
-							updateCounts={this.updateCounts}
-							updateCategories={this.updateCategories}
-							key={`${room}`}
-							room={room}
-						/>
-					);
+				{rooms.map((room, i) => {
+					if (room.count !== this.updateCounts) {
+						return (
+							<Content
+								updatePrices={this.updatePrices}
+								updateCounts={this.updateCounts}
+								updateCategories={this.updateCategories}
+								key={`${i}`}
+								room={room}
+							/>
+						);
+					} else return null;
 				})}
 			</div>
 		);

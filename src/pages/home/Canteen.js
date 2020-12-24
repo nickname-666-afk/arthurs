@@ -1,10 +1,10 @@
 import React from "react";
 
-import Button from "../../elem/button/Button";
+import Button from "../../elem/button/Buttons";
 import barbecue from "../../assets/images/barbecue/second.jpg";
 
 const text = [
-	<div className="text" key={10}>
+	<div className="flex" key={10}>
 		<div className="title">Столовая</div>
 		<div className="title_p">
 			<div className="p">
@@ -24,7 +24,7 @@ export default class Canteen extends React.Component {
 			<div className="Canteen box">
 				<div className="content">
 					{text}
-					<div className="image">
+					<div className="flex">
 						<img src={barbecue} alt="Изображение" />
 					</div>
 				</div>

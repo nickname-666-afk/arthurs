@@ -2,14 +2,16 @@ $max: 100%;
 .Welcome {
 	& > .title {
 		text-align: right;
-		margin: 0 auto 50px auto;
+		margin: 50px 0;
 		font-size: 36px;
 		text-align: center;
 	}
-	.content {
+	.content_flex {
 		display: flex;
 		flex-direction: column;
-		.left {
+		justify-content: center;
+		padding: 50px 0;
+		.flex {
 			display: block;
 			width: 100%;
 			max-width: 100%;
@@ -39,9 +41,6 @@ $max: 100%;
 					}
 				}
 			}
-		}
-		.right {
-			width: $max;
 			.wrapper-info {
 				display: block;
 				float: right;
@@ -73,14 +72,12 @@ $max: 100%;
 		.title {
 			font-size: 36px;
 		}
-		.content {
-			.left {
+		.content_flex {
+			.flex {
 				.image {
 					width: 55%;
 					max-width: 55%;
 				}
-			}
-			.right {
 				.wrapper-info {
 					width: 55%;
 					.info {
@@ -95,13 +92,11 @@ $max: 100%;
 }
 @media (max-width: 834px) {
 	.Welcome {
-		.content {
-			.left {
+		.content_flex {
+			.flex {
 				.text {
 					max-width: 40%;
 				}
-			}
-			.right {
 				.wrapper-info {
 					width: 60%;
 					.info {
@@ -117,13 +112,15 @@ $max: 100%;
 		display: block;
 		padding: 20px 10px;
 		box-sizing: border-box;
-		& > .title {
+		.title {
 			text-align: center;
 			margin: 25px auto 0 auto;
 			font-size: 22px;
 		}
-		.content {
-			.left {
+		.content_flex {
+			padding: 0;
+			text-align: center;
+			.flex {
 				float: none;
 				width: $max;
 				.text {
@@ -144,10 +141,6 @@ $max: 100%;
 					max-width: 500px;
 					margin: 0 auto;
 				}
-			}
-			.right {
-				float: none;
-				max-width: $max;
 				.wrapper-info {
 					float: none;
 					width: $max;

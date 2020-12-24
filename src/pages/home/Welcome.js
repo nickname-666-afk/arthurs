@@ -52,12 +52,12 @@ export default class Welcome extends React.Component {
 		return (
 			<div className="Welcome box">
 				<div className="title">Добро пожаловать в ARTHUR’S!</div>
-				<div className="content">
-					<div className="left">
+				<div className="content_flex">
+					<div className="flex">
 						{text}
 						{image}
 					</div>
-					<div className="right">
+					<div className="flex">
 						<div className="wrapper-info">{info}</div>
 						{this.props.button}
 					</div>

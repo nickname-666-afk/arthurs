@@ -1,15 +1,14 @@
 $max: 100%;
 $middle: 50%;
 .Service {
-	display: flex;
+	width: $max;
 	justify-content: space-between;
 	.content-main {
-		width: $max;
 		& > .title {
 			text-align: center;
 			font-size: 36px;
 			font-weight: bold;
-			margin: 30px auto;
+			margin: 0 auto 30px auto;
 		}
 		.wrapper-serv {
 			display: block;

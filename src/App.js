@@ -1,5 +1,7 @@
 import React from "react";
 import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
+import {Provider} from "react-redux";
+import store from "./store";
 import Header from "./elem/header/Header";
 import Footer from "./elem/footer/Footer";
 import Home from "./pages/home/Home";
@@ -98,8 +100,8 @@ export default class App extends React.Component {
 		};
 
 		return (
-			<BrowserRouter>
-				<div className="App">
+			<Provider store={store}>
+				<BrowserRouter>
 					<Switch>
 						<ContentContext.Provider value={room}>
 							<Route
@@ -113,8 +115,8 @@ export default class App extends React.Component {
 							<Route to="*" component={NotFound} />
 						</ContentContext.Provider>
 					</Switch>
-				</div>
-			</BrowserRouter>
+				</BrowserRouter>
+			</Provider>
 		);
 	}
 }

@@ -1,11 +1,7 @@
 $max: 100%;
-@mixin link {
-	color: #fff;
-	text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.35);
-}
-.header {
+.Header {
 	z-index: 100;
-	position: absolute;
+	top: 0;
 	height: 80px;
 	width: $max;
 	.toolbar {
@@ -23,7 +19,7 @@ $max: 100%;
 				.link {
 					font-weight: bold;
 					font-size: 22px;
-					@include link;
+					color: #fff;
 				}
 			}
 			.toolbar_navigation-items {
@@ -45,7 +41,7 @@ $max: 100%;
 						text-align: center;
 						.link {
 							font-size: 18px;
-							@include link;
+							color: #fff;
 						}
 					}
 				}
@@ -54,14 +50,14 @@ $max: 100%;
 	}
 }
 @media (max-width: 1112px) {
-	.header {
+	.Header {
 		.toolbar {
 			width: 90%;
 		}
 	}
 }
 @media (max-width: 834px) {
-	.header {
+	.Header {
 		.toolbar {
 			.toolbar__navigation {
 				width: $max;
@@ -81,7 +77,7 @@ $max: 100%;
 	}
 }
 @media (max-width: 768px) {
-	.header {
+	.Header {
 		height: 50px;
 		ul {
 			li {
@@ -107,14 +103,13 @@ $max: 100%;
 				box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
 				.toolbar__logo {
 					position: absolute;
-					left: 25%;
-					right: 25%;
-					width: 50%;
+					right: 5%;
+					width: $max - 10%;
 					min-width: 200px;
 					height: auto;
-					top: 15px;
 					font-size: 21px;
 					.link {
+						text-align: center;
 						width: $max;
 						color: #fff;
 						font-size: 21px;

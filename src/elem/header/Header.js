@@ -27,11 +27,10 @@ export default class Header extends React.Component {
 	};
 	sideDrawerOpen = () => {
 		this.setState((prev) => ({sideDrawerOpen: !prev.sideDrawerOpen}));
-		return this.tStyle ? {background: "red"} : {backgrond: "yellow"};
 	};
 
 	hStyle = window.location.pathname.includes("/home")
-		? {background: "transparent"}
+		? {background: "transparent", position: "absolute"}
 		: {
 				background: "#FF7B51",
 				boxShadow: "0px 4px 11px rgba(0, 0, 0, 0.25)",
@@ -42,7 +41,6 @@ export default class Header extends React.Component {
 	render() {
 		let sideDrawer;
 		let backdrop;
-
 		if (this.state.sideDrawerOpen) {
 			sideDrawer = <nav className="side-drawer">{this.props.sidebar}</nav>;
 			backdrop = (
@@ -52,7 +50,7 @@ export default class Header extends React.Component {
 			);
 		}
 		return (
-			<header className="header" style={this.hStyle}>
+			<header className="Header" style={this.hStyle}>
 				{this.state.sideDrawerOpen ? this.sideDrawer : null}
 				<div className="toolbar">
 					<div className="toolbar__navigation">

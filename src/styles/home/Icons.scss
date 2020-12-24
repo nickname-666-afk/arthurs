@@ -33,7 +33,7 @@ $max: 100%;
 					.icon {
 						display: block;
 						width: $max;
-						max-width: 300px;
+						max-width: 250px;
 						text-align: center;
 						& > img {
 							width: 9vmax;
@@ -61,7 +61,6 @@ $max: 100%;
 }
 @media (max-width: 1024px) {
 	.Icons {
-		margin: 0;
 		.content {
 			& > .title {
 				font-size: 36px;
@@ -107,8 +106,8 @@ $max: 100%;
 	.Icons {
 		display: block;
 		background-image: none;
+		width: $max - 5%;
 		.content {
-			padding: 10px 0;
 			width: $max;
 			& > .title {
 				max-width: 80%;

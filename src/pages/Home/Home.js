@@ -45,9 +45,7 @@ export default class Home extends React.Component {
 				<div className="component">
 					<Welcome button={button} />
 				</div>
-				<div className="m">
-					<Icons />
-				</div>
+				<Icons />
 				<div className="component">
 					<Numbers />
 				</div>

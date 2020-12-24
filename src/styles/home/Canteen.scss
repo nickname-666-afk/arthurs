@@ -1,15 +1,12 @@
 $max: 100%;
 $middle: 50%;
-@mixin size {
-	width: calc(100% - 50%);
-	max-width: calc(100% - 50%);
-}
 .Canteen {
 	.content {
-		& > .text {
-			float: left;
+		display: flex;
+		justify-content: space-between;
+		.flex {
 			text-align: left;
-			@include size;
+			width: $middle;
 			& > .title {
 				font-size: 36px;
 			}
@@ -29,85 +26,13 @@ $middle: 50%;
 				.button {
 					margin: 0;
 				}
-				& > .backdrop {
-					z-index: 999;
-					position: fixed;
-					width: 100%;
-					height: 100%;
-					top: 0;
-					left: 0;
-					background: rgba(0, 0, 0, 0.9);
-					display: flex;
-					justify-content: center;
-					.wrapper-backdrop {
-						.wrapper-image {
-							width: 800px;
-							height: $max;
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-							justify-content: center;
-							.nav-image {
-								position: relative;
-								display: flex;
-								justify-content: flex-end;
-								background: #2d2a2e;
-								height: 35px;
-								width: 50%;
-								& > .btn-nav {
-									position: absolute;
-									width: 30px;
-									height: 30px;
-									top: 0;
-									right: 10px;
-									background: transparent;
-									cursor: pointer;
-									animation: 3s ease-in 1s infinite reverse both running slidein;
-									&:hover {
-										background: #2d2a2e;
-										& > :nth-child(1) {
-											background: #000;
-										}
-										& > :nth-child(2) {
-											background: #000;
-										}
-									}
-									& > :nth-child(1) {
-										position: absolute;
-										top: 15px;
-										left: 5px;
-										background: #fff;
-										transform: rotate(45deg);
-										width: 25px;
-										height: 2.5px;
-									}
-									& > :nth-child(2) {
-										position: absolute;
-										top: 15px;
-										left: 5px;
-										background: #fff;
-										transform: rotate(-45deg);
-										width: 25px;
-										height: 2.5px;
-									}
-								}
-							}
-							.image {
-								max-width: 500px;
-							}
-						}
-					}
-				}
 			}
 		}
-		.image {
-			position: relative;
-			float: right;
-			@include size;
+		.flex:last-child {
 			overflow: hidden;
 			& > img {
 				width: $max;
-				max-height: 550px;
+				height: $max;
 				transition: transform cubic-bezier(0.4, 0, 0.2, 1) 0.35s,
 					-webkit-transform cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
 				&:hover {
@@ -117,32 +42,10 @@ $middle: 50%;
 		}
 	}
 }
-@media (max-width: 1112px) {
-	.Canteen {
-		.content {
-			& > .text {
-				.button_block {
-					& > .backdrop {
-						.wrapper-backdrop {
-							display: flex;
-							align-items: center;
-							.wrapper-image {
-								height: 80%;
-								.nav-image {
-									width: $middle;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
 @media (max-width: 1024px) {
 	.Canteen {
 		.content {
-			.text {
+			.flex {
 				.title {
 					font-size: 36px;
 				}
@@ -156,18 +59,6 @@ $middle: 50%;
 					& > .button {
 						margin: 0;
 					}
-					& > .backdrop {
-						.wrapper-backdrop {
-							display: flex;
-							align-items: center;
-							.wrapper-image {
-								height: $max;
-								.nav-image {
-									width: $middle;
-								}
-							}
-						}
-					}
 				}
 			}
 		}
@@ -176,9 +67,8 @@ $middle: 50%;
 @media (max-width: 834px) {
 	.Canteen {
 		.content {
-			.text {
-				width: $middle - 5%;
-				max-width: $middle - 5%;
+			.flex {
+				width: $middle;
 				.title_p {
 					& > .p {
 						width: $max;
@@ -190,22 +80,6 @@ $middle: 50%;
 					& > .button {
 						margin: 0;
 					}
-					& > .backdrop {
-						.wrapper-backdrop {
-							display: flex;
-							align-items: center;
-							.wrapper-image {
-								height: $max;
-								.nav-image {
-									width: 62.5%;
-								}
-								.image {
-									width: $max;
-									max-width: 500px;
-								}
-							}
-						}
-					}
 				}
 			}
 		}
@@ -214,11 +88,10 @@ $middle: 50%;
 @media (max-width: 768px) {
 	.Canteen {
 		.content {
+			display: block;
 			padding: 20px 10px;
-			.text {
+			.flex {
 				width: $max;
-				max-width: $max;
-				float: none;
 				text-align: center;
 				& > .title {
 					font-size: 22px;
@@ -240,90 +113,10 @@ $middle: 50%;
 						margin: 0;
 					}
 				}
-			}
-			.image {
-				float: none;
-				width: $max;
-				max-width: $max;
 				& > img {
 					border-radius: 8px;
-					max-height: 350px;
-					max-width: 500px;
-				}
-			}
-		}
-	}
-}
-@media (max-width: 414px) {
-	.Canteen {
-		.content {
-			.text {
-				.button_block {
-					& > .button {
-						margin: 0;
-					}
-					& > .backdrop {
-						.wrapper-backdrop {
-							display: flex;
-							align-items: center;
-							.wrapper-image {
-								height: $max;
-								.nav-image {
-									z-index: 3;
-									position: absolute;
-									top: 100px;
-									width: 73%;
-								}
-								.image {
-									width: $max;
-									max-width: 300px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-@media (max-width: 375px) {
-	.Canteen {
-		.content {
-			.text {
-				.button_block {
-					& > .backdrop {
-						.wrapper-backdrop {
-							.wrapper-image {
-								.nav-image {
-									top: 70px;
-									width: 80%;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-@media (max-width: 320px) {
-	.Canteen {
-		.content {
-			.text {
-				.button_block {
-					& > .backdrop {
-						.wrapper-backdrop {
-							.wrapper-image {
-								.nav-image {
-									top: 55px;
-									width: 78%;
-								}
-								.image {
-									max-width: 250px;
-								}
-							}
-						}
-					}
+					max-height: 450px;
+					max-width: 700px;
 				}
 			}
 		}

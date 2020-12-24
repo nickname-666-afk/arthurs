@@ -1,9 +1,5 @@
 $max: 100%;
-@mixin right {
-	text-align: right;
-	float: right;
-	width: 55%;
-}
+$middle: 50%;
 .Footer {
 	width: $max;
 	background-color: #ff7b51;
@@ -27,21 +23,23 @@ $max: 100%;
 				}
 			}
 		}
-		.address {
-			display: block;
+		.flex__address {
 			margin: 7% auto;
-			font-size: 24px;
-			line-height: 150%;
-			color: #fff;
+			.address {
+				font-size: 24px;
+				line-height: 150%;
+				color: #fff;
+			}
 		}
 		.tel {
 			font-size: 24px;
 			font-weight: 500;
 			margin: 20px auto;
-			.mobile_phone {
-				display: block;
-				color: #fff;
-				margin-top: 10px;
+			.flex__phone {
+				.mobile_phone {
+					color: #fff;
+					margin-top: 10px;
+				}
 			}
 		}
 		.icon {
@@ -84,14 +82,20 @@ $max: 100%;
 					}
 				}
 			}
-			.address {
-				@include right;
+			.flex__address {
+				width: $middle + 5%;
+				float: right;
+				text-align: right;
 				margin: 0;
-				font-size: 12px;
-				line-height: 150%;
+				.address {
+					font-size: 12px;
+					line-height: 150%;
+				}
 			}
 			.tel {
-				@include right;
+				width: $middle + 5%;
+				float: right;
+				text-align: right;
 				font-size: 16px;
 				font-weight: 800;
 				margin: 10px 0 20px 0;

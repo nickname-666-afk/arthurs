@@ -101,7 +101,8 @@ $middle: 50%;
 					margin: auto;
 					& > .p {
 						margin: 30px auto;
-						width: $max;
+						width: 100%;
+						padding: 0 20px;
 						font-size: 14px;
 						color: #595858;
 					}

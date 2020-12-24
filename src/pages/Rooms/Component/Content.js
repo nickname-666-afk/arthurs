@@ -34,15 +34,17 @@ export default class Content extends React.Component {
 							Удобства: <p>{this.props.room.comfort}</p>
 						</div>
 					</div>
-					<Link className="link" to="/services">
-						<button
-							className="button"
-							onClick={() => {
-								// this.props.updatePrices(this.state.name);
-							}}>
-							Забронировать
-						</button>
-					</Link>
+					<div className="group-button">
+						<Link className="link" to="/services">
+							<button
+								className="button"
+								onClick={() => {
+									// this.props.updatePrices(this.state.name);
+								}}>
+								Забронировать
+							</button>
+						</Link>
+					</div>
 				</div>
 			</div>
 		);

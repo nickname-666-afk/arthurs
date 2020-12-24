@@ -1,7 +1,7 @@
 import React from "react";
 
 const maps = [
-	<div className="left" key={12}>
+	<div className="flex" key={12}>
 		<div className="maps" style={{position: "relative", overflow: "hidden"}}>
 			<a
 				href="https://yandex.com/maps?utm_medium=mapframe&utm_source=maps"
@@ -27,10 +27,12 @@ const text = [
 			<div className="address">
 				<div className="title">Адрес:</div>
 				<div className="address_link">
-					<a className="link" href="https://yandex.fr/maps/-/CCUAbGQQdC" target="_black">
-						Республика Крым,
-						<br /> Береговое, ул. Приморская, 1В
-					</a>
+					<div className="flex__address">
+						<a className="link" href="https://yandex.fr/maps/-/CCUAbGQQdC" target="_black">
+							Республика Крым,
+							<br /> Береговое, ул. Приморская, 1В
+						</a>
+					</div>
 				</div>
 			</div>
 			<div className="email">
@@ -44,12 +46,16 @@ const text = [
 			<div className="phone">
 				<div className="phone_text">Телефон:</div>
 				<div className="phone_link">
-					<a className="mobile_phone" href="tel: +7 (978) 030-71-52">
-						+7 (978) 030-71-52
-					</a>
-					<a className="mobile_phone" href="tel: +7 (928) 362-63-33">
-						+7 (928) 362-63-33
-					</a>
+					<div className="flex__phone">
+						<a className="mobile_phone" href="tel: +7 (978) 030-71-52">
+							+7 (978) 030-71-52
+						</a>
+					</div>
+					<div className="flex__phone">
+						<a className="mobile_phone" href="tel: +7 (928) 362-63-33">
+							+7 (928) 362-63-33
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -65,8 +71,8 @@ export default class Maps extends React.Component {
 			<div className="Maps">
 				<div className="content">
 					{maps}
-					<div className="right">
-						<div className="title">Наши контакты</div>
+					<div className="flex">
+						<p className="title">Наши контакты</p>
 						{this.props.icons}
 						{text}
 					</div>

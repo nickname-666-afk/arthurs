@@ -4,8 +4,12 @@ $max: 100%;
 	.content {
 		display: flex;
 		width: $max;
-		.left {
+		.flex {
 			width: $middle;
+			& > .title {
+				font-size: 36px;
+				width: $max;
+			}
 			.maps {
 				& > a {
 					position: none;
@@ -15,29 +19,6 @@ $max: 100%;
 					height: 55vmax;
 					max-height: 720px;
 					border: none;
-				}
-			}
-		}
-		.right {
-			padding: 40px;
-			& > .title {
-				font-size: 36px;
-				width: $max;
-			}
-			.icon {
-				margin: 20px 0;
-				.link {
-					&:nth-child(2) {
-						margin: 0 15px;
-					}
-					& > img {
-						width: 50px;
-						filter: brightness(0.1);
-						&:hover {
-							box-shadow: none !important;
-							transform: none;
-						}
-					}
 				}
 			}
 			.text {
@@ -74,31 +55,48 @@ $max: 100%;
 						.phone_link {
 							font-size: 32px;
 							font-weight: 500;
-							.mobile_phone {
-								color: #000;
-								display: block;
-								margin-top: 20px;
+							.flex__phone {
+								.mobile_phone {
+									color: #000;
+									margin-top: 20px;
+								}
 							}
 						}
 					}
 				}
 			}
+			.icon {
+				margin: 20px 0;
+				.link {
+					&:nth-child(2) {
+						margin: 0 15px;
+					}
+					& > img {
+						width: 50px;
+						filter: brightness(0.1);
+						&:hover {
+							box-shadow: none !important;
+							transform: none;
+						}
+					}
+				}
+			}
+		}
+		.flex:last-child {
+			padding: 40px;
 		}
 	}
 }
 @media (max-width: 1112px) {
 	.Maps {
 		.content {
-			.left {
+			.flex {
 				.maps {
 					.yandex-maps {
 						width: $max;
 						border: none;
 					}
 				}
-			}
-			.right {
-				padding: 25px;
 				.text {
 					.wrapper-text {
 						.address {
@@ -117,7 +115,15 @@ $max: 100%;
 							}
 						}
 					}
+					.link {
+						.button {
+							margin-top: 30px;
+						}
+					}
 				}
+			}
+			.flex:last-child {
+				padding: 15px 25px;
 			}
 		}
 	}
@@ -125,7 +131,7 @@ $max: 100%;
 @media (max-width: 834px) {
 	.Maps {
 		.content {
-			.right {
+			.flex {
 				.text {
 					.wrapper-text {
 						width: $max;
@@ -149,31 +155,22 @@ $max: 100%;
 			display: block;
 			margin: auto;
 			text-align: center;
-			.left {
+			.flex {
 				width: $max;
 				max-width: $max;
 				float: none;
+				& > .title {
+					float: none;
+					margin: 10px auto;
+					font-size: 24px;
+					width: $max;
+				}
 				.maps {
 					max-height: 400px;
 					& > .yandex-maps {
 						max-height: 400px;
 						border-radius: 8px 8px 0 0;
 					}
-				}
-			}
-			.right {
-				width: $max;
-				max-width: $max;
-				float: none;
-				padding: 10px 15px;
-				box-sizing: border-box;
-				text-align: center;
-				border-radius: 0 0 8px 8px;
-				& > .title {
-					float: none;
-					margin: 10px auto;
-					font-size: 24px;
-					width: $max;
 				}
 				.text {
 					text-align: center;
@@ -199,7 +196,7 @@ $max: 100%;
 @media (max-width: 414px) {
 	.Maps {
 		.content {
-			.left {
+			.flex {
 				.maps {
 					max-height: 300px;
 					& > .yandex-maps {

@@ -16,15 +16,6 @@ import whatsapp from "./assets/images/icons/whatsapp.png";
 
 const ContentContext = React.createContext(null);
 
-const routeRooms = {
-	pathname: "/rooms",
-};
-const roteService = {
-	pathname: "/services",
-};
-const routeContact = {
-	pathname: "/contact",
-};
 const icons = [
 	<div className="icon" key={0}>
 		<a
@@ -46,39 +37,45 @@ const icons = [
 ];
 const phone = [
 	<div className="tel" key={1}>
-		<a className="mobile_phone" href="tel: +7 (978) 030-71-52">
-			+7 (978) 030-71-52
-		</a>
-		<a className="mobile_phone" href="tel: +7 (928) 362-63-33">
-			+7 (928) 362-63-33
-		</a>
+		<div className="flex__phone">
+			<a className="mobile_phone" href="tel: +7 (978) 030-71-52">
+				+7 (978) 030-71-52
+			</a>
+		</div>
+		<div className="flex__phone">
+			<a className="mobile_phone" href="tel: +7 (928) 362-63-33">
+				+7 (928) 362-63-33
+			</a>
+		</div>
 	</div>,
 ];
 const address = [
-	<a className="address" href="https://yandex.fr/maps/-/CCUAbGQQdC" target="_black" key={2}>
-		Республика Крым,
-		<br /> Береговое, ул. Приморская, 1В
-	</a>,
+	<div className="flex__address">
+		<a className="address" href="https://yandex.fr/maps/-/CCUAbGQQdC" target="_black" key={2}>
+			Республика Крым,
+			<br /> Береговое, ул. Приморская, 1В
+		</a>
+	</div>,
 ];
 const sidebar = [
 	<ul key={3}>
 		<li>
-			<Link className="link" to={routeRooms}>
+			<Link className="link" to="/rooms">
 				Номера и цены
 			</Link>
 		</li>
 		<li>
-			<Link className="link" to={routeRooms}>
+			<Link className="link" to="/rooms">
 				Забронировать
 			</Link>
 		</li>
 		<li>
-			<Link className="link" to={roteService}>
+			<Link className="link" to="/services">
 				Услуги
 			</Link>
 		</li>
 		<li>
-			<Link className="link" to={routeContact}>
+			<Link className="link" to="/contact">
 				Контакты
 			</Link>
 		</li>

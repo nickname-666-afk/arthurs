@@ -10,15 +10,14 @@ import Canteen from "./Canteen";
 import Barbecue from "./Barbecue";
 import Maps from "./Maps";
 
-const routeRooms = {
-	pathname: "/rooms",
-};
 const button = [
-	<Link className="link" to={routeRooms} key={4}>
-		<button type="button" className="button">
-			Забронировать
-		</button>
-	</Link>,
+	<div className="group-button" key={4}>
+		<Link className="link" to="/rooms">
+			<button type="button" className="button">
+				Забронировать
+			</button>
+		</Link>
+	</div>,
 ];
 const text = [
 	<div className="text" key={5}>

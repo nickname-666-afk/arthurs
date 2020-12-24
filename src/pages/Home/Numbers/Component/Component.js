@@ -6,9 +6,6 @@ import lux from "../../../../assets/images/lux/first.jpg";
 import delux from "../../../../assets/images/delux.png";
 import family from "../../../../assets/images/family.png";
 
-const routeRooms = {
-	pathname: "/rooms",
-};
 const images = [lux, delux, family];
 
 export default class Column extends React.Component {
@@ -108,14 +105,16 @@ export default class Column extends React.Component {
 							<Content key={image} text={image} images={images[2]} />
 						))}
 					</div>
-					<Link className="link" to={routeRooms}>
-						<button type="button" className="button">
-							Показать все номера
-						</button>
-					</Link>
+					<div className="group-button">
+						<Link className="link" to="/rooms">
+							<button type="button" className="button">
+								Показать все номера
+							</button>
+						</Link>
+					</div>
 				</div>
 				<div className="rightImage">
-					<div className="image" onClick={this.routeRooms}>
+					<div className="image">
 						{this.state.imageFirst ? <img src={lux} alt="Изображение" /> : null}
 						{this.state.showFirst ? (
 							<div className="first-text">

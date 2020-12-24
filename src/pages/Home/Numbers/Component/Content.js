@@ -1,10 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const routeRooms = {
-	pathname: "/rooms",
-};
-
 export default class Content extends React.Component {
 	render() {
 		const text = this.props.text;
@@ -24,11 +20,13 @@ export default class Content extends React.Component {
 						<div className="p">{text.text}</div>
 					</div>
 				</div>
-				<Link className="link" to={routeRooms}>
-					<button type="button" className="button">
-						Подробнее
-					</button>
-				</Link>
+				<div className="group-button">
+					<Link className="link" to="/rooms">
+						<button type="button" className="button">
+							Подробнее
+						</button>
+					</Link>
+				</div>
 			</div>
 		);
 	}

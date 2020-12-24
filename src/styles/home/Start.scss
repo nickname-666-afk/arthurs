@@ -28,8 +28,7 @@ $max: 100%;
 			}
 		}
 		.icon,
-		.tel,
-		.button {
+		.tel {
 			display: none;
 			.link {
 				color: #fff;
@@ -40,6 +39,9 @@ $max: 100%;
 				display: block;
 				color: #fff;
 			}
+		}
+		.group-button {
+			display: none;
 		}
 	}
 }
@@ -74,8 +76,7 @@ $max: 100%;
 				}
 			}
 			.icon,
-			.tel,
-			.button {
+			.tel {
 				display: flex;
 			}
 			.icon {
@@ -92,11 +93,8 @@ $max: 100%;
 				font-size: 20px;
 				margin: 30px auto;
 			}
-			.button {
-				text-shadow: none;
-				align-items: center;
-				justify-content: center;
-				text-decoration: none;
+			.group-button {
+				display: block;
 			}
 		}
 	}

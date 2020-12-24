@@ -103,13 +103,14 @@ $middle: 50%;
 						}
 					}
 				}
-				.link {
-					display: block;
+				.group-button {
 					text-align: right;
 					margin: 40px 0 0 0;
-					.button {
-						width: 45%;
-						margin: 0;
+					.link {
+						.button {
+							width: 45%;
+							margin: 0;
+						}
 					}
 				}
 			}
@@ -149,15 +150,6 @@ $middle: 50%;
 						.text__title_wrrapper {
 							.title {
 								font-size: calc(0.2rem + 15px);
-							}
-						}
-						.link {
-							margin: 40px 0 0 0;
-							.button {
-								width: 180px;
-								height: 40px;
-								margin: 0;
-								font-size: 14px;
 							}
 						}
 					}
@@ -204,13 +196,15 @@ $middle: 50%;
 							font-size: 12px;
 						}
 					}
-					.link {
+					.group-button {
 						margin: 20px 0 0 0;
-						.button {
-							width: 45%;
-							max-width: 200px;
-							height: 35px;
-							font-size: 12px;
+						.link {
+							.button {
+								width: 45%;
+								max-width: 200px;
+								height: 35px;
+								font-size: 12px;
+							}
 						}
 					}
 				}
@@ -222,7 +216,7 @@ $middle: 50%;
 	.Rooms {
 		.component {
 			padding: 0;
-			margin: 80px auto !important;
+			margin: 80px auto;
 			width: $max - 5%;
 			.title {
 				font-size: 22px;
@@ -305,12 +299,14 @@ $middle: 50%;
 							}
 						}
 					}
-					.link {
+					.group-button {
 						display: flex;
 						justify-content: center;
-						margin: 0;
-						.button {
-							margin: 30px 0 0 0;
+						.link {
+							.button {
+								width: 12rem;
+								margin: 30px 0 0 0;
+							}
 						}
 					}
 				}

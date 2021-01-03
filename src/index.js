@@ -1,5 +1,5 @@
 import React from "react";
-import App from "./App";
+import Arthurs from "./Arthurs";
 import ReactDOM from "react-dom";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Arthurs />, document.getElementById("root"));

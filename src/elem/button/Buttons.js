@@ -1,6 +1,5 @@
 import React from "react";
-import {Button, Modal} from "react-bootstrap";
-import menus from "../../assets/images/menu.svg";
+import { Button, Modal } from "react-bootstrap";
 
 export default class Buttons extends React.Component {
 	constructor(props) {
@@ -11,8 +10,8 @@ export default class Buttons extends React.Component {
 		};
 	}
 	handleModal = () => {
-		this.setState((prev) => ({show: !prev.show}));
-		this.setState((prev) => ({hide: !prev.hide}));
+		this.setState((prev) => ({ show: !prev.show }));
+		this.setState((prev) => ({ hide: !prev.hide }));
 	};
 	render() {
 		return (
@@ -27,7 +26,8 @@ export default class Buttons extends React.Component {
 							<Modal.Title style={this.title}>Наше меню</Modal.Title>
 						</Modal.Header>
 						<Modal.Body>
-							<img src={menus} alt="Меню" />
+							Здесь скоро появится меню
+							{/* <img src={menus} alt="Меню" /> */}
 						</Modal.Body>
 					</Modal>
 				) : null}

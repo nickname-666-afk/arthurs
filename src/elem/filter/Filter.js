@@ -41,15 +41,15 @@ export default class Filter extends React.Component {
 
 	handlePrices = (event) => {
 		this.setState({price: event.value});
-		console.log(event.price);
+		// console.log(event.price);
 	};
 	handleCounts = (event) => {
 		this.setState({count: event.value});
-		console.log(event.value);
+		// console.log(event.value);
 	};
 	handleCategories = (event) => {
 		this.setState({category: event.value});
-		console.log(event.value);
+		// console.log(event.value);
 	};
 	isMobileDevice() {
 		return (

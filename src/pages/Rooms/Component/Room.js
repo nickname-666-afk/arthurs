@@ -1,5 +1,5 @@
 import React from "react";
-import {RoomContext} from "../Rooms";
+// import { RoomContext } from "../Rooms";
 import Content from "./Content";
 import Filter from "../../../elem/filter/Filter";
 import family from "../../../assets/images/family.png";
@@ -8,7 +8,6 @@ import luxSecond from "../../../assets/images/lux/second.jpg";
 import luxThird from "../../../assets/images/lux/third.jpg";
 import delux from "../../../assets/images/delux.png";
 import standart from "../../../assets/images/standart.png";
-
 const rooms = [
 	{
 		category: "Люкс с двумя спальнями и видом на море",
@@ -91,17 +90,15 @@ export default class Room extends React.Component {
 		};
 	}
 	updatePrices = (event) => {
-		this.setState({price: event.target.value});
+		this.setState({ price: event.target.value });
 	};
 	updateCounts = (event) => {
-		this.setState({count: event.target.value});
-		console.log(this.updateCounts);
+		this.setState({ count: event.target.value });
 	};
 	updateCategories = (event) => {
-		this.setState({category: event.target.value});
+		this.setState({ category: event.target.value });
 	};
-
-	consumer = (<RoomContext.Consumer>{(room) => this.Content(room)}</RoomContext.Consumer>);
+	// consumer = (<RoomContext.Consumer>{(room) => this.Content(room)}</RoomContext.Consumer>);
 
 	render() {
 		return (

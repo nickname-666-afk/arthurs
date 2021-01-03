@@ -1,48 +1,63 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const routeHome = {
 	pathname: "/home",
 };
-const scrollTop = () => {
-	window.scrollTo({top: 0, behavior: "smooth"});
-};
+// const scrollTop = () => {
+// 	window.scrollTo({ top: 0, behavior: "smooth" });
+// };
 
 export default class Header extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			sideDrawerOpen: false,
+			route: window.location.pathname.includes("/rooms"),
 		};
 	}
-
 	drawerToggleClickHandler = () => {
 		this.setState((prevState) => {
-			return {sideDrawerOpen: !prevState.sideDrawerOpen};
+			return { sideDrawerOpen: !prevState.sideDrawerOpen };
 		});
 	};
-
 	backdropClickHandler = () => {
-		this.setState({sideDrawerOpen: false});
+		this.setState({ sideDrawerOpen: false });
 	};
 	sideDrawerOpen = () => {
-		this.setState((prev) => ({sideDrawerOpen: !prev.sideDrawerOpen}));
+		this.setState((prev) => ({ sideDrawerOpen: !prev.sideDrawerOpen }));
 	};
-
-	hStyle = window.location.pathname.includes("/home")
-		? {background: "transparent", position: "absolute"}
-		: {
-				background: "#FF7B51",
-				boxShadow: "0px 4px 11px rgba(0, 0, 0, 0.25)",
-				position: "fixed",
-				zIndex: "999",
-		  };
 
 	render() {
 		let sideDrawer;
 		let backdrop;
 		if (this.state.sideDrawerOpen) {
-			sideDrawer = <nav className="side-drawer">{this.props.sidebar}</nav>;
+			sideDrawer = (
+				<nav className="side-drawer">
+					<ul>
+						<li>
+							<Link className="link" to="/rooms">
+								Номера и цены
+							</Link>
+						</li>
+						<li>
+							<Link className="link" to="/rooms">
+								Забронировать
+							</Link>
+						</li>
+						<li>
+							<Link className="link" to="/home">
+								Услуги
+							</Link>
+						</li>
+						<li>
+							<Link className="link" to="/home">
+								Контакты
+							</Link>
+						</li>
+					</ul>
+				</nav>
+			);
 			backdrop = (
 				<div className="backdrop" onClick={this.sideDrawerOpen}>
 					{this.props.click}
@@ -50,7 +65,9 @@ export default class Header extends React.Component {
 			);
 		}
 		return (
-			<header className="Header" style={this.hStyle}>
+			<header
+				className="Header"
+				style={this.state.route ? { background: "red" } : { background: "green" }}>
 				{this.state.sideDrawerOpen ? this.sideDrawer : null}
 				<div className="toolbar">
 					<div className="toolbar__navigation">
@@ -59,12 +76,35 @@ export default class Header extends React.Component {
 							<div className="toggle-button__line" />
 							<div className="toggle-button__line" />
 						</button>
-						<div className="toolbar__logo" onClick={scrollTop}>
+						<div className="toolbar__logo">
 							<Link className="link" to={routeHome}>
 								Отель Arthurs
 							</Link>
 						</div>
-						<div className="toolbar_navigation-items">{this.props.sidebar}</div>
+						<div className="toolbar_navigation-items">
+							<ul>
+								<li>
+									<Link className="link" to="/rooms">
+										Номера и цены
+									</Link>
+								</li>
+								<li>
+									<Link className="link" to="/rooms">
+										Забронировать
+									</Link>
+								</li>
+								<li>
+									<Link className="link" to="/home">
+										Услуги
+									</Link>
+								</li>
+								<li>
+									<Link className="link" to="/home">
+										Контакты
+									</Link>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				{sideDrawer}

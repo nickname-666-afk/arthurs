@@ -19,11 +19,10 @@ $middle: 50%;
 				.content {
 					box-shadow: 0 0.1rem 0.5rem #2022241a, 0 0.5rem 1rem -0.75rem #2022241a;
 					display: flex;
-					align-items: center;
 					justify-content: space-between;
-					max-width: 550px;
-					width: $middle - 10%;
-					margin: 25px 0;
+					max-width: 480px;
+					width: $middle - 5%;
+					margin-bottom: 30px;
 					padding: 10px;
 					transition: all 0.35s ease-in-out;
 					&:hover {
@@ -34,14 +33,14 @@ $middle: 50%;
 					.image {
 						position: relative;
 						display: block;
-						width: 48%;
+						width: $middle - 10%;
 						overflow: hidden;
 						& > img {
 							width: $max;
 						}
 					}
 					.text {
-						width: 48%;
+						width: $middle + 8%;
 						color: #000;
 						height: $max;
 						& > .title {
@@ -50,7 +49,7 @@ $middle: 50%;
 						}
 						& > .info {
 							max-width: 300px;
-							margin: 20px 0;
+							margin: 5% 0;
 							color: #848484;
 							font-size: 18px;
 						}

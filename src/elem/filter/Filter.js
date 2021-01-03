@@ -1,25 +1,25 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Select from "react-select";
 
 const prices = [
-	{id: 0, label: "Все", value: "All"},
-	{id: 1, label: "от 3000 рублей", value: 3000},
-	{id: 2, label: "от 4000 рублей", value: 4000},
-	{id: 3, label: "от 5000 рублей", value: 5000},
+	{ id: 0, label: "Все", value: "All" },
+	{ id: 1, label: "от 3000 рублей", value: 3000 },
+	{ id: 2, label: "от 4000 рублей", value: 4000 },
+	{ id: 3, label: "от 5000 рублей", value: 5000 },
 ];
 const counts = [
-	{id: 0, label: "Все", value: "All"},
-	{id: 1, label: "от 2 мест", value: 2},
-	{id: 2, label: "от 4 мест", value: 4},
-	{id: 3, label: "от 6 мест", value: 6},
+	{ id: 0, label: "Все", value: "All" },
+	{ id: 1, label: "от 2 мест", value: 2 },
+	{ id: 2, label: "от 4 мест", value: 4 },
+	{ id: 3, label: "от 6 мест", value: 6 },
 ];
 const categories = [
-	{id: 0, label: "Все", value: "All"},
-	{id: 1, label: "Делюкс", value: "Делюкс"},
-	{id: 2, label: "Трехместный", value: "Трехместный"},
-	{id: 3, label: "Семейный", value: "Семейный"},
-	{id: 4, label: "С видом на море", value: "Море"},
+	{ id: 0, label: "Все", value: "All" },
+	{ id: 1, label: "Делюкс", value: "Делюкс" },
+	{ id: 2, label: "Трехместный", value: "Трехместный" },
+	{ id: 3, label: "Семейный", value: "Семейный" },
+	{ id: 4, label: "С видом на море", value: "Море" },
 ];
 
 export default class Filter extends React.Component {
@@ -32,23 +32,23 @@ export default class Filter extends React.Component {
 		};
 	}
 
-	isMain = window.location.pathname.includes("/home");
-	fStyle = this.isMain ? {boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)"} : {boxShadow: "none"};
-	wStyle = this.isMain ? {width: "90%"} : {width: "100%"};
-	tStyle = this.isMain ? "Забронировать" : "Показать";
-	hStyle = this.isMain ? {display: "none"} : {display: "block"};
-	sStyle = this.isMain ? {display: "block"} : {display: "none"};
+	isRoute = window.location.pathname.includes("/home");
+	fStyle = this.isRoute ? { boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)" } : { boxShadow: "none" };
+	wStyle = this.isRoute ? { width: "90%" } : { width: "100%" };
+	tStyle = this.isRoute ? "Забронировать" : "Показать";
+	hStyle = this.isRoute ? { display: "none" } : { display: "block" };
+	sStyle = this.isRoute ? { display: "block" } : { display: "none" };
 
 	handlePrices = (event) => {
-		this.setState({price: event.value});
+		this.setState({ price: event.value });
 		// console.log(event.price);
 	};
 	handleCounts = (event) => {
-		this.setState({count: event.value});
+		this.setState({ count: event.value });
 		// console.log(event.value);
 	};
 	handleCategories = (event) => {
-		this.setState({category: event.value});
+		this.setState({ category: event.value });
 		// console.log(event.value);
 	};
 	isMobileDevice() {

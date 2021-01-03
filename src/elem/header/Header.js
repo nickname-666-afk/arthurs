@@ -13,9 +13,13 @@ export default class Header extends React.Component {
 		super(props);
 		this.state = {
 			sideDrawerOpen: false,
-			route: window.location.pathname.includes("/rooms"),
 		};
 	}
+	isRoute = window.location.pathname.includes("/home");
+	bgStyle = this.isRoute
+		? { boxShadow: "none", position: "absolute", background: "transparent" }
+		: { boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)", position: "fixed", background: "#ff7b51" };
+
 	drawerToggleClickHandler = () => {
 		this.setState((prevState) => {
 			return { sideDrawerOpen: !prevState.sideDrawerOpen };
@@ -65,9 +69,7 @@ export default class Header extends React.Component {
 			);
 		}
 		return (
-			<header
-				className="Header"
-				style={this.state.route ? { background: "red" } : { background: "green" }}>
+			<header className="Header" style={this.bgStyle}>
 				{this.state.sideDrawerOpen ? this.sideDrawer : null}
 				<div className="toolbar">
 					<div className="toolbar__navigation">

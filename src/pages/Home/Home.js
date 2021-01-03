@@ -11,10 +11,12 @@ import Maps from "./Maps";
 import instagram from "../../assets/images/icons/instagram.png";
 import vk from "../../assets/images/icons/vk.png";
 import whatsapp from "../../assets/images/icons/whatsapp.png";
+import Header from "../../elem/header/Header";
 
 const Home = () => {
 	return (
 		<div className="App">
+			<Header />
 			<Start instagram={instagram} vk={vk} whatsapp={whatsapp} />
 			<Filter />
 			<div className="component">
